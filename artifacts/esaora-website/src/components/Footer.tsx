@@ -7,7 +7,7 @@ import { useSiteSettings } from '@workspace/esaora-core/hooks/useData';
 export function Footer() {
   const { t } = useLanguage();
   const { settings } = useSiteSettings();
-  const footerLogo = settings.footer_logo_url || '/footerlogo.png';
+  const footerLogo = settings.footer_logo_url || '/footerlogo.svg';
   const siteName = settings.site_name || 'Mahilala Madagascar';
 
   return (
@@ -33,20 +33,23 @@ export function Footer() {
               </p>
             </div>
 
-            {/* Social Links */}
-            <div className="flex gap-5 pt-2">
+            {/* Social + Contact Links */}
+            <div className="flex flex-wrap gap-3 pt-2">
               {[
-                { icon: <FaLinkedin className="w-6 h-6" />, href: '#', color: '#0077b5', label: 'LinkedIn' },
-                { icon: <FaXTwitter className="w-6 h-6" />,  href: '#', color: '#ffffff', label: 'Twitter' },
-                { icon: <FaFacebookF className="w-6 h-6" />, href: '#', color: '#1877F2', label: 'Facebook' },
-                { icon: <FaYoutube className="w-6 h-6" />,   href: '#', color: '#FF0000', label: 'YouTube' },
+                { icon: <FaLinkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
+                { icon: <FaXTwitter className="w-5 h-5" />,  href: '#', label: 'Twitter' },
+                { icon: <FaFacebookF className="w-5 h-5" />, href: '#', label: 'Facebook' },
+                { icon: <FaYoutube className="w-5 h-5" />,   href: '#', label: 'YouTube' },
+                { icon: <Mail className="w-5 h-5" />, href: `mailto:${t.footer.email}`, label: 'Email' },
               ].map((s, i) => (
                 <a
                   key={i}
                   href={s.href}
                   aria-label={s.label}
-                  style={{ color: s.color }}
-                  className="transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 p-1 hover:border hover:border-white/20 rounded-lg"
+                  title={s.label === 'Email' ? t.footer.email : s.label}
+                  target={s.href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/15 text-white hover:bg-white hover:text-[#001BB7] transition-all duration-300 hover:-translate-y-1"
                 >
                   {s.icon}
                 </a>
@@ -70,30 +73,19 @@ export function Footer() {
             <h4 className="text-white font-bold text-sm tracking-widest mb-10">{t.footer.about}</h4>
             <ul className="space-y-5">
               <li><Link href="/about"      className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.about}</Link></li>
-              <li><Link href="/our-story"  className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.ourStory}</Link></li>
-              <li><Link href="/vision"     className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.vision}</Link></li>
               <li><Link href="/team"       className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.ourTeam}</Link></li>
+              <li><Link href="/programs"   className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.programs}</Link></li>
+              <li><Link href="/partners"   className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.partners}</Link></li>
             </ul>
           </div>
 
-          {/* Alliance Links Column */}
+          {/* Explore Column */}
           <div>
             <h4 className="text-white font-bold text-sm tracking-widest mb-10">{t.footer.allianceConnectivity}</h4>
             <ul className="space-y-5">
-              <li><Link href="/about"   className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.about}</Link></li>
               <li><Link href="/gallery" className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.gallery}</Link></li>
               <li><Link href="/news"    className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.news}</Link></li>
-              <li><Link href="/partners"className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.partners}</Link></li>
               <li><Link href="/contact" className="text-white/80 hover:text-[#F78A28] text-base transition-colors duration-200 block">{t.nav.contact}</Link></li>
-              <li className="pt-4">
-                <a
-                  href={`mailto:${t.footer.email}`}
-                  className="text-[#F78A28] font-medium text-sm flex items-center gap-2 group"
-                >
-                  <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  {t.footer.email}
-                </a>
-              </li>
             </ul>
           </div>
         </div>

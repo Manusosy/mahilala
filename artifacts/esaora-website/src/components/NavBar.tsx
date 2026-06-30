@@ -29,7 +29,7 @@ export function NavBar() {
   const { t, language, setLanguage } = useLanguage();
   const { settings } = useSiteSettings();
   const [location] = useLocation();
-  const headerLogo = settings.header_logo_url || '/ESAORA-LOGO.png';
+  const headerLogo = settings.header_logo_url || '/mahilala-logo.png';
   const siteName = settings.site_name || 'Mahilala Madagascar';
   const [scrolled, setScrolled]         = useState(false);
   const [mobileOpen, setMobileOpen]     = useState(false);
@@ -94,27 +94,14 @@ export function NavBar() {
       key: 'about',
       label: t.nav.about,
       href: '/about',
-      sub: [
-        { label: t.nav.ourStory, href: '/our-story' },
-        { label: t.nav.vision, href: '/vision' },
-        { label: t.nav.ourTeam, href: '/team' },
-      ],
     },
+    { key: 'team', label: t.nav.ourTeam, href: '/team' },
     {
       key: 'programs',
       label: t.nav.programs,
       href: '/programs',
-      sub: [
-        { label: t.nav.allProjects, href: '/programs' },
-        { label: t.nav.wash, href: '/programs/toroy-izy' },
-        { label: t.nav.blueEconomy, href: '/programs/sekoly-manga' },
-      ],
     },
-    {
-      key: 'partners',
-      label: t.nav.partners,
-      href: '/partners',
-    },
+    { key: 'partners', label: t.nav.partners, href: '/partners' },
     { key: 'gallery', label: t.nav.gallery, href: '/gallery' },
     { key: 'news', label: t.nav.news, href: '/news' },
   ];

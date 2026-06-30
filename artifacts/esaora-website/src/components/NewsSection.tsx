@@ -79,13 +79,8 @@ export function NewsSection() {
                                             <Calendar className="w-3.5 h-3.5" />
                                             <span>{date}</span>
                                         </div>
-                                        {article.author && (
-                                            <span className="text-[9px] font-black text-brand-navy/30 uppercase tracking-tighter">
-                                                By {article.author.full_name}
-                                            </span>
-                                        )}
                                     </div>
-                                    <h3 className="font-display text-xl font-black text-brand-navy leading-tight mb-4 group-hover:text-brand-cyan transition-colors line-clamp-2 italic">{article.title}</h3>
+                                    <h3 className="font-display text-xl font-black text-[#111111] leading-tight mb-4 group-hover:text-gray-600 transition-colors line-clamp-2 italic">{article.title}</h3>
                                     <p className="text-slate-800 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">{article.excerpt}</p>
                                     <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-50">
                                         <div className="flex items-center gap-1.5 text-brand-cyan text-[10px] font-black uppercase tracking-widest">

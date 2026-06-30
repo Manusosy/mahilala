@@ -13,7 +13,7 @@ export function usePublishedArticles(limit = 12, categorySlug?: string) {
       setLoading(true);
       let query = supabase
         .from('articles')
-        .select(`*, categories(*), article_tags(tags(*)), author:admin_profiles!author_id(full_name, avatar_url)`)
+        .select(`*, categories(*), article_tags(tags(*))`)
         .eq('is_published', true)
         .order('published_at', { ascending: false })
         .limit(limit);
@@ -29,7 +29,6 @@ export function usePublishedArticles(limit = 12, categorySlug?: string) {
         const mapped = (data || []).map((a: any) => ({
           ...a,
           categories: a.categories,
-          author: a.author,
           tags: (a.article_tags || []).map((at: any) => at.tags).filter(Boolean),
         }));
         setArticles(mapped);
@@ -43,8 +42,10 @@ export function usePublishedArticles(limit = 12, categorySlug?: string) {
 }
 
 // ── Public hook: fetch single article by slug ───────────────────────────────
+type ArticleAuthor = { full_name: string | null; avatar_url: string | null };
+
 export function useArticleBySlug(slug: string) {
-  const [article, setArticle] = useState<(Article & { categories: Category | null; tags: Tag[] }) | null>(null);
+  const [article, setArticle] = useState<(Article & { categories: Category | null; tags: Tag[]; author: ArticleAuthor | null }) | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -54,17 +55,28 @@ export function useArticleBySlug(slug: string) {
       setLoading(true);
       const { data, error } = await supabase
         .from('articles')
-        .select(`*, categories(*), article_tags(tags(*)), author:admin_profiles!author_id(full_name, avatar_url)`)
+        .select(`*, categories(*), article_tags(tags(*))`)
         .eq('slug', slug)
         .eq('is_published', true)
         .single();
 
       if (error) { setError(error.message); } else if (data) {
+        // Fetch the publishing author's public profile (name + avatar) when set.
+        let author: ArticleAuthor | null = null;
+        if ((data as any).author_id) {
+          const { data: authorData } = await (supabase as any)
+            .from('public_author_profiles')
+            .select('full_name, avatar_url')
+            .eq('id', (data as any).author_id)
+            .maybeSingle();
+          author = authorData || null;
+        }
+
         setArticle({
           ...data,
           categories: (data as any).categories,
-          author: (data as any).author,
           tags: ((data as any).article_tags || []).map((at: any) => at.tags).filter(Boolean),
+          author,
         });
         // Increment view count via secure RPC
         supabase.rpc('increment_article_view', { article_id: data.id }).then(({ error: rpcError }) => {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, Link } from 'wouter';
 import { useProgramBySlug, usePublishedPrograms } from '@workspace/esaora-core/hooks/usePrograms';
-import { Loader2, ChevronRight, Target, TrendingUp, HelpCircle, MapPin, Layers, Calendar, PlayCircle, X, ArrowRight } from 'lucide-react';
+import { ChevronRight, Target, TrendingUp, HelpCircle, MapPin, Layers, Calendar, PlayCircle, X, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
 
 // ── Official Social Icons (SVG) ─────────────────────────────────────────────
@@ -30,9 +30,19 @@ export default function ProgramDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen pt-32 pb-20 flex flex-col items-center justify-center">
-        <Loader2 className="w-10 h-10 animate-spin text-brand-navy/30 mb-4" />
-        <p className="text-slate-900 font-medium tracking-wide">Gathering program intelligence...</p>
+      <div className="min-h-screen pt-32 pb-20 animate-pulse">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="h-3 w-24 bg-gray-100 rounded mb-5" />
+          <div className="h-10 w-3/4 bg-gray-100 rounded mb-4" />
+          <div className="h-4 w-1/2 bg-gray-100 rounded mb-10" />
+          <div className="aspect-[16/9] w-full bg-gray-100 rounded-[7px] mb-10" />
+          <div className="space-y-3">
+            <div className="h-4 w-full bg-gray-100 rounded" />
+            <div className="h-4 w-11/12 bg-gray-100 rounded" />
+            <div className="h-4 w-10/12 bg-gray-100 rounded" />
+            <div className="h-4 w-9/12 bg-gray-100 rounded" />
+          </div>
+        </div>
       </div>
     );
   }
@@ -111,7 +121,7 @@ export default function ProgramDetailPage() {
                           <Layers className="w-3 h-3 text-brand-cyan" /> Strategic Programme
                       </div>
                   </div>
-                  <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-brand-navy font-black leading-tight tracking-tight">
+                  <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-[#111111] font-black leading-tight tracking-tight">
                       {program.name}
                   </h1>
               </div>
@@ -373,7 +383,7 @@ function RelatedProgramsSection({ currentPillar, currentId }: { currentPillar: s
                                 </div>
                             )}
                             <div className="p-6 flex-1 flex flex-col">
-                                <h3 className="font-display text-lg text-brand-navy font-black mb-3 group-hover:text-brand-cyan transition-colors leading-tight">{p.name}</h3>
+                                <h3 className="font-display text-lg text-[#111111] font-black mb-3 group-hover:text-gray-600 transition-colors leading-tight">{p.name}</h3>
                                 <p className="text-xs text-slate-800 line-clamp-2 flex-1 mb-6 leading-relaxed">{p.summary}</p>
                                 <span className="text-[10px] font-black text-brand-navy uppercase tracking-widest transition-colors flex items-center gap-2">
                                     Details <ArrowRight className="w-3 h-3" />

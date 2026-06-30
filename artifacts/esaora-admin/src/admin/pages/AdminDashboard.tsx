@@ -164,9 +164,11 @@ export default function AdminDashboard() {
                     <Icon className={`w-4.5 h-4.5 ${card.color}`} />
                   </div>
                 </div>
-                <p className={`text-2xl font-bold ${loading ? 'text-gray-200' : 'text-gray-900'}`}>
-                  {loading ? '—' : card.value}
-                </p>
+                {loading ? (
+                  <div className="h-7 w-10 bg-gray-100 rounded animate-pulse" />
+                ) : (
+                  <p className="text-2xl font-bold text-gray-900">{card.value}</p>
+                )}
                 <p className="text-gray-400 text-xs mt-0.5">{card.label}</p>
               </div>
             </Link>

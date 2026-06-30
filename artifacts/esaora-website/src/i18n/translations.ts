@@ -30,7 +30,7 @@ export const translations = {
       partnerDirectory: 'Partner Directory',
       becomeMember: 'Get Involved',
       funders: 'Supporters',
-      ourTeam: 'Founder',
+      ourTeam: 'Our Team',
       toroyIzy: 'Toroy Izy',
       sekolyManga: 'Sekoly Manga',
     },

@@ -15,7 +15,7 @@ interface UseScrollRevealOptions {
  *
  * Targets only elements marked with `data-reveal` inside the scope, so it never
  * double-animates sections like BlueprintSection, QuoteSection, ObjectivesSlider,
- * GovernanceSection or NewsSection (which animate themselves).
+ * or NewsSection (which animate themselves).
  *
  * - Each target fades in + rises (opacity 0→1, y 40→0) once as it enters view.
  * - Direct children of an element marked `data-reveal-stagger` animate with a

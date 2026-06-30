@@ -1,9 +1,37 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Target, Eye, Heart } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 gsap.registerPlugin(ScrollTrigger);
+
+const PURPOSE_TABS = [
+  {
+    key: 'mission',
+    label: 'Mission',
+    icon: Target,
+    headline: 'Our Mission',
+    body: 'To sensitize, support, and inspire young Malagasy people toward responsible citizenship, personal development, academic fulfillment, leadership, and environmental stewardship.',
+    image: '/images/hero/hero-bg-10.jpg',
+  },
+  {
+    key: 'vision',
+    label: 'Vision',
+    icon: Eye,
+    headline: 'Our Vision',
+    body: 'A generation of informed, confident, purpose-driven, and civically engaged Malagasy youth who contribute positively to their communities and protect Madagascar\u2019s marine and coastal ecosystems.',
+    image: '/images/hero/hero-bg-2.jpg',
+  },
+  {
+    key: 'values',
+    label: 'Values',
+    icon: Heart,
+    headline: 'Our Values',
+    body: 'The principles that shape how Mahilala accompanies young people in Toliara and across Madagascar.',
+    values: ['Empowerment', 'Civic Responsibility', 'Environmental Consciousness', 'Community Action', 'Mentorship', 'Humility', 'Hope', 'Lifelong Learning'],
+    image: '/images/sections/pillar-climate-action.jpg',
+  },
+] as const;
 
 const CRISES = [
   {
@@ -75,6 +103,8 @@ const PARTNERS = [
 export default function OurStoryPage() {
   const videoSectionRef = useRef<HTMLElement>(null);
   const quoteRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState<'mission' | 'vision' | 'values'>('mission');
+  const active = PURPOSE_TABS.find((t) => t.key === activeTab) ?? PURPOSE_TABS[0];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -115,12 +145,11 @@ export default function OurStoryPage() {
     <main className="bg-brand-navy">
       {/* ── Hero ─────────────────────────────────────────────── */}
       <PageHero
-        label="OUR STORY"
-        heading="The Story Behind Mahilala"
-        subheading="Born from personal reflection, lived experience, and a desire to make guidance more accessible to young people in Madagascar."
+        label="ABOUT US"
+        heading="Who Is Mahilala Madagascar"
+        subheading="Born from personal reflection, lived experience, and a desire to make guidance more accessible to young people in Toliara and across Madagascar."
         imageSrc="/images/hero/hero-bg-3.jpg"
-        breadcrumb="Our Story"
-        breadcrumbParent={{ label: 'About', href: '/about' }}
+        breadcrumb="About"
       />
 
       {/* ── The Catalyst (Premium Editorial Narrative) ──────────── */}
@@ -180,6 +209,76 @@ export default function OurStoryPage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mission · Vision · Values (Tabbed) ──────────────── */}
+      <section className="bg-[#FAF9F6] py-24 px-4 relative overflow-hidden">
+        {/* Dotted Whiteboard Pattern - Dimmed */}
+        <div
+          className="absolute inset-0 z-0 opacity-20"
+          style={{ backgroundImage: 'radial-gradient(#94A3B8 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-transparent to-[#FAF9F6] z-0 pointer-events-none opacity-90" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <span className="text-brand-navy/50 uppercase tracking-widest text-xs font-bold bg-white shadow-sm px-4 py-1.5 rounded-lg inline-block mb-4">Purpose &amp; Principles</span>
+            <h2 className="font-display text-4xl sm:text-5xl text-brand-navy font-bold">Mission, Vision &amp; Values</h2>
+            <p className="text-[#4A5568] mt-4 text-base max-w-2xl mx-auto">
+              The aspirations and principles that guide every programme, partnership, and moment of mentorship at Mahilala Madagascar.
+            </p>
+          </div>
+
+          {/* Tab Switcher */}
+          <div className="flex justify-center mb-10">
+            <div className="inline-flex flex-wrap justify-center gap-1 bg-white border border-black/5 rounded-[10px] p-1.5 shadow-sm">
+              {PURPOSE_TABS.map((tab) => {
+                const Icon = tab.icon;
+                const isActive = tab.key === activeTab;
+                return (
+                  <button
+                    key={tab.key}
+                    onClick={() => setActiveTab(tab.key)}
+                    className={`flex items-center gap-2 px-6 py-2.5 rounded-[7px] text-sm font-bold transition-all ${
+                      isActive ? 'bg-[#001BB7] text-white shadow-sm' : 'text-brand-navy/60 hover:text-brand-navy hover:bg-brand-navy/5'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Active Panel */}
+          <div key={active.key} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white rounded-[10px] border border-black/5 shadow-sm overflow-hidden animate-in fade-in duration-500">
+            <div className="p-10 lg:p-14">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <span className="w-11 h-11 rounded-xl bg-[#001BB7]/10 flex items-center justify-center text-[#001BB7]">
+                  <active.icon className="w-5 h-5" />
+                </span>
+                <span className="text-[#001BB7] uppercase tracking-widest text-xs font-bold">{active.headline}</span>
+              </div>
+              <p className="text-black text-base md:text-lg leading-relaxed font-light">{active.body}</p>
+
+              {'values' in active && active.values && (
+                <div className="flex flex-wrap gap-2.5 mt-8">
+                  {active.values.map((v) => (
+                    <span key={v} className="bg-[#F0F4F8] border border-black/5 text-brand-navy text-sm font-semibold px-4 py-2 rounded-full">
+                      {v}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="relative h-64 lg:h-full min-h-[340px]">
+              <img src={active.image} alt={active.headline} className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001833]/40 via-transparent to-transparent" />
+            </div>
           </div>
         </div>
       </section>

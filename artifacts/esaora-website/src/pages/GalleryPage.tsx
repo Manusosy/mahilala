@@ -57,9 +57,16 @@ export default function GalleryPage() {
       <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           {loading ? (
-             <div className="flex flex-col items-center justify-center py-40 gap-4">
-                 <div className="w-12 h-12 border-4 border-gray-100 border-t-[#001BB7] rounded-full animate-spin" />
-                 <span className="text-[10px] font-black text-gray-300 uppercase tracking-[0.4em]">Curating Archive</span>
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="bg-white rounded-[7px] border border-gray-100 overflow-hidden animate-pulse">
+                    <div className="aspect-[4/3] bg-gray-100" />
+                    <div className="p-6 space-y-3">
+                      <div className="h-4 w-full bg-gray-100 rounded" />
+                      <div className="h-3 w-1/3 bg-gray-100 rounded" />
+                    </div>
+                  </div>
+                ))}
              </div>
           ) : filteredItems.length === 0 ? (
             <div className="text-center py-40 bg-gray-50 rounded-2xl border border-dashed border-gray-200">

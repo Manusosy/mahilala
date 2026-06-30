@@ -103,7 +103,7 @@ function PillarDescCard({ pillarKey, side, active, onActivate }: PillarDescCardP
 export function BlueprintSection() {
   const { t } = useLanguage();
   const { settings } = useSiteSettings();
-  const centerLogoSrc = settings.favicon_url || '/ESAORA-LOGO.png';
+  const centerLogoSrc = settings.favicon_url || '/favicon.png';
   const [activePillar, setActivePillar] = useState<PillarKey | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const diagramRef = useRef<HTMLDivElement>(null);

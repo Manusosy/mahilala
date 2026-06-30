@@ -19,7 +19,7 @@ const FOUNDER_CREDENTIALS = [
 
 const FOUNDER_BIO = [
   'Rakotonjanahary Fidèle is a marine biologist, environmentalist, and committed leader for youth and sustainable development in Madagascar. His journey combines scientific research, community engagement, environmental education, and the mentoring of younger generations.',
-  'A graduate of the Institute of Fisheries and Marine Sciences (IH.SM) at the University of Toliara, he earned a Professional Bachelor\u2019s Degree of the Sea and Coast — specializing in Marine and Coastal Environment and Biodiversity — in 2011, before continuing with a Master\u2019s (DEA) in Applied Oceanology in 2015. He became a Doctor (PhD) in April 2025.',
+  'A graduate of the Institute of Fisheries and Marine Sciences (IH.SM) at the University of Toliara, he earned a Professional Bachelor\u2019s Degree of the Sea and Coast, specializing in Marine and Coastal Environment and Biodiversity, in 2011, before continuing with a Master\u2019s (DEA) in Applied Oceanology in 2015. He became a Doctor (PhD) in April 2025.',
   'Beyond the scientific field, he developed a strong involvement in leadership and civic engagement early on. In 2017, he was selected for the prestigious Mandela Washington Fellowship for Young African Leaders, with a specialization in Civic Leadership. This experience strengthened his vision: helping young people discover their potential, develop their leadership, and become positive agents of change in their communities.',
   'This conviction gave rise to Mahilala, an initiative dedicated to youth orientation, personal development, leadership, and environmental education. Through Mahilala, he guides young people and students in discovering their vocation, choosing their academic and professional paths, and developing an entrepreneurial and civic culture.',
   'Fidèle is also involved in several community and associative initiatives. He has contributed to environmental education programmes in schools, training for fishing communities in southwestern Madagascar, and civic movements focused on civic-mindedness, patriotism, and the social responsibility of young people.',
@@ -30,10 +30,10 @@ const FOUNDER_BIO = [
 
 const FOUNDER_MESSAGE = [
   'At Mahilala, we believe that life is a journey, and it is up to each person to make that journey meaningful, inspiring, and unforgettable.',
-  'Success is a choice, much like preparing a good meal. The quality of the result depends on the ingredients we choose every day — our decisions, our values, our discipline, and the people we surround ourselves with. Wrong choices can sometimes change the direction of our lives, while reflection, learning, and continuous improvement help us grow and become better versions of ourselves.',
+  'Success is a choice, much like preparing a good meal. The quality of the result depends on the ingredients we choose every day: our decisions, our values, our discipline, and the people we surround ourselves with. Wrong choices can sometimes change the direction of our lives, while reflection, learning, and continuous improvement help us grow and become better versions of ourselves.',
   'Just like a master chef constantly improves a recipe, we must also take time to learn, adapt, and refine our path throughout life.',
   'And finally, whether our presence on Earth was planned or unexpected, we believe that every life has a purpose. Nothing is completely by chance. Each person carries a mission, a reason to exist, and a unique contribution to bring to the world.',
-  'The challenge is to discover that purpose and to use it to create a positive impact — for ourselves, for others, and for future generations.',
+  'The challenge is to discover that purpose and to use it to create a positive impact for ourselves, for others, and for future generations.',
 ];
 
 export default function TeamPage() {
@@ -81,8 +81,8 @@ export default function TeamPage() {
       <PageHero
         label="OUR TEAM"
         heading="The People Behind Mahilala"
-        subheading="A founder, a leadership team, and a regional secretariat working together for Madagascar's youth — through science, mentorship, environmental education, and community engagement."
-        imageSrc="/images/hero/hero-bg-2.jpg"
+        subheading="A founder and a dedicated team working together for Madagascar's youth through science, mentorship, environmental education, and community engagement."
+        imageSrc="/images/hero/team-hero.jpg"
         breadcrumb="Our Team"
         breadcrumbParent={{ label: 'About', href: '/about' }}
       />
@@ -161,7 +161,7 @@ export default function TeamPage() {
         {/* Sticky/parallax background image */}
         <div
           className="fixed top-0 left-0 w-full h-[100vh] pointer-events-none overflow-hidden -z-10 bg-black bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/sections/homearea.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero/team-hero.jpg')" }}
         />
 
         {/* Dark scrim for text legibility */}
@@ -187,7 +187,7 @@ export default function TeamPage() {
             <div className="mt-12 flex items-center justify-center gap-4">
               <span className="w-10 h-[1px] bg-white/30" />
               <span className="text-white/80 font-display italic text-base">
-                — Rakotonjanahary Fidèle, Founder
+                Rakotonjanahary Fidèle, Founder
               </span>
               <span className="w-10 h-[1px] bg-white/30" />
             </div>
@@ -213,8 +213,17 @@ export default function TeamPage() {
           </div>
 
           {loading ? (
-             <div className="flex flex-col items-center justify-center py-20 gap-4">
-                <div className="w-10 h-10 border-2 border-gray-100 border-t-brand-cyan rounded-full animate-spin" />
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="flex flex-col animate-pulse">
+                    <div className="aspect-square w-full rounded-t-[7px] bg-gray-100 border-x border-t border-gray-100" />
+                    <div className="w-full bg-[#fcfcfa] p-8 rounded-b-[7px] border-x border-b border-gray-100 space-y-3 flex flex-col items-center">
+                      <div className="h-6 w-2/3 bg-gray-100 rounded" />
+                      <div className="h-3 w-1/3 bg-gray-100 rounded" />
+                      <div className="h-3 w-1/2 bg-gray-100 rounded" />
+                    </div>
+                  </div>
+                ))}
              </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
@@ -280,7 +289,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Secretariat Section - Applying same centered design */}
+      {/* Team Members Section - Applying same centered design */}
       <section className="py-32 px-4 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 text-center">
@@ -288,9 +297,9 @@ export default function TeamPage() {
                 className="uppercase tracking-widest text-xs font-bold border px-4 py-1.5 rounded-lg leading-none inline-block mb-5"
                 style={{ color: '#001BB7', borderColor: '#001BB7' }}
               >
-                Implementation
+                Our People
               </span>
-              <h3 className="font-display text-4xl text-[#111111] font-bold tracking-tight">Regional Secretariat</h3>
+              <h3 className="font-display text-4xl text-[#111111] font-bold tracking-tight">Team Members</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">

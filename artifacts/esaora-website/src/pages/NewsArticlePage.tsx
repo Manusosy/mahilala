@@ -1,6 +1,6 @@
 import { useParams, Link } from 'wouter';
 import { useArticleBySlug, usePublishedArticles } from '@workspace/esaora-core/hooks/useArticles';
-import { Calendar, Loader2, Share2, Link as LinkIcon, Check, ChevronRight, Signal } from 'lucide-react';
+import { Calendar, Share2, Link as LinkIcon, Check, ChevronRight, Signal } from 'lucide-react';
 import { useState } from 'react';
 
 // ── Official Social Icons (SVG) ─────────────────────────────────────────────
@@ -45,9 +45,20 @@ export default function NewsArticlePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen pt-32 pb-20 flex flex-col items-center justify-center">
-        <Loader2 className="w-10 h-10 animate-spin text-brand-navy/30 mb-4" />
-        <p className="text-gray-400 font-medium">Loading article...</p>
+      <div className="min-h-screen pt-32 pb-20 animate-pulse">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="h-3 w-24 bg-gray-100 rounded mb-5" />
+          <div className="h-10 w-full bg-gray-100 rounded mb-3" />
+          <div className="h-10 w-3/4 bg-gray-100 rounded mb-8" />
+          <div className="aspect-[16/9] w-full bg-gray-100 rounded-[7px] mb-10" />
+          <div className="space-y-3">
+            <div className="h-4 w-full bg-gray-100 rounded" />
+            <div className="h-4 w-11/12 bg-gray-100 rounded" />
+            <div className="h-4 w-10/12 bg-gray-100 rounded" />
+            <div className="h-4 w-full bg-gray-100 rounded" />
+            <div className="h-4 w-9/12 bg-gray-100 rounded" />
+          </div>
+        </div>
       </div>
     );
   }
@@ -66,7 +77,8 @@ export default function NewsArticlePage() {
 
   const date = new Date(article.published_at || article.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   const categoryColor = article.categories?.color || '#001BB7';
-  const author = article.author || { full_name: 'THE CONSORTIUM', avatar_url: null };
+  const authorName = article.author?.full_name?.trim() || 'Mahilala';
+  const authorAvatar = article.author?.avatar_url?.trim() || null;
 
   return (
     <main className="bg-[#FAFAFA] min-h-screen">
@@ -94,22 +106,22 @@ export default function NewsArticlePage() {
       <article className="pb-24">
         {/* Header Section */}
         <header className="max-w-4xl mx-auto px-4 lg:px-8 mb-12 text-center md:text-left">
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-brand-navy font-bold leading-[1.2] mb-6">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-[#111111] font-bold leading-[1.2] mb-6">
                 {article.title}
             </h1>
 
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 border-t border-gray-200 pt-6">
                 <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center border border-gray-200">
-                        {author.avatar_url ? (
-                            <img src={author.avatar_url} alt={author.full_name} className="w-full h-full object-cover" />
+                        {authorAvatar ? (
+                            <img src={authorAvatar} alt={authorName} className="w-full h-full object-cover" />
                         ) : (
                             <img src="/favicon.png" alt="Platform Logo" className="w-8 h-8 opacity-60" />
                         )}
                     </div>
                     <div>
-                        <p className="text-sm font-black text-brand-navy uppercase tracking-wider leading-none mb-1">
-                            By {author.full_name || 'THE CONSORTIUM'}
+                        <p className="text-sm font-black text-[#111111] uppercase tracking-wider leading-none mb-1">
+                            By {authorName}
                         </p>
                         <p className="text-[11px] text-gray-500 font-medium">Official Release</p>
                     </div>
@@ -244,7 +256,7 @@ export default function NewsArticlePage() {
                             </div>
                             <div className="p-6 flex flex-col flex-1">
                                 <span className="text-[10px] font-bold text-[#001BB7] uppercase tracking-widest mb-3">{a.categories?.name || 'News'}</span>
-                                <h3 className="text-lg font-bold text-brand-navy mb-4 group-hover:text-[#001BB7] transition-colors line-clamp-2">{a.title}</h3>
+                                <h3 className="text-lg font-bold text-[#111111] mb-4 group-hover:text-gray-600 transition-colors line-clamp-2">{a.title}</h3>
                                 <p className="text-sm text-gray-500 line-clamp-2 mt-auto">{a.excerpt}</p>
                             </div>
                         </a>

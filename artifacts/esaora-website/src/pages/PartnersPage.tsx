@@ -41,8 +41,18 @@ export default function PartnersPage() {
           </div>
 
           {loading ? (
-             <div className="flex justify-center p-20">
-               <div className="w-10 h-10 border-4 border-brand-navy border-t-[#001BB7] rounded-full animate-spin" />
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+               {[...Array(4)].map((_, i) => (
+                 <div key={i} className="bg-white rounded-xl border border-black/5 overflow-hidden animate-pulse">
+                   <div className="h-48 bg-gray-100 border-b border-black/5" />
+                   <div className="p-8 space-y-3 flex flex-col items-center">
+                     <div className="h-3 w-20 bg-gray-100 rounded" />
+                     <div className="h-5 w-2/3 bg-gray-100 rounded" />
+                     <div className="h-3 w-full bg-gray-100 rounded" />
+                     <div className="h-3 w-5/6 bg-gray-100 rounded" />
+                   </div>
+                 </div>
+               ))}
              </div>
           ) : partners.length === 0 ? (
             <div className="text-center py-20 text-gray-500">

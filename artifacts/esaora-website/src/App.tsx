@@ -15,9 +15,8 @@ import NotFound from '@/pages/not-found';
 import { useSiteSettings } from '@workspace/esaora-core/hooks/useData';
 
 // ── Phase 2: About Section ──────────────────────────────────────────────────
-const AboutPage        = lazy(() => import('@/pages/AboutPage'));
+// "Our Story" now serves as the main About Us page (Mission/Vision/Values live inside it).
 const OurStoryPage     = lazy(() => import('@/pages/OurStoryPage'));
-const VisionPage       = lazy(() => import('@/pages/VisionPage'));
 // ── Phase 4: Country Pages ──────────────────────────────────────────────────
 const MadagascarPage   = lazy(() => import('@/pages/MadagascarPage'));
 
@@ -39,12 +38,25 @@ const TeamMemberPage   = lazy(() => import('@/pages/TeamMemberPage'));
 
 const queryClient = new QueryClient();
 
-function PageLoader() {
+function PageSkeleton() {
   return (
-    <div className="min-h-screen bg-[#001833] flex items-center justify-center">
-      <div className="flex flex-col items-center gap-4">
-        <div className="w-10 h-10 border-2 border-[#001BB7]/30 border-t-[#001BB7] rounded-full animate-spin" />
-        <span className="text-white/40 text-xs tracking-widest uppercase font-medium">Loading</span>
+    <div className="min-h-screen bg-white pt-24 md:pt-28 animate-pulse">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="h-3 w-28 bg-gray-100 rounded mb-5" />
+        <div className="h-9 w-3/4 max-w-xl bg-gray-100 rounded mb-4" />
+        <div className="h-4 w-1/2 max-w-md bg-gray-100 rounded mb-12" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="rounded-[7px] border border-gray-100 overflow-hidden">
+              <div className="aspect-[16/10] bg-gray-100" />
+              <div className="p-7 space-y-3">
+                <div className="h-3 w-24 bg-gray-100 rounded" />
+                <div className="h-5 w-full bg-gray-100 rounded" />
+                <div className="h-4 w-5/6 bg-gray-100 rounded" />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -78,12 +90,11 @@ function App() {
     }
   }, [settings.favicon_url, settings.site_name]);
 
-  if (loading) return <PageLoader />;
+  if (loading) return null;
 
   if (settings.maintenance_mode === 'true') {
     return (
       <div className="min-h-screen bg-[#001BB7] flex flex-col items-center justify-center p-6 text-center">
-        <div className="w-16 h-16 border-2 border-[#001BB7]/30 border-t-[#001BB7] rounded-full animate-spin mb-8" />
         <h1 className="text-4xl font-bold text-white mb-4">Under Maintenance</h1>
         <p className="text-[#001BB7] text-xl max-w-lg leading-relaxed">
           The Mahilala Madagascar website is currently undergoing scheduled maintenance. Please check back shortly.
@@ -98,13 +109,13 @@ function App() {
         <LanguageProvider>
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
             <ScrollToTop />
-            <Suspense fallback={<PageLoader />}>
-              <NavBar />
+            <NavBar />
+            <Suspense fallback={<PageSkeleton />}>
               <Switch>
                 <Route path="/" component={HomePage} />
-                <Route path="/about"      component={AboutPage} />
-                <Route path="/our-story"  component={OurStoryPage} />
-                <Route path="/vision"     component={VisionPage} />
+                <Route path="/about"      component={OurStoryPage} />
+                <Route path="/our-story">{() => <Redirect to="/about" />}</Route>
+                <Route path="/vision">{() => <Redirect to="/about" />}</Route>
                 <Route path="/governance">{() => <Redirect to="/about" />}</Route>
                 <Route path="/our-work/wash">{() => <Redirect to="/programs" />}</Route>
                 <Route path="/our-work/climate">{() => <Redirect to="/programs" />}</Route>
@@ -130,8 +141,8 @@ function App() {
                 <Route path="/cookies">{() => <LegalPage title="Cookie Policy" type="cookies" />}</Route>
                 <Route component={NotFound} />
               </Switch>
-              <Footer />
             </Suspense>
+            <Footer />
           </WouterRouter>
         </LanguageProvider>
         <Toaster />

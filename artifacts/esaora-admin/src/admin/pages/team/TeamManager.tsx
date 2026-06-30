@@ -6,7 +6,7 @@ import type { TeamMember } from '@workspace/esaora-core/lib/database.types';
 import { Plus, Edit2, Trash2, Loader2, AlertCircle, X, ImagePlus, Check, Linkedin, Mail } from 'lucide-react';
 
 const ROLES = ['leadership', 'board', 'staff', 'advisor', 'coordinator'];
-const COUNTRIES = ['Kenya', 'Tanzania', 'Mozambique', 'Madagascar', 'Regional'];
+const COUNTRIES = ['Madagascar', 'International'];
 type FormState = Partial<TeamMember> & { name: string; title: string };
 const EMPTY: FormState = { name: '', title: '', bio: '', role: 'staff', country: '', organization: '', email: '', linkedin_url: '', sort_order: 0, is_active: true };
 
@@ -140,7 +140,7 @@ export default function TeamManager() {
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Country</label>
                   <select value={form.country || ''} onChange={(e) => setForm((f) => ({ ...f, country: e.target.value }))} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm outline-none">
-                    <option value="">—</option>
+                    <option value="">Not specified</option>
                     {COUNTRIES.map((c) => <option key={c}>{c}</option>)}
                   </select>
                 </div>

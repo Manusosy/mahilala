@@ -83,9 +83,17 @@ export default function ReportsPage() {
       <section className="pb-16 px-4 min-h-[400px]">
         <div className="max-w-5xl mx-auto">
           {loading ? (
-            <div className="flex flex-col items-center justify-center py-32 gap-4">
-              <Loader2 className="w-9 h-9 animate-spin text-brand-navy/20" />
-              <p className="text-brand-navy/30 text-[10px] font-bold tracking-widest uppercase">Loading Publications...</p>
+            <div className="space-y-3">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="bg-white rounded-[7px] border border-gray-100 flex overflow-hidden animate-pulse">
+                  <div className="w-[104px] flex-shrink-0 bg-gray-100" />
+                  <div className="flex-1 px-5 py-4 space-y-2.5">
+                    <div className="h-3 w-24 bg-gray-100 rounded" />
+                    <div className="h-4 w-2/3 bg-gray-100 rounded" />
+                    <div className="h-3 w-1/3 bg-gray-100 rounded" />
+                  </div>
+                </div>
+              ))}
             </div>
           ) : reports.length === 0 ? (
             <div className="bg-white border border-gray-100 rounded-[7px] p-14 text-center max-w-xl mx-auto">

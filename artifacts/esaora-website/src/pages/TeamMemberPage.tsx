@@ -24,8 +24,18 @@ export default function TeamMemberPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-10 h-10 border-2 border-gray-100 border-t-brand-cyan rounded-full animate-spin" />
+      <div className="min-h-screen bg-white pt-32 pb-20 animate-pulse">
+        <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="aspect-[4/5] w-full bg-gray-100 rounded-[7px]" />
+          <div className="md:col-span-2 space-y-4">
+            <div className="h-3 w-24 bg-gray-100 rounded" />
+            <div className="h-9 w-2/3 bg-gray-100 rounded" />
+            <div className="h-3 w-1/3 bg-gray-100 rounded mb-6" />
+            <div className="h-4 w-full bg-gray-100 rounded" />
+            <div className="h-4 w-11/12 bg-gray-100 rounded" />
+            <div className="h-4 w-10/12 bg-gray-100 rounded" />
+          </div>
+        </div>
       </div>
     );
   }
@@ -155,7 +165,7 @@ export default function TeamMemberPage() {
               <div className="max-w-2xl">
                 <span className="text-[10px] text-gray-300 font-black uppercase tracking-[0.4em] block mb-6">Biography</span>
                 <div className="text-gray-600 text-lg leading-relaxed space-y-4">
-                    {member.bio || `The professional biography for ${member.name} is currently being verified by the Regional Secretariat. Official records reflect their current standing within the consortium governance.`}
+                    {member.bio || `The full biography for ${member.name} will be available here soon.`}
                 </div>
                 
                 <div className="mt-16">

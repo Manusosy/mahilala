@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { PageHero } from '@/components/PageHero';
-import { ArrowRight, Globe, Loader2, Calendar, Check } from 'lucide-react';
+import { ArrowRight, Globe, Loader2, Calendar, Check, Mail } from 'lucide-react';
 import { usePublishedArticles, useCategories } from '@workspace/esaora-core/hooks/useArticles';
 import { supabase } from '@workspace/esaora-core/lib/supabase';
 
@@ -39,6 +39,7 @@ export default function NewsPage() {
   return (
     <main>
       <PageHero
+        label="NEWS & INSIGHTS"
         heading="News, Stories & Insights from the Alliance"
         subheading="Updates, programme stories, and news from Mahilala Madagascar on youth mentorship, civic engagement, and environmental education."
         imageSrc="/images/hero/hero-bg-11.jpg"
@@ -77,9 +78,18 @@ export default function NewsPage() {
 
           {/* Grid */}
           {loading ? (
-            <div className="py-20 flex flex-col items-center justify-center">
-              <Loader2 className="w-8 h-8 animate-spin text-brand-navy/30 mb-4" />
-              <p className="text-slate-500 font-medium">Loading network insights...</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="bg-white rounded-[7px] overflow-hidden border border-gray-100 animate-pulse">
+                  <div className="aspect-[16/10] bg-gray-100" />
+                  <div className="p-7 space-y-3">
+                    <div className="h-3 w-24 bg-gray-100 rounded" />
+                    <div className="h-5 w-full bg-gray-100 rounded" />
+                    <div className="h-4 w-5/6 bg-gray-100 rounded" />
+                    <div className="h-4 w-2/3 bg-gray-100 rounded" />
+                  </div>
+                </div>
+              ))}
             </div>
           ) : filtered.length === 0 ? (
             <div className="py-20 text-center bg-white rounded-[7px] border border-gray-100">
@@ -125,13 +135,8 @@ export default function NewsPage() {
                             <Calendar className="w-3.5 h-3.5" />
                             <span>{date}</span>
                           </div>
-                          {article.author && (
-                            <span className="text-[9px] font-black text-brand-navy/30 uppercase tracking-tighter">
-                              By {article.author.full_name}
-                            </span>
-                          )}
                         </div>
-                        <h3 className="font-display text-xl font-black text-brand-navy leading-tight mb-4 group-hover:text-brand-cyan transition-colors line-clamp-2 italic">{article.title}</h3>
+                        <h3 className="font-display text-xl font-black text-[#111111] leading-tight mb-4 group-hover:text-gray-600 transition-colors line-clamp-2 italic">{article.title}</h3>
                         <p className="text-slate-800 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">{article.excerpt}</p>
                         <div className="flex items-center text-brand-cyan font-black text-[10px] tracking-[0.2em] mt-auto transition-all group-hover:gap-2 uppercase">
                           READ ARTICLE <ArrowRight className="w-4 h-4 ml-1" />
@@ -146,37 +151,52 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="bg-brand-navy py-20 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <span className="text-[#001BB7] uppercase tracking-widest text-xs font-bold block mb-4">Stay Connected</span>
-          <h2 className="font-display text-3xl text-white font-bold mb-4">Get Mahilala Updates</h2>
-          <p className="text-white/55 text-base mb-8">Receive news, program updates, and funding opportunities directly from the Alliance Secretariat.</p>
-          {subscribed ? (
-            <div className="flex items-center justify-center gap-3 bg-white/10 border border-white/20 rounded-[7px] px-6 py-4 max-w-md mx-auto">
-              <Check className="w-5 h-5 text-[#001BB7]" />
-              <span className="text-white text-sm font-semibold">You're subscribed! Thank you.</span>
+      {/* Newsletter Signup — detached branded band (not part of the footer) */}
+      <section className="bg-gray-50 px-4 pt-6 pb-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="relative overflow-hidden rounded-[14px] bg-gradient-to-br from-[#001833] via-[#001f4a] to-[#002a73] px-8 py-10 md:px-14 md:py-12 shadow-xl shadow-brand-navy/10">
+            {/* Decorative brand accent glow */}
+            <div className="absolute -top-20 -right-12 w-64 h-64 rounded-full bg-[#F78A28]/20 blur-3xl pointer-events-none" />
+            <div className="relative flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+              <div className="lg:flex-1">
+                <span className="inline-flex items-center gap-2 text-[#F78A28] uppercase tracking-widest text-[11px] font-black mb-3">
+                  <Mail className="w-3.5 h-3.5" /> Stay Connected
+                </span>
+                <h2 className="font-display text-2xl md:text-3xl text-white font-bold mb-2">Get Mahilala Updates</h2>
+                <p className="text-white/60 text-sm md:text-base max-w-xl leading-relaxed">
+                  Receive news, programme stories, and opportunities directly from Mahilala Madagascar.
+                </p>
+              </div>
+
+              <div className="lg:w-[440px] flex-shrink-0">
+                {subscribed ? (
+                  <div className="flex items-center justify-center gap-3 bg-white/10 border border-white/20 rounded-[7px] px-6 py-4">
+                    <Check className="w-5 h-5 text-[#F78A28]" />
+                    <span className="text-white text-sm font-semibold">You're subscribed! Thank you.</span>
+                  </div>
+                ) : (
+                  <form className="flex flex-col sm:flex-row gap-3" onSubmit={handleSubscribe}>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="your@email.org"
+                      className="flex-1 bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-3 rounded-[7px] text-sm focus:outline-none focus:border-[#F78A28]/60 transition-colors"
+                    />
+                    <button
+                      type="submit"
+                      disabled={subscribing}
+                      className="flex items-center justify-center gap-2 bg-[#F78A28] hover:bg-white hover:text-brand-navy text-white px-7 py-3 rounded-[7px] font-black text-xs uppercase tracking-widest transition-all hover:scale-105 whitespace-nowrap disabled:opacity-60"
+                    >
+                      {subscribing ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Subscribe'}
+                    </button>
+                  </form>
+                )}
+                {subError && <p className="text-red-300 text-xs mt-3">{subError}</p>}
+              </div>
             </div>
-          ) : (
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={handleSubscribe}>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.org"
-                className="flex-1 bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-3 rounded-[7px] text-sm focus:outline-none focus:border-[#001BB7]/60 transition-colors"
-              />
-              <button
-                type="submit"
-                disabled={subscribing}
-                className="flex items-center justify-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-7 py-3 rounded-[7px] font-black text-xs uppercase tracking-widest transition-all hover:scale-105 whitespace-nowrap disabled:opacity-60"
-              >
-                {subscribing ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Subscribe'}
-              </button>
-            </form>
-          )}
-          {subError && <p className="text-red-400 text-xs mt-3">{subError}</p>}
+          </div>
         </div>
       </section>
     </main>

@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 import { PageHero } from '@/components/PageHero';
 import { PartnerMarquee } from '@/components/PartnerMarquee';
 import { usePublishedPrograms } from '@workspace/esaora-core/hooks/usePrograms';
-import { Loader2, Calendar, Globe, ArrowRight } from 'lucide-react';
+import { Calendar, Globe, ArrowRight } from 'lucide-react';
 
 const CROSS_CUTTING = [
   { title: 'Toroy Izy', desc: 'Youth orientation and mentoring initiative with roots going back to 2016, helping young people discover purpose, choose direction, and believe in their potential.' },
@@ -38,7 +38,7 @@ export default function ProgramsPage() {
                 <div className="w-8 h-8 bg-brand-navy rounded-lg flex items-center justify-center text-[#001BB7] text-xs font-bold mb-4">
                   {String(i + 1).padStart(2, '0')}
                 </div>
-                <h3 className="text-brand-navy font-bold text-base mb-3">{item.title}</h3>
+                <h3 className="text-[#111111] font-bold text-base mb-3">{item.title}</h3>
                 <p className="text-slate-700 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -82,9 +82,24 @@ function LiveProgramsSection() {
 
   if (loading) {
     return (
-      <section className="bg-white py-12">
-        <div className="flex justify-center">
-          <Loader2 className="w-8 h-8 animate-spin text-brand-navy/30" />
+      <section className="bg-white py-24 px-4 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 space-y-3 animate-pulse">
+            <div className="h-3 w-28 bg-gray-100 rounded" />
+            <div className="h-9 w-64 bg-gray-100 rounded" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="rounded-[7px] border border-gray-100 overflow-hidden animate-pulse">
+                <div className="h-56 bg-gray-100" />
+                <div className="p-7 space-y-3">
+                  <div className="h-3 w-20 bg-gray-100 rounded" />
+                  <div className="h-5 w-full bg-gray-100 rounded" />
+                  <div className="h-4 w-5/6 bg-gray-100 rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     );
@@ -129,7 +144,7 @@ function LiveProgramsSection() {
                         }`}>{p.status}</span>
                       </div>
                       
-                      <h3 className="font-display text-xl text-brand-navy font-black mb-3 group-hover:text-brand-cyan transition-colors leading-tight">{p.name}</h3>
+                      <h3 className="font-display text-xl text-[#111111] font-black mb-3 group-hover:text-gray-600 transition-colors leading-tight">{p.name}</h3>
                       <p className="text-slate-800 text-sm line-clamp-2 flex-1 mb-6 leading-relaxed">{p.summary}</p>
                       
                       {p.funding_goal > 0 && (

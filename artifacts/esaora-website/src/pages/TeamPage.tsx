@@ -99,9 +99,9 @@ export default function TeamPage() {
                   {/* Portrait slot — drop the real founder photo at /images/team/founder.jpg */}
                   <div className="relative aspect-[4/5] rounded-[4px] overflow-hidden bg-brand-navy/5 border border-gray-50">
                     <img
-                      src="/images/hero/hero-bg-5.jpg"
+                      src="/images/team/founder-fidele-speaking.png"
                       alt="Rakotonjanahary Fidèle, Founder of Mahilala Madagascar"
-                      className="w-full h-full object-cover grayscale-[0.15]"
+                      className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent pointer-events-none" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -160,12 +160,12 @@ export default function TeamPage() {
       >
         {/* Sticky/parallax background image */}
         <div
-          className="fixed top-0 left-0 w-full h-[100vh] pointer-events-none overflow-hidden -z-10 bg-black bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero/team-hero.jpg')" }}
+          className="fixed top-0 left-0 w-full h-[100vh] pointer-events-none overflow-hidden -z-10 bg-black bg-cover bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero/hero-slide-outdoor-education.png')", backgroundPosition: 'center center' }}
         />
 
-        {/* Dark scrim for text legibility */}
-        <div className="absolute inset-0 bg-black/60 -z-0 pointer-events-none" />
+        {/* Dark scrim for text legibility — matches About Us quote section */}
+        <div className="absolute inset-0 bg-black/30 -z-0 pointer-events-none" />
 
         <div className="max-w-4xl mx-auto relative z-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
           <div className="founder-message-panel text-center">

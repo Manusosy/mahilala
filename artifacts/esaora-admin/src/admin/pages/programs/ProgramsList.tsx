@@ -5,11 +5,16 @@ import { useAdminPrograms } from '@workspace/esaora-core/hooks/usePrograms';
 import { Plus, Edit2, Trash2, Eye, EyeOff, Loader2, AlertCircle, Globe } from 'lucide-react';
 
 const PILLAR_COLORS: Record<string, string> = {
-  'WASH': '#001BB7',
-  'Climate Resilience': '#22C55E',
-  'Blue Economy': '#001BB7',
-  'Public Health': '#F59E0B',
-  'Governance': '#8B5CF6',
+  'Toroy Izy': '#001BB7',
+  'Youth Mentoring': '#7C3AED',
+  'Sekoly Manga': '#22C55E',
+  'Civic Engagement': '#F78A28',
+  // Legacy esaora values (existing records)
+  WASH: '#001BB7',
+  'Climate Resilience': '#7C3AED',
+  'Blue Economy': '#22C55E',
+  'Public Health': '#F78A28',
+  Governance: '#F78A28',
 };
 
 export default function ProgramsList() {
@@ -57,7 +62,7 @@ export default function ProgramsList() {
                 <tr className="border-b border-gray-50">
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Programme</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden md:table-cell">Pillar</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden lg:table-cell">Countries</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden lg:table-cell">Location</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden lg:table-cell">Status</th>
                   <th className="text-center px-4 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Visible</th>
                   <th className="text-right px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Actions</th>
@@ -85,7 +90,7 @@ export default function ProgramsList() {
                       <td className="px-4 py-3.5 hidden lg:table-cell">
                         <div className="flex items-center gap-1.5">
                           <Globe className="w-3.5 h-3.5 text-gray-300" />
-                          <span className="text-xs text-gray-500">{prog.countries?.join(', ') || '—'}</span>
+                          <span className="text-xs text-gray-500">Madagascar</span>
                         </div>
                       </td>
                       <td className="px-4 py-3.5 hidden lg:table-cell">

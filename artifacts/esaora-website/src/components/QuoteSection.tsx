@@ -37,8 +37,8 @@ export function QuoteSection() {
     >
       {/* Sticky Background Image */}
       <div 
-        className="fixed top-0 left-0 w-full h-[100vh] pointer-events-none overflow-hidden -z-10 bg-black bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/founder-fidele.png')" }}
+        className="fixed top-0 left-0 w-full h-[100vh] pointer-events-none overflow-hidden -z-10 bg-black bg-cover bg-no-repeat"
+        style={{ backgroundImage: "url('/founder-fidele.png')", backgroundPosition: 'top center' }}
       />
       
       {/* Light Black Overlay */}
@@ -53,12 +53,10 @@ export function QuoteSection() {
         <p className="text-white/60 text-sm tracking-wider">{t.videoQuote.attribution}</p>
       </div>
 
-      {/* Bottom wave — blue fills the curved shape so it flows seamlessly into
-          the blue section (ObjectivesSlider) below; the curve is the top edge
-          of the blue band, leaving no white sliver. */}
+      {/* Bottom wave — white curve into the section below */}
       <div className="absolute bottom-0 left-0 right-0 leading-none">
         <svg viewBox="0 0 1440 60" className="block w-full" preserveAspectRatio="none">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#001BB7" />
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff" />
         </svg>
       </div>
     </section>

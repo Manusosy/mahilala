@@ -28,7 +28,7 @@ export default function PartnersPage() {
         label="PARTNERS & COLLABORATORS"
         heading="Working Together for Youth and the Environment"
         subheading="Mahilala Madagascar collaborates with organizations that share our commitment to youth empowerment, civic engagement, and environmental education in Toliara and across Madagascar."
-        imageSrc="/images/hero/hero-bg-10.jpg"
+        imageSrc="/images/about/about-hero-team.png"
         breadcrumb="Partners"
       />
 

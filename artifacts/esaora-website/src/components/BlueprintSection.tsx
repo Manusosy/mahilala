@@ -23,10 +23,10 @@ const PILLAR_COLORS: Record<PillarKey, string> = {
 };
 
 const PILLAR_IMAGES: Record<PillarKey, string> = {
-  wash: '/images/sections/pillar-wash.jpeg',
-  climate: '/images/sections/pillar-climate-action.jpg',
-  blueEconomy: '/images/sections/pillar-blueeconomy.jpeg',
-  publicHealth: '/images/sections/pillar-public-health.jpeg',
+  wash: '/images/hero/hero-slide-coastal-cleanup.png',
+  climate: '/images/hero/hero-slide-youth-workshop.png',
+  blueEconomy: '/images/sections/impact-civic-life.jpg',
+  publicHealth: '/images/sections/impact-mentorship.jpg',
 };
 
 const PILLAR_LINKS: Record<PillarKey, string> = {

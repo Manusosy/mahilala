@@ -7,6 +7,8 @@ export interface PageHeroProps {
   heading: string;
   subheading?: string;
   imageSrc: string;
+  /** CSS background-position for the hero image. Defaults to center top. */
+  imagePosition?: string;
   breadcrumb?: string;
   /** Optional second breadcrumb segment for nested pages e.g. "About > Our Story" */
   breadcrumbParent?: { label: string; href: string };
@@ -17,6 +19,7 @@ export function PageHero({
   heading,
   subheading,
   imageSrc,
+  imagePosition = 'center top',
   breadcrumb,
   breadcrumbParent,
 }: PageHeroProps) {
@@ -49,24 +52,17 @@ export function PageHero({
 
   return (
     <section className="relative w-full min-h-[420px] md:min-h-[540px] flex flex-col justify-end overflow-hidden bg-brand-navy">
-      {/* Background image — starts below fixed nav */}
-      <div
-        className="absolute top-16 md:top-20 left-0 right-0 bottom-0"
-        style={{
-          backgroundImage: `url('${imageSrc}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-        }}
-      />
-
-      {/* Base dark overlay */}
-      <div className="absolute inset-0 bg-black/52 pointer-events-none" />
-
-      {/* Gradient vignette towards bottom */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#001833]/90 via-black/15 to-transparent pointer-events-none" />
-
-      {/* Left-side navy vignette for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent pointer-events-none" />
+      {/* Background image + uniform overlay — matches homepage hero */}
+      <div className="absolute top-16 md:top-20 left-0 right-0 bottom-0 bg-black">
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: `url('${imageSrc}')`,
+            backgroundPosition: imagePosition,
+          }}
+        />
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
+      </div>
 
       {/* Content — anchored to the bottom */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-14 md:pb-20 pt-28 md:pt-36">

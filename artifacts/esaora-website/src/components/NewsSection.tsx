@@ -80,7 +80,7 @@ export function NewsSection() {
                                             <span>{date}</span>
                                         </div>
                                     </div>
-                                    <h3 className="font-display text-xl font-black text-[#111111] leading-tight mb-4 group-hover:text-gray-600 transition-colors line-clamp-2 italic">{article.title}</h3>
+                                    <h3 className="font-display text-xl font-black text-[#111111] leading-tight mb-4 group-hover:text-gray-600 transition-colors line-clamp-2">{article.title}</h3>
                                     <p className="text-slate-800 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">{article.excerpt}</p>
                                     <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-50">
                                         <div className="flex items-center gap-1.5 text-brand-cyan text-[10px] font-black uppercase tracking-widest">

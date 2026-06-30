@@ -16,10 +16,10 @@ export default function NewsPage() {
   return (
     <main>
       <PageHero
-        label="NEWS & INSIGHTS"
-        heading="News, Stories & Insights from the Alliance"
-        subheading="Updates, programme stories, and news from Mahilala Madagascar on youth mentorship, civic engagement, and environmental education."
-        imageSrc="/images/hero/hero-bg-11.jpg"
+        label="NEWS & STORIES"
+        heading="Updates from Mahilala Madagascar"
+        subheading="Programme stories, announcements, and insights on youth mentorship, civic engagement, and environmental education in Toliara and across Madagascar."
+        imageSrc="/images/sections/pillar-youth-mentoring.jpg"
         breadcrumb="News"
       />
 
@@ -113,7 +113,7 @@ export default function NewsPage() {
                             <span>{date}</span>
                           </div>
                         </div>
-                        <h3 className="font-display text-xl font-black text-[#111111] leading-tight mb-4 group-hover:text-gray-600 transition-colors line-clamp-2 italic">{article.title}</h3>
+                        <h3 className="font-display text-xl font-black text-[#111111] leading-tight mb-4 group-hover:text-gray-600 transition-colors line-clamp-2">{article.title}</h3>
                         <p className="text-slate-800 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">{article.excerpt}</p>
                         <div className="flex items-center text-brand-cyan font-black text-[10px] tracking-[0.2em] mt-auto transition-all group-hover:gap-2 uppercase">
                           READ ARTICLE <ArrowRight className="w-4 h-4 ml-1" />

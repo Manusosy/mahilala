@@ -35,8 +35,8 @@ export function HomePage() {
           'Marine & environmental education',
           'Community-driven, Toliara-based',
         ]}
-        imageSrc="/images/sections/homearea.jpg"
-        imageAlt="Mahilala Madagascar youth and community gathering in Toliara"
+        imageSrc="/images/sections/pillar-sekoly-manga.jpg"
+        imageAlt="Mahilala environmental education and youth programmes in Madagascar"
         cta={{ label: 'Learn More About Us', href: '/about' }}
       />
 
@@ -56,8 +56,8 @@ export function HomePage() {
           'Academic fulfillment & leadership',
           'Environmental stewardship',
         ]}
-        imageSrc="/images/hero/hero-bg-3.jpg"
-        imageAlt="Mahilala Madagascar mentoring young people"
+        imageSrc="/images/sections/impact-personal-growth.jpg"
+        imageAlt="Young people building confidence through Mahilala programmes"
         reverse
         background="offwhite"
       />
@@ -73,14 +73,14 @@ export function HomePage() {
           'Stronger, more responsible communities',
           'Protected marine & coastal ecosystems',
         ]}
-        imageSrc="/images/sections/pillar-blueeconomy.jpeg"
-        imageAlt="Madagascar marine and coastal ecosystem"
+        imageSrc="/images/sections/pillar-toroy-izy.jpg"
+        imageAlt="Youth orientation and mentoring with Mahilala Madagascar"
       />
 
       {/* 6. What We Do — programme pillars */}
       <BlueprintSection />
 
-      {/* 7. Strategic Impact */}
+      {/* 7. Impact outcomes (distinct from programme pillars above) */}
       <ObjectivesSlider />
 
       {/* 8. Founder voice */}

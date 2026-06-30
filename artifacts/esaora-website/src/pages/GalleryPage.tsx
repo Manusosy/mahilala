@@ -24,7 +24,7 @@ export default function GalleryPage() {
         label="GALLERY"
         heading="Mahilala in Action"
         subheading="Moments from our programmes, events, environmental education activities, and community work across Madagascar."
-        imageSrc="/images/hero/hero-bg-10.jpg"
+        imageSrc="/images/hero/hero-slide-youth-workshop.png"
         breadcrumb="Gallery"
       />
 

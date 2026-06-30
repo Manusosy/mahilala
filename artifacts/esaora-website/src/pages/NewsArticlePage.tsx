@@ -156,7 +156,7 @@ export default function NewsArticlePage() {
                 {article.cover_image_url ? (
                     <img src={article.cover_image_url} alt={article.title} className="w-full h-full object-cover" />
                 ) : (
-                    <div className="w-full h-full bg-brand-navy" />
+                    <img src="/images/sections/pillar-sekoly-manga.jpg" alt={article.title} className="w-full h-full object-cover" />
                 )}
             </div>
         </div>
@@ -256,7 +256,7 @@ export default function NewsArticlePage() {
                     <Link key={a.id} href={`/news/${a.slug}`}>
                         <a className="group flex flex-col h-full bg-[#FAFAFA] rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1">
                             <div className="aspect-video overflow-hidden">
-                                <img src={a.cover_image_url || '/placeholder.jpg'} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <img src={a.cover_image_url || '/images/sections/impact-mentorship.jpg'} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                             </div>
                             <div className="p-6 flex flex-col flex-1">
                                 <span className="text-[10px] font-bold text-[#001BB7] uppercase tracking-widest mb-3">{a.categories?.name || 'News'}</span>

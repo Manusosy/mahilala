@@ -1,27 +1,45 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'wouter';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { usePublishedPartners } from '@workspace/esaora-core/hooks/useData';
+
+const HERO_SLIDES = [
+  {
+    id: 'slide-1',
+    url: '/images/sections/our-vision.jpg',
+    alt: 'Mahilala youth programmes in southwest Madagascar',
+  },
+  {
+    id: 'slide-2',
+    url: '/images/sections/pillar-youth-mentoring.jpg',
+    alt: 'Youth mentoring and leadership with Mahilala Madagascar',
+  },
+  {
+    id: 'slide-3',
+    url: '/images/sections/who-we-are.jpg',
+    alt: 'Community workshop led by Mahilala in Toliara',
+  },
+  {
+    id: 'slide-4',
+    url: '/images/sections/our-mission.jpg',
+    alt: 'Mahilala coastal and community action in Madagascar',
+  },
+  {
+    id: 'slide-5',
+    url: '/images/sections/impact-coastal-stewardship.jpg',
+    alt: 'Environmental education along Madagascar\'s coast',
+  },
+] as const;
 
 export function HeroSection() {
   const { t } = useLanguage();
-  const { partners } = usePublishedPartners();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const carouselImages = useMemo(
-    () =>
-      partners
-        .filter((p) => p.logo_url && p.logo_url.trim() !== '')
-        .map((p) => ({ id: p.id, url: p.logo_url!, alt: p.name })),
-    [partners],
-  );
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  // Initial enter animations
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.2 });
     tl.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.out' })
@@ -31,31 +49,24 @@ export function HeroSection() {
   }, []);
 
   useEffect(() => {
-    setCurrentSlide(0);
-  }, [carouselImages.length]);
-
-  // Background slider — only partner logos from the dashboard
-  useEffect(() => {
-    if (carouselImages.length <= 1) return;
-
     const sliderInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 8000);
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 10000);
 
     return () => clearInterval(sliderInterval);
-  }, [carouselImages.length]);
+  }, []);
 
   const lines = t.hero.headline.split('\n');
 
   return (
     <section className="relative w-full h-screen min-h-[600px] flex flex-col items-center justify-center overflow-hidden bg-brand-navy">
-      {/* Background Slider */}
+      {/* Background slider */}
       <div className="absolute top-16 md:top-20 left-0 right-0 bottom-0 bg-black">
-        {carouselImages.map((img, index) => (
+        {HERO_SLIDES.map((img, index) => (
           <div
             key={img.id}
-            className={`absolute inset-0 transition-opacity duration-[3000ms] ease-in-out ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 transition-[opacity,transform] duration-[5000ms] ease-in-out ${
+              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.04]'
             }`}
             style={{
               backgroundImage: `url('${img.url}')`,
@@ -64,12 +75,12 @@ export function HeroSection() {
             }}
             role="img"
             aria-label={img.alt}
+            aria-hidden={index !== currentSlide}
           />
         ))}
         <div ref={overlayRef} className="absolute inset-0 bg-black/55" />
       </div>
 
-      {/* Clean Horizontal Transition (No Curves) */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-white/20 z-20" />
 
       {/* Content */}

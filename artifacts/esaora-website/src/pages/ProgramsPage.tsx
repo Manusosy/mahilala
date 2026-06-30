@@ -18,7 +18,7 @@ export default function ProgramsPage() {
         label="WHAT WE DO"
         heading="Programmes Built for Youth, By People Who Care"
         subheading="Mahilala Madagascar combines mentoring, orientation, civic engagement, and environmental education to help young people grow with purpose and responsibility."
-        imageSrc="/images/hero/hero-bg-2.jpg"
+        imageSrc="/images/hero/hero-slide-youth-program.png"
         breadcrumb="Programmes"
       />
 

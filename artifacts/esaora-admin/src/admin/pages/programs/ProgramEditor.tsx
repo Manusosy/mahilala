@@ -9,10 +9,21 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
 
-const PILLARS = ['WASH', 'Climate Resilience', 'Blue Economy', 'Public Health', 'Governance'];
+const PILLARS = ['Toroy Izy', 'Youth Mentoring', 'Sekoly Manga', 'Civic Engagement'];
+const LEGACY_PILLAR_MAP: Record<string, string> = {
+  WASH: 'Toroy Izy',
+  'Climate Resilience': 'Youth Mentoring',
+  'Blue Economy': 'Sekoly Manga',
+  'Public Health': 'Civic Engagement',
+  Governance: 'Civic Engagement',
+};
+const PROGRAM_LOCATION = 'Madagascar';
 const STATUSES = ['active', 'completed', 'planned', 'paused'];
-const COUNTRIES = ['Kenya', 'Tanzania', 'Mozambique', 'Madagascar'];
 const FUNDING_STATUSES = ['unfunded', 'partially funded', 'fully funded'];
+
+function normalizePillar(value: string): string {
+  return LEGACY_PILLAR_MAP[value] || (PILLARS.includes(value) ? value : PILLARS[0]);
+}
 
 export default function ProgramEditor() {
   const { id } = useParams<{ id?: string }>();
@@ -24,7 +35,6 @@ export default function ProgramEditor() {
   const [slug, setSlug] = useState('');
   const [slugEdited, setSlugEdited] = useState(false);
   const [pillar, setPillar] = useState(PILLARS[0]);
-  const [countries, setCountries] = useState<string[]>([]);
   const [summary, setSummary] = useState('');
   const [keyOutput, setKeyOutput] = useState('');
   const [coverImageUrl, setCoverImageUrl] = useState('');
@@ -82,7 +92,7 @@ export default function ProgramEditor() {
     supabase.from('programs').select('*').eq('id', id).single().then(({ data }) => {
       if (data) {
         setName(data.name); setSlug(data.slug); setSlugEdited(true);
-        setPillar(data.pillar); setCountries(data.countries || []);
+        setPillar(normalizePillar(data.pillar));
         setSummary(data.summary || ''); setKeyOutput(data.key_output || '');
         setCoverImageUrl(data.cover_image_url || ''); setStatus(data.status);
         setStartDate(data.start_date || ''); setEndDate(data.end_date || '');
@@ -114,7 +124,6 @@ export default function ProgramEditor() {
   const validateForPublish = () => {
     const missing = [];
     if (!name.trim()) missing.push('Name');
-    if (countries.length === 0) missing.push('At least one Country');
     if (!summary.trim()) missing.push('Summary');
     if (!bodyEditor?.getText().trim()) missing.push('Description Body');
     if (!objectivesEditor?.getText().trim()) missing.push('Objectives');
@@ -140,7 +149,7 @@ export default function ProgramEditor() {
     setError(null); setSaveMode(mode); setSaving(true);
     const payload = {
       name: name.trim(), slug: slug.trim(), pillar,
-      countries, summary: summary || null, body: bodyEditor?.getHTML() || '',
+      countries: [PROGRAM_LOCATION], summary: summary || null, body: bodyEditor?.getHTML() || '',
       key_output: keyOutput || null, cover_image_url: coverImageUrl || null,
       status, start_date: startDate || null, end_date: endDate || null,
       is_published: mode === 'publish', sort_order: sortOrder,
@@ -163,10 +172,6 @@ export default function ProgramEditor() {
       setTimeout(() => setLocation('/admin/programs'), 1200);
     } catch (err: any) { setError(err.message); }
     finally { setSaving(false); }
-  };
-
-  const toggleCountry = (c: string) => {
-    setCountries((prev) => prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]);
   };
 
   const addFocusArea = () => {
@@ -299,20 +304,16 @@ export default function ProgramEditor() {
             <div>
               <p className="text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">Thematic Pillar</p>
               <select value={pillar} onChange={(e) => setPillar(e.target.value)} className="w-full bg-white border border-gray-300 rounded-[4px] px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-gray-500">
-                {PILLARS.map((p) => <option key={p}>{p}</option>)}
+                {PILLARS.map((p) => <option key={p} value={p}>{p}</option>)}
               </select>
             </div>
 
             <div>
-              <p className="text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">Operating Countries</p>
-              <div className="flex flex-wrap gap-1.5">
-                {COUNTRIES.map((c) => (
-                  <button key={c} type="button" onClick={() => toggleCountry(c)}
-                    className={`px-3 py-1.5 rounded-[4px] text-[10px] font-bold uppercase tracking-tight border transition-all flex items-center gap-1 ${countries.includes(c) ? 'bg-[#001BB7] text-white border-[#001BB7]' : 'border-gray-300 bg-white text-gray-600 hover:border-gray-500'}`}>
-                    {countries.includes(c) ? <Check className="w-2.5 h-2.5" /> : <MapPin className="w-2.5 h-2.5" />}{c}
-                  </button>
-                ))}
+              <p className="text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">Location</p>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] text-[10px] font-bold uppercase tracking-tight border bg-[#001BB7] text-white border-[#001BB7]">
+                <MapPin className="w-2.5 h-2.5" />{PROGRAM_LOCATION}
               </div>
+              <p className="text-[10px] text-gray-400 mt-2">All Mahilala programmes operate in Madagascar.</p>
             </div>
 
             <div className="pt-2 border-t border-gray-50">

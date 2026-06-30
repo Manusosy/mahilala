@@ -2,6 +2,8 @@ import { useParams, Link } from 'wouter';
 import { useArticleBySlug, usePublishedArticles } from '@workspace/esaora-core/hooks/useArticles';
 import { Calendar, Share2, Link as LinkIcon, Check, ChevronRight, Signal } from 'lucide-react';
 import { useState } from 'react';
+import { NewsletterPopup } from '@/components/NewsletterPopup';
+import { useNewsletterPopupTrigger } from '@/hooks/useNewsletterPopupTrigger';
 
 // ── Official Social Icons (SVG) ─────────────────────────────────────────────
 const FacebookIcon = ({ className }: { className?: string }) => (
@@ -33,6 +35,8 @@ export default function NewsArticlePage() {
   const { article, loading, error } = useArticleBySlug(params.slug || '');
   const { articles: relatedArticles } = usePublishedArticles(3, article?.categories?.slug);
   const [copySuccess, setCopySuccess] = useState(false);
+  const articleReady = !loading && !!article && !error;
+  const { shouldShow, dismiss, close } = useNewsletterPopupTrigger(articleReady);
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
   const shareTitle = article?.title || '';
@@ -265,6 +269,8 @@ export default function NewsArticlePage() {
             </div>
         </div>
       </section>
+
+      <NewsletterPopup open={shouldShow} onDismiss={dismiss} onClose={close} />
     </main>
   );
 }

@@ -1,0 +1,15 @@
+{
+  "name": "@workspace/esaora-core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./lib/*": "./src/lib/*.ts",
+    "./hooks/*": "./src/hooks/*.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.103.3",
+    "@types/react": "catalog:",
+    "react": "catalog:"
+  }
+}

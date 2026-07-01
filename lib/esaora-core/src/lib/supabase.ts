@@ -15,10 +15,10 @@ export const supabase = createClient<Database>(supabaseUrl, supabasePublishableK
     persistSession: true,
     autoRefreshToken: true,
     detectSessionInUrl: true,
-    storageKey: 'esaora-admin-auth',
+    storageKey: 'mahilala-admin-auth',
   },
   global: {
-    headers: { 'x-application-name': 'esaora-website' },
+    headers: { 'x-application-name': 'mahilala-website' },
   },
 });
 

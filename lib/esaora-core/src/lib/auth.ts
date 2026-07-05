@@ -13,6 +13,9 @@ export function isAllowedAdminEmail(email: string): boolean {
   return ALLOWED_ADMIN_EMAIL_DOMAINS.some((domain) => normalized.endsWith(domain));
 }
 
+/** Supabase email OTP length sent via Magic Link template ({{ .Token }}). */
+export const ADMIN_OTP_LENGTH = 8;
+
 /** DEV ONLY - remove/disable for production. Requires VITE_ADMIN_SKIP_OTP=true in .env. */
 export function shouldSkipAdminOtp(): boolean {
   return import.meta.env.VITE_ADMIN_SKIP_OTP === 'true';

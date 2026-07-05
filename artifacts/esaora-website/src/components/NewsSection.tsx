@@ -29,7 +29,7 @@ export function NewsSection() {
   }, [articles]);
 
   return (
-    <section ref={sectionRef} className="bg-white py-24 px-4 overflow-hidden">
+    <section ref={sectionRef} className="relative z-[1] -mt-px bg-white py-24 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-16">
           <div className="max-w-xl">

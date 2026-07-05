@@ -143,7 +143,7 @@ interface AdminSidebarProps {
 
 export function AdminSidebar({ collapsed, onCollapse, mobileOpen, setMobileOpen }: AdminSidebarProps) {
   const { settings } = useSiteSettings();
-  const footerLogo = settings.footer_logo_url || '/footerlogo.png';
+  const footerLogo = settings.footer_logo_url || '/footerlogo.svg';
 
   const handleSignOut = async () => {
     try { await signOut(); } catch { /* ignore */ }

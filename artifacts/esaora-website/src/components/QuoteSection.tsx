@@ -32,7 +32,7 @@ export function QuoteSection() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden"
+      className="relative z-10 -mb-px h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden"
       style={{ clipPath: 'inset(0)' }}
     >
       {/* Sticky Background Image */}
@@ -54,8 +54,13 @@ export function QuoteSection() {
       </div>
 
       {/* Bottom wave — white curve into the section below */}
-      <div className="absolute bottom-0 left-0 right-0 leading-none">
-        <svg viewBox="0 0 1440 60" className="block w-full" preserveAspectRatio="none">
+      <div className="absolute bottom-0 inset-x-0 z-20 leading-[0] pointer-events-none">
+        <svg
+          viewBox="0 0 1440 60"
+          className="block w-full [filter:drop-shadow(0_2px_0_#ffffff)]"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
           <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff" />
         </svg>
       </div>

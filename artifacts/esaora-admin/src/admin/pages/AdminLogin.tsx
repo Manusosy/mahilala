@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 import { Eye, EyeOff, Loader2, AlertCircle, Shield, ArrowRight, ArrowLeft, Mail } from 'lucide-react';
-import { sendOtp, verifyOtp, signIn, signUp, resetPassword, isAllowedAdminEmail, shouldSkipAdminOtp } from '@workspace/esaora-core/lib/auth';
+import { sendOtp, verifyOtp, signIn, signUp, resetPassword, isAllowedAdminEmail, shouldSkipAdminOtp, ADMIN_OTP_LENGTH } from '@workspace/esaora-core/lib/auth';
 import { supabase } from '@workspace/esaora-core/lib/supabase';
+import { useSiteSettings } from '@workspace/esaora-core/hooks/useData';
 
 type AuthView = 'login' | 'signup' | 'forgot' | 'success' | 'otp';
 
 export default function AdminLogin() {
   const [, setLocation] = useLocation();
+  const { settings } = useSiteSettings();
+  const loginLogo = settings.footer_logo_url || settings.header_logo_url || '/footerlogo.svg';
   const [view, setView] = useState<AuthView>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +20,7 @@ export default function AdminLogin() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [attempts, setAttempts] = useState(0);
-  const [otpCode, setOtpCode] = useState(['', '', '', '', '', '']);
+  const [otpValue, setOtpValue] = useState('');
   const [lockoutTime, setLockoutTime] = useState(0);
   const [resendTimer, setResendTimer] = useState(0);
   const [otpAuthType, setOtpAuthType] = useState<'signup' | 'email' | 'recovery'>('email');
@@ -102,8 +105,10 @@ export default function AdminLogin() {
     setError(null);
     setLoading(true);
     try {
-      const code = otpCode.join('');
-      if (code.length !== 6) throw new Error('Please enter the fully completed 6-digit code.');
+      const code = otpValue.replace(/\D/g, '');
+      if (code.length !== ADMIN_OTP_LENGTH) {
+        throw new Error(`Please enter the full ${ADMIN_OTP_LENGTH}-digit code.`);
+      }
       
       await verifyOtp(email, code, otpAuthType);
       window.location.href = '/admin';
@@ -114,34 +119,8 @@ export default function AdminLogin() {
     }
   };
 
-  const handleOtpChange = (index: number, value: string) => {
-    if (value.length > 1) {
-       // Paste functionality
-       const pasted = value.slice(0, 6).split('');
-       const newOtp = [...otpCode];
-       for(let i = 0; i < pasted.length; i++) {
-         if (index + i < 6) newOtp[index + i] = pasted[i];
-       }
-       setOtpCode(newOtp);
-       // Focus last
-       const next = document.getElementById(`otp-${Math.min(5, index + pasted.length)}`);
-       if (next) next.focus();
-       return;
-    }
-    const newOtp = [...otpCode];
-    newOtp[index] = value;
-    setOtpCode(newOtp);
-    if (value && index < 5) {
-      const next = document.getElementById(`otp-${index + 1}`);
-      if (next) next.focus();
-    }
-  };
-
-  const handleOtpKeyDown = (index: number, e: React.KeyboardEvent) => {
-    if (e.key === 'Backspace' && !otpCode[index] && index > 0) {
-      const prev = document.getElementById(`otp-${index - 1}`);
-      if (prev) prev.focus();
-    }
+  const handleOtpInput = (value: string) => {
+    setOtpValue(value.replace(/\D/g, '').slice(0, ADMIN_OTP_LENGTH));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -187,6 +166,7 @@ export default function AdminLogin() {
             await sendOtp(email);
 
             setOtpAuthType('email');
+            setOtpValue('');
             setResendTimer(60);
             await new Promise(resolve => setTimeout(resolve, 600));
             setView('otp');
@@ -210,6 +190,7 @@ export default function AdminLogin() {
             window.location.href = '/admin';
           } else {
             setOtpAuthType('signup');
+            setOtpValue('');
             setResendTimer(60);
             setView('otp');
           }
@@ -253,7 +234,7 @@ export default function AdminLogin() {
         <div className="relative z-10 flex flex-col h-full">
           {/* [1] TOP LOGO */}
           <div className="mb-12">
-            <img src="/footerlogo.png" alt="Mahilala Madagascar" className="h-12 w-auto brightness-110" />
+            <img src={loginLogo} alt="Mahilala Madagascar" className="h-12 w-auto brightness-110" />
           </div>
 
           {/* [2] CONCISE HEADING & DESCRIPTION */}
@@ -336,7 +317,7 @@ export default function AdminLogin() {
                   </div>
                   <h3 className="text-brand-navy font-bold text-lg">Verify Identity</h3>
                   <p className="text-gray-400 text-xs mt-1 px-4">
-                    Enter the 6-digit code sent to <span className="font-bold text-gray-700">{email}</span>.
+                    Enter the {ADMIN_OTP_LENGTH}-digit code sent to <span className="font-bold text-gray-700">{email}</span>.
                   </p>
                 </div>
 
@@ -347,22 +328,22 @@ export default function AdminLogin() {
                   </div>
                 )}
 
-                <div className="flex justify-between gap-2 max-w-[280px] mx-auto py-2">
-                  {otpCode.map((digit, idx) => (
-                    <input
-                      key={idx}
-                      id={`otp-${idx}`}
-                      type="text"
-                      inputMode="numeric"
-                      pattern="[0-9]*"
-                      maxLength={1}
-                      value={digit}
-                      onChange={(e) => handleOtpChange(idx, e.target.value)}
-                      onKeyDown={(e) => handleOtpKeyDown(idx, e)}
-                      className="w-10 h-10 text-center bg-white border border-gray-300 rounded-[6px] text-lg font-bold focus:border-[#204f79] focus:ring-1 focus:ring-[#204f79] outline-none transition-all"
-                      required
-                    />
-                  ))}
+                <div className="py-2">
+                  <label htmlFor="admin-otp" className="sr-only">Verification code</label>
+                  <input
+                    id="admin-otp"
+                    type="text"
+                    inputMode="numeric"
+                    autoComplete="one-time-code"
+                    pattern="[0-9]*"
+                    maxLength={ADMIN_OTP_LENGTH}
+                    value={otpValue}
+                    onChange={(e) => handleOtpInput(e.target.value)}
+                    placeholder={'0'.repeat(ADMIN_OTP_LENGTH)}
+                    className="w-full max-w-[320px] mx-auto block h-14 text-center bg-white border border-gray-300 rounded-[6px] text-xl sm:text-2xl font-bold tracking-[0.22em] font-mono text-[#204f79] focus:border-[#204f79] focus:ring-1 focus:ring-[#204f79] outline-none transition-all px-3"
+                    required
+                    autoFocus
+                  />
                 </div>
 
                 <div className="flex flex-col gap-4 pt-4">

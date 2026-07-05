@@ -35,7 +35,7 @@ export default function ProgramsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {CROSS_CUTTING.map((item, i) => (
               <div key={i} className="bg-white rounded-[7px] p-7 border border-black/5 hover:-translate-y-1 transition-all">
-                <div className="w-8 h-8 bg-brand-navy rounded-lg flex items-center justify-center text-[#204f79] text-xs font-bold mb-4">
+                <div className="w-10 h-10 bg-[#204f79] rounded-lg flex items-center justify-center text-white text-sm font-bold tracking-wide mb-4">
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <h3 className="text-[#111111] font-bold text-base mb-3">{item.title}</h3>
@@ -65,7 +65,7 @@ export default function ProgramsPage() {
               { phase: 'Inspire', num: '05', desc: 'Help young people discover purpose, develop leadership, and contribute positively to Madagascar\'s future.' },
             ].map((phase) => (
               <div key={phase.num} className="bg-white/5 border border-white/10 rounded-[7px] p-6 text-center">
-                <div className="text-[#204f79] font-bold text-2xl font-display mb-2">{phase.num}</div>
+                <div className="text-white font-bold text-2xl font-display mb-2">{phase.num}</div>
                 <h3 className="text-white font-bold text-sm mb-3">{phase.phase}</h3>
                 <p className="text-white/70 text-xs leading-relaxed">{phase.desc}</p>
               </div>

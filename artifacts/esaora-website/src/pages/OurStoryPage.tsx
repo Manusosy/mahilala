@@ -39,7 +39,7 @@ const CRISES = [
     title: 'Lack of Guidance',
     body: 'Many young people grow up without strong guidance or inspiring role models around them — facing financial, social, family, and educational challenges that are less visible but equally real.',
     image: '/images/about/challenge-lack-of-guidance.png',
-    color: '#001BB7',
+    color: '#204f79',
   },
   {
     title: 'Limited Potential',
@@ -57,7 +57,7 @@ const CRISES = [
     title: 'Missed Opportunities',
     body: 'Many lessons discovered through years of study, work, leadership, and community engagement could have changed the course of life if they had been known earlier.',
     image: '/images/about/challenge-missed-opportunities.png',
-    color: '#001BB7',
+    color: '#204f79',
   }
 ];
 
@@ -169,7 +169,7 @@ export default function OurStoryPage() {
 
             {/* Narrative */}
             <div className="w-full lg:w-1/2 story-intro-content">
-              <span className="uppercase tracking-widest text-xs font-bold border border-[#001BB7] text-[#001BB7] px-4 py-1.5 rounded-lg leading-none inline-block mb-6">
+              <span className="uppercase tracking-widest text-xs font-bold border border-[#204f79] text-[#204f79] px-4 py-1.5 rounded-lg leading-none inline-block mb-6">
                 The Story Behind Mahilala
               </span>
 
@@ -205,7 +205,7 @@ export default function OurStoryPage() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <span className="uppercase tracking-widest text-xs font-bold border border-[#001BB7] text-[#001BB7] px-4 py-1.5 rounded-lg inline-block mb-4">Purpose &amp; Principles</span>
+            <span className="uppercase tracking-widest text-xs font-bold border border-[#204f79] text-[#204f79] px-4 py-1.5 rounded-lg inline-block mb-4">Purpose &amp; Principles</span>
             <h2 className="font-display text-4xl sm:text-5xl text-[#111111] font-bold">Mission, Vision &amp; Values</h2>
             <p className="text-[#4A5568] mt-4 text-base max-w-2xl mx-auto">
               The aspirations and principles that guide every programme, partnership, and moment of mentorship at Mahilala Madagascar.
@@ -223,7 +223,7 @@ export default function OurStoryPage() {
                     key={tab.key}
                     onClick={() => setActiveTab(tab.key)}
                     className={`flex items-center gap-2 px-6 py-2.5 rounded-[7px] text-sm font-bold transition-all ${
-                      isActive ? 'bg-[#001BB7] text-white shadow-sm' : 'text-brand-navy/60 hover:text-brand-navy hover:bg-brand-navy/5'
+                      isActive ? 'bg-[#204f79] text-white shadow-sm' : 'text-brand-navy/60 hover:text-brand-navy hover:bg-brand-navy/5'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -238,10 +238,10 @@ export default function OurStoryPage() {
           <div key={active.key} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white rounded-[10px] border border-black/5 shadow-sm overflow-hidden animate-in fade-in duration-500">
             <div className="p-10 lg:p-14">
               <div className="inline-flex items-center gap-3 mb-6">
-                <span className="w-11 h-11 rounded-xl bg-[#001BB7]/10 flex items-center justify-center text-[#001BB7]">
+                <span className="w-11 h-11 rounded-xl bg-[#204f79]/10 flex items-center justify-center text-[#204f79]">
                   <active.icon className="w-5 h-5" />
                 </span>
-                <span className="text-[#001BB7] uppercase tracking-widest text-xs font-bold">{active.headline}</span>
+                <span className="text-[#204f79] uppercase tracking-widest text-xs font-bold">{active.headline}</span>
               </div>
               <p className="text-black text-base md:text-lg leading-relaxed font-light">{active.body}</p>
 
@@ -268,7 +268,7 @@ export default function OurStoryPage() {
       <section className="bg-brand-navy py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#001BB7] bg-[#001BB7]/10 px-4 py-1.5 rounded-lg uppercase tracking-widest text-xs font-bold block mb-4 mx-auto w-max">Why Mahilala Exists</span>
+            <span className="text-[#204f79] bg-[#204f79]/10 px-4 py-1.5 rounded-lg uppercase tracking-widest text-xs font-bold block mb-4 mx-auto w-max">Why Mahilala Exists</span>
             <h2 className="font-display text-4xl sm:text-5xl text-white font-bold">Challenges Young People Face</h2>
             <p className="text-white/50 mt-4 text-lg max-w-2xl mx-auto">
               Mahilala was created to respond to real challenges — not with charity alone, but with guidance, inspiration, and empowerment.
@@ -306,7 +306,7 @@ export default function OurStoryPage() {
         <div className="absolute inset-0 bg-black/30 pointer-events-none" />
 
         <div ref={quoteRef} className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="w-12 h-1 bg-[#001BB7] mx-auto mb-8 rounded-full" />
+          <div className="w-12 h-1 bg-[#204f79] mx-auto mb-8 rounded-full" />
           <blockquote className="font-display text-3xl sm:text-4xl md:text-5xl text-white leading-tight mb-6 drop-shadow-xl">
             &ldquo;Mahilala believes that every young person carries potential, purpose, and a contribution that Madagascar needs.&rdquo;
           </blockquote>
@@ -327,7 +327,7 @@ export default function OurStoryPage() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-20 relative pt-8">
-            <span className="uppercase tracking-widest text-xs font-bold border border-[#001BB7] text-[#001BB7] px-4 py-1.5 rounded-lg inline-block mb-4">Milestones</span>
+            <span className="uppercase tracking-widest text-xs font-bold border border-[#204f79] text-[#204f79] px-4 py-1.5 rounded-lg inline-block mb-4">Milestones</span>
             <h2 className="font-display text-4xl sm:text-5xl text-[#111111] font-bold">Organization Timeline</h2>
             <p className="text-[#4A5568] mt-4 text-lg max-w-2xl mx-auto">Key moments in Mahilala&apos;s journey from informal youth orientation to recognized organization.</p>
           </div>
@@ -341,11 +341,11 @@ export default function OurStoryPage() {
               return (
                 <div key={index} className="timeline-item relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 last:mb-0">
                   {/* Timeline Dot */}
-                  <div className="absolute left-[27px] md:left-1/2 w-4 h-4 bg-[#001BB7] rounded-full -translate-x-1/2 mt-2 md:mt-0 z-10 ring-4 ring-[#FAF9F6]" />
+                  <div className="absolute left-[27px] md:left-1/2 w-4 h-4 bg-[#204f79] rounded-full -translate-x-1/2 mt-2 md:mt-0 z-10 ring-4 ring-[#FAF9F6]" />
 
                   {/* Left Side (Content for even, Image for odd) */}
                   <div className={`w-full md:w-[45%] pl-16 md:pl-0 ${isEven ? 'md:text-right md:pr-12' : 'md:order-2 md:pl-12'}`}>
-                    <span className="text-[#001BB7] font-bold tracking-widest text-sm uppercase block mb-2">{m.period}</span>
+                    <span className="text-[#204f79] font-bold tracking-widest text-sm uppercase block mb-2">{m.period}</span>
                     <h3 className="font-display text-2xl text-[#111111] font-bold mb-3">{m.event}</h3>
                     <p className="text-[#4A5568] text-sm leading-relaxed">{m.detail}</p>
                   </div>
@@ -368,7 +368,7 @@ export default function OurStoryPage() {
       <section className="bg-white py-24 px-4 border-t border-black/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#001BB7] uppercase tracking-widest text-xs font-bold block mb-3">Collaborations</span>
+            <span className="text-[#204f79] uppercase tracking-widest text-xs font-bold block mb-3">Collaborations</span>
             <h2 className="font-display text-4xl sm:text-5xl text-[#111111] font-bold">Partners & Supporters</h2>
             <p className="text-[#4A5568] mt-4 text-base max-w-2xl mx-auto">
               Mahilala works with organizations that share our commitment to youth empowerment, civic engagement, and environmental education in Toliara and across Madagascar.
@@ -394,7 +394,7 @@ export default function OurStoryPage() {
                 </div>
                 <div className="p-6 text-center flex-grow flex flex-col">
                   {org.country && (
-                    <span className="inline-block bg-[#001BB7]/15 text-[#001BB7] text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm mb-3 self-center">
+                    <span className="inline-block bg-[#204f79]/15 text-[#204f79] text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm mb-3 self-center">
                       {org.country}
                     </span>
                   )}
@@ -408,7 +408,7 @@ export default function OurStoryPage() {
                       href={org.website_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 text-brand-navy font-bold text-xs uppercase tracking-wider hover:text-[#001BB7] transition-colors mt-auto pt-4 border-t border-black/5"
+                      className="inline-flex items-center justify-center gap-2 text-brand-navy font-bold text-xs uppercase tracking-wider hover:text-[#204f79] transition-colors mt-auto pt-4 border-t border-black/5"
                     >
                       Visit Website <ExternalLink className="w-3.5 h-3.5" />
                     </a>

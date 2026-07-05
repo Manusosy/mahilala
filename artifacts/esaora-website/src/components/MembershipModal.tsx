@@ -165,7 +165,7 @@ export function MembershipModal({ open, onClose }: Props) {
                     <div
                       className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition-all duration-200"
                       style={{
-                        background: isDone ? '#001BB7' : isActive ? '#001BB7' : '#f1f5f9',
+                        background: isDone ? '#204f79' : isActive ? '#204f79' : '#f1f5f9',
                         color: isDone || isActive ? 'white' : '#64748b',
                       }}
                     >
@@ -173,7 +173,7 @@ export function MembershipModal({ open, onClose }: Props) {
                     </div>
                     <span className={`text-xs font-semibold hidden sm:inline ${isActive ? 'text-brand-navy' : 'text-gray-400'}`}>{label}</span>
                     {i < STEPS.length - 1 && (
-                      <div className="flex-1 h-[2px] mx-1 rounded-lg" style={{ background: step > num ? '#001BB7' : '#f1f5f9' }} />
+                      <div className="flex-1 h-[2px] mx-1 rounded-lg" style={{ background: step > num ? '#204f79' : '#f1f5f9' }} />
                     )}
                   </div>
                 );
@@ -232,8 +232,8 @@ export function MembershipModal({ open, onClose }: Props) {
                             <div
                               className="w-4 h-4 rounded flex-shrink-0 mt-0.5 border flex items-center justify-center transition-all duration-150"
                               style={{
-                                borderColor: checked ? '#001BB7' : '#e2e8f0',
-                                background: checked ? '#001BB7' : 'transparent',
+                                borderColor: checked ? '#204f79' : '#e2e8f0',
+                                background: checked ? '#204f79' : 'transparent',
                               }}
                               onClick={() => toggleFocus(area)}
                             >
@@ -281,8 +281,8 @@ export function MembershipModal({ open, onClose }: Props) {
                     <div
                       className="w-5 h-5 rounded border border-gray-200 flex-shrink-0 mt-0.5 flex items-center justify-center transition-all bg-gray-50"
                       style={{
-                        borderColor: form.termsAgreed ? '#001BB7' : '#e2e8f0',
-                        background: form.termsAgreed ? '#001BB7' : '#f8fafc',
+                        borderColor: form.termsAgreed ? '#204f79' : '#e2e8f0',
+                        background: form.termsAgreed ? '#204f79' : '#f8fafc',
                       }}
                       onClick={() => set('termsAgreed', !form.termsAgreed)}
                     >
@@ -309,7 +309,7 @@ export function MembershipModal({ open, onClose }: Props) {
                   onClick={() => setStep((s) => (s + 1) as Step)}
                   disabled={step === 1 ? !canNext1 : !canNext2}
                   className="px-6 py-2.5 rounded-lg text-sm font-bold text-brand-navy transition-all disabled:opacity-30 disabled:grayscale disabled:cursor-not-allowed hover:brightness-105 active:scale-95 shadow-lg shadow-brand-navy/5"
-                  style={{ background: '#001BB7' }}
+                  style={{ background: '#204f79' }}
                 >
                   Continue →
                 </button>
@@ -320,7 +320,7 @@ export function MembershipModal({ open, onClose }: Props) {
                     onClick={handleSubmit}
                     disabled={!canSubmit || submitting}
                     className="px-6 py-2.5 rounded-lg text-sm font-bold text-brand-navy flex items-center gap-2 transition-all disabled:opacity-30 disabled:grayscale disabled:cursor-not-allowed hover:brightness-105 active:scale-95 shadow-lg shadow-brand-navy/5"
-                    style={{ background: '#001BB7' }}
+                    style={{ background: '#204f79' }}
                   >
                     {submitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Submitting…</> : 'Submit Application'}
                   </button>
@@ -331,8 +331,8 @@ export function MembershipModal({ open, onClose }: Props) {
         ) : (
           /* Success screen */
            <div className="flex flex-col items-center justify-center flex-1 px-6 py-12 text-center">
-            <div className="w-16 h-16 rounded-full bg-[#001BB7]/10 flex items-center justify-center mb-5">
-              <Check className="w-8 h-8 text-[#001BB7]" />
+            <div className="w-16 h-16 rounded-full bg-[#204f79]/10 flex items-center justify-center mb-5">
+              <Check className="w-8 h-8 text-[#204f79]" />
             </div>
             <h3 className="text-brand-navy font-bold text-2xl mb-2">Application Submitted!</h3>
             <p className="text-brand-navy/60 text-sm leading-relaxed max-w-sm">
@@ -341,7 +341,7 @@ export function MembershipModal({ open, onClose }: Props) {
             <button
               onClick={onClose}
               className="mt-8 px-8 py-3 rounded-lg text-brand-navy font-semibold text-sm transition-all hover:scale-105"
-              style={{ background: '#001BB7' }}
+              style={{ background: '#204f79' }}
             >
               Close
             </button>
@@ -363,6 +363,6 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 
 const input = [
   'w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-brand-navy text-sm',
-  'focus:outline-none focus:border-[#001BB7]/60 focus:bg-white transition-all placeholder-gray-400',
+  'focus:outline-none focus:border-[#204f79]/60 focus:bg-white transition-all placeholder-gray-400',
   '[&>option]:bg-white [&>option]:text-brand-navy',
 ].join(' ');

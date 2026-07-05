@@ -46,7 +46,7 @@ export function QuoteSection() {
 
       {/* Content */}
       <div ref={quoteRef} className="relative z-10 text-center px-6 max-w-3xl mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-        <div className="w-12 h-1 bg-[#001BB7] mx-auto mb-6 rounded-full" />
+        <div className="w-12 h-1 bg-[#204f79] mx-auto mb-6 rounded-full" />
         <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl text-white leading-snug mb-6">
           &ldquo;{t.videoQuote.quote}&rdquo;
         </blockquote>

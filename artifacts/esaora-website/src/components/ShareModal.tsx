@@ -189,7 +189,7 @@ export function ShareModal({ open, onClose }: Props) {
               onClick={handleCopy}
               className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-all duration-200 flex-shrink-0"
               style={{
-                background: copied ? '#001BB7' : '#e2e8f0',
+                background: copied ? '#204f79' : '#e2e8f0',
                 color: copied ? '#001D45' : '#64748b',
               }}
             >

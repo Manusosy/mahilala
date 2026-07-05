@@ -237,9 +237,9 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-stretch font-sans selection:bg-[#001BB7] selection:text-white">
+    <div className="min-h-screen flex items-stretch font-sans selection:bg-[#204f79] selection:text-white">
       {/* Left Panel: Precise Institutional Identity */}
-      <div className="hidden lg:flex flex-col w-[40%] p-16 bg-[#001BB7] relative overflow-hidden">
+      <div className="hidden lg:flex flex-col w-[40%] p-16 bg-[#204f79] relative overflow-hidden">
         {/* Deep Field Background */}
         <div 
           className="absolute inset-0 z-0 opacity-30"
@@ -311,7 +311,7 @@ export default function AdminLogin() {
             {view === 'success' ? (
               <div className="space-y-8 py-4">
                 <div className="w-16 h-16 bg-[#E8EAF8] rounded-full flex items-center justify-center mx-auto">
-                   <Shield className="w-8 h-8 text-[#001BB7]" />
+                   <Shield className="w-8 h-8 text-[#204f79]" />
                 </div>
                 <div className="text-center space-y-3 px-4">
                    <p className="text-brand-navy font-semibold text-sm leading-relaxed">
@@ -323,7 +323,7 @@ export default function AdminLogin() {
                 </div>
                 <button 
                   onClick={() => setView('login')}
-                  className="w-full text-brand-navy font-bold text-xs uppercase tracking-widest hover:text-[#001BB7] transition-colors"
+                  className="w-full text-brand-navy font-bold text-xs uppercase tracking-widest hover:text-[#204f79] transition-colors"
                 >
                   Return to sign in
                 </button>
@@ -332,7 +332,7 @@ export default function AdminLogin() {
               <form onSubmit={handleOtpSubmit} className="space-y-6">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-[#E8EAF8] rounded-full flex items-center justify-center mx-auto mb-4">
-                     <Mail className="w-8 h-8 text-[#001BB7]" />
+                     <Mail className="w-8 h-8 text-[#204f79]" />
                   </div>
                   <h3 className="text-brand-navy font-bold text-lg">Verify Identity</h3>
                   <p className="text-gray-400 text-xs mt-1 px-4">
@@ -359,7 +359,7 @@ export default function AdminLogin() {
                       value={digit}
                       onChange={(e) => handleOtpChange(idx, e.target.value)}
                       onKeyDown={(e) => handleOtpKeyDown(idx, e)}
-                      className="w-10 h-10 text-center bg-white border border-gray-300 rounded-[6px] text-lg font-bold focus:border-[#001BB7] focus:ring-1 focus:ring-[#001BB7] outline-none transition-all"
+                      className="w-10 h-10 text-center bg-white border border-gray-300 rounded-[6px] text-lg font-bold focus:border-[#204f79] focus:ring-1 focus:ring-[#204f79] outline-none transition-all"
                       required
                     />
                   ))}
@@ -369,7 +369,7 @@ export default function AdminLogin() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[#001BB7] text-white hover:bg-[#F78A28] px-8 py-4 rounded-[6px] font-bold text-xs tracking-widest transition-colors flex items-center justify-center gap-3 relative overflow-hidden group"
+                    className="w-full bg-[#204f79] text-white hover:bg-[#F78A28] px-8 py-4 rounded-[6px] font-bold text-xs tracking-widest transition-colors flex items-center justify-center gap-3 relative overflow-hidden group"
                   >
                     {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Confirm Access'}
                   </button>
@@ -393,7 +393,7 @@ export default function AdminLogin() {
                         setLoading(false);
                       }
                     }}
-                    className={`text-center text-[10px] font-bold uppercase tracking-widest transition-colors mt-3 ${resendTimer > 0 ? 'text-gray-300' : 'text-[#001BB7] hover:text-brand-navy'}`}
+                    className={`text-center text-[10px] font-bold uppercase tracking-widest transition-colors mt-3 ${resendTimer > 0 ? 'text-gray-300' : 'text-[#204f79] hover:text-brand-navy'}`}
                   >
                     {resendTimer > 0 ? `Resend available in ${resendTimer}s` : 'Resend Code'}
                   </button>
@@ -435,7 +435,7 @@ export default function AdminLogin() {
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="Mahilala team member"
                         required
-                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#001BB7] transition-all"
+                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#204f79] transition-all"
                       />
                     </div>
                   </div>
@@ -450,7 +450,7 @@ export default function AdminLogin() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@organization.com"
                       required
-                      className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#001BB7] transition-all"
+                      className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm font-medium focus:outline-none focus:border-[#204f79] transition-all"
                     />
                   </div>
                 </div>
@@ -460,7 +460,7 @@ export default function AdminLogin() {
                     <div className="flex justify-between items-center px-1">
                       <label className="text-[11px] font-bold text-gray-400 leading-none">Password</label>
                       {view === 'login' && (
-                        <button type="button" onClick={() => setView('forgot')} className="text-[10px] font-bold text-[#001BB7] hover:text-brand-navy transition-colors">
+                        <button type="button" onClick={() => setView('forgot')} className="text-[10px] font-bold text-[#204f79] hover:text-brand-navy transition-colors">
                           Forgot password?
                         </button>
                       )}
@@ -472,7 +472,7 @@ export default function AdminLogin() {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="••••••••"
                         required
-                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 pr-12 text-sm font-medium focus:outline-none focus:border-[#001BB7] transition-all"
+                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 pr-12 text-sm font-medium focus:outline-none focus:border-[#204f79] transition-all"
                       />
                       <button
                         type="button"
@@ -495,7 +495,7 @@ export default function AdminLogin() {
                           onChange={(e) => setRememberMe(e.target.checked)}
                           className="peer sr-only"
                         />
-                        <div className="w-4 h-4 border border-gray-300 rounded peer-checked:bg-[#001BB7] peer-checked:border-[#001BB7] transition-all" />
+                        <div className="w-4 h-4 border border-gray-300 rounded peer-checked:bg-[#204f79] peer-checked:border-[#204f79] transition-all" />
                         <span className="text-[11px] font-bold text-gray-400 group-hover:text-brand-navy transition-colors">Keep session active</span>
                       </label>
                     )}
@@ -509,7 +509,7 @@ export default function AdminLogin() {
                   <button
                     type="submit"
                     disabled={loading || lockoutTime > 0}
-                    className="w-full bg-[#001BB7] text-white hover:bg-[#F78A28] px-8 py-4 rounded-lg font-bold text-xs tracking-widest transition-colors flex items-center justify-center gap-3 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-[#204f79] text-white hover:bg-[#F78A28] px-8 py-4 rounded-lg font-bold text-xs tracking-widest transition-colors flex items-center justify-center gap-3 group relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? (
                       <div className="flex items-center gap-2">
@@ -539,7 +539,7 @@ export default function AdminLogin() {
                 onClick={() => setView('signup')}
                 className="group flex items-center gap-2 text-[11px] font-bold text-gray-400 hover:text-brand-navy transition-colors"
                >
-                 No credentials? <span className="text-[#001BB7] group-hover:text-brand-navy transition-colors underline underline-offset-4 decoration-gray-200">Create account</span>
+                 No credentials? <span className="text-[#204f79] group-hover:text-brand-navy transition-colors underline underline-offset-4 decoration-gray-200">Create account</span>
                </button>
              )}
              

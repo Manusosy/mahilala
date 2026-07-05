@@ -152,7 +152,7 @@ export function AdminSidebar({ collapsed, onCollapse, mobileOpen, setMobileOpen 
 
   return (
     <aside
-      className={`flex flex-col h-full bg-[#001BB7] border-r border-[#001496] transition-all duration-300 ease-in-out flex-shrink-0 w-[260px] lg:h-screen lg:w-auto ${
+      className={`flex flex-col h-full bg-[#204f79] border-r border-[#001496] transition-all duration-300 ease-in-out flex-shrink-0 w-[260px] lg:h-screen lg:w-auto ${
         collapsed ? 'lg:w-[64px]' : 'lg:w-[260px]'
       }`}
     >

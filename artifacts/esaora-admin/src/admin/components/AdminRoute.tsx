@@ -22,9 +22,9 @@ export function AdminRoute({ children }: AdminRouteProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#001BB7] flex items-center justify-center">
+      <div className="min-h-screen bg-[#204f79] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-2 border-[#001BB7]/30 border-t-[#001BB7] rounded-full animate-spin" />
+          <div className="w-10 h-10 border-2 border-[#204f79]/30 border-t-[#204f79] rounded-full animate-spin" />
           <p className="text-white/50 text-sm">Loading Mahilala Platform…</p>
         </div>
       </div>

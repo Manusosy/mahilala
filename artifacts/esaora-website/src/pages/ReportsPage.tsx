@@ -144,8 +144,8 @@ export default function ReportsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <div className="bg-white/90 backdrop-blur-sm border border-gray-100 rounded-[7px] px-8 py-10 text-center">
-            <div className="w-10 h-10 bg-[#001BB7]/10 rounded-[7px] flex items-center justify-center mx-auto mb-5">
-              <BookOpen className="w-5 h-5 text-[#001BB7]" />
+            <div className="w-10 h-10 bg-[#204f79]/10 rounded-[7px] flex items-center justify-center mx-auto mb-5">
+              <BookOpen className="w-5 h-5 text-[#204f79]" />
             </div>
             <h2 className="font-display text-xl md:text-2xl text-brand-navy font-bold mb-3">Open Access Policy</h2>
             <p className="text-brand-navy/55 text-sm leading-relaxed max-w-xl mx-auto mb-7">
@@ -195,7 +195,7 @@ function ReportRow({ report, overrideCount, onDownload }: ReportRowProps) {
       {/* Colour thumbnail */}
       <div
         className="sm:w-[104px] flex-shrink-0 flex items-center justify-center py-5 sm:py-0"
-        style={{ backgroundColor: `${report.color || '#001BB7'}12` }}
+        style={{ backgroundColor: `${report.color || '#204f79'}12` }}
       >
         {report.cover_image_url ? (
           <img
@@ -206,9 +206,9 @@ function ReportRow({ report, overrideCount, onDownload }: ReportRowProps) {
         ) : (
           <div
             className="w-10 h-10 rounded-[7px] flex items-center justify-center"
-            style={{ backgroundColor: `${report.color || '#001BB7'}20` }}
+            style={{ backgroundColor: `${report.color || '#204f79'}20` }}
           >
-            <FileText className="w-5 h-5" style={{ color: report.color || '#001BB7' }} />
+            <FileText className="w-5 h-5" style={{ color: report.color || '#204f79' }} />
           </div>
         )}
       </div>
@@ -221,7 +221,7 @@ function ReportRow({ report, overrideCount, onDownload }: ReportRowProps) {
           <div className="flex items-center gap-2 mb-1.5 flex-wrap">
             <span
               className="text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: `${report.color || '#001BB7'}18`, color: report.color || '#001BB7' }}
+              style={{ backgroundColor: `${report.color || '#204f79'}18`, color: report.color || '#204f79' }}
             >
               {report.category}
             </span>

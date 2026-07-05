@@ -40,7 +40,7 @@ function PageLoader() {
   return (
     <div className="min-h-screen bg-[#001833] flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-10 h-10 border-2 border-[#3F4DC2]/30 border-t-[#3F4DC2] rounded-full animate-spin" />
+        <div className="w-10 h-10 border-2 border-[#204f79]/30 border-t-[#204f79] rounded-full animate-spin" />
         <span className="text-white/40 text-xs tracking-widest uppercase font-medium">Loading</span>
       </div>
     </div>

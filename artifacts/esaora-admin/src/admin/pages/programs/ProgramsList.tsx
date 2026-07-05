@@ -5,12 +5,12 @@ import { useAdminPrograms } from '@workspace/esaora-core/hooks/usePrograms';
 import { Plus, Edit2, Trash2, Eye, EyeOff, Loader2, AlertCircle, Globe } from 'lucide-react';
 
 const PILLAR_COLORS: Record<string, string> = {
-  'Toroy Izy': '#001BB7',
+  'Toroy Izy': '#204f79',
   'Youth Mentoring': '#7C3AED',
   'Sekoly Manga': '#22C55E',
   'Civic Engagement': '#F78A28',
   // Legacy esaora values (existing records)
-  WASH: '#001BB7',
+  WASH: '#204f79',
   'Climate Resilience': '#7C3AED',
   'Blue Economy': '#22C55E',
   'Public Health': '#F78A28',
@@ -39,7 +39,7 @@ export default function ProgramsList() {
           <p className="text-gray-400 text-sm mt-0.5">{programs.length} total programmes</p>
         </div>
         <Link href="/admin/programs/new">
-          <button className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+          <button className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
             <Plus className="w-4 h-4" /> New Programme
           </button>
         </Link>
@@ -52,7 +52,7 @@ export default function ProgramsList() {
           <div className="text-center py-16">
             <p className="text-gray-500 font-medium">No programmes yet</p>
             <Link href="/admin/programs/new">
-              <button className="mt-4 px-4 py-2 bg-[#001BB7] text-white rounded-lg text-sm font-semibold hover:bg-[#F78A28] transition-colors">Create First Programme</button>
+              <button className="mt-4 px-4 py-2 bg-[#204f79] text-white rounded-lg text-sm font-semibold hover:bg-[#F78A28] transition-colors">Create First Programme</button>
             </Link>
           </div>
         ) : (
@@ -70,7 +70,7 @@ export default function ProgramsList() {
               </thead>
               <tbody className="divide-y divide-gray-50">
                 {programs.map((prog) => {
-                  const color = PILLAR_COLORS[prog.pillar] || '#001BB7';
+                  const color = PILLAR_COLORS[prog.pillar] || '#204f79';
                   return (
                     <tr key={prog.id} className="hover:bg-gray-50/50 transition-colors">
                       <td className="px-5 py-3.5">

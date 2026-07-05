@@ -76,9 +76,9 @@ export function GalleryPanel() {
         </div>
         <div className="flex gap-2">
             <button onClick={openMultiAdd} disabled={saving} className="flex items-center gap-2 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2.5 rounded-lg text-sm font-bold transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
-              {saving ? <Loader2 className="w-4 h-4 animate-spin text-[#001BB7]" /> : <Layers className="w-4 h-4 text-[#001BB7]" />} {saving ? 'Uploading…' : 'Bulk Upload'}
+              {saving ? <Loader2 className="w-4 h-4 animate-spin text-[#204f79]" /> : <Layers className="w-4 h-4 text-[#204f79]" />} {saving ? 'Uploading…' : 'Bulk Upload'}
             </button>
-            <button onClick={openAdd} className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-bold transition-all shadow-sm">
+            <button onClick={openAdd} className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-bold transition-all shadow-sm">
               <Plus className="w-4 h-4" /> Add Single
             </button>
         </div>
@@ -101,7 +101,7 @@ export function GalleryPanel() {
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
           {items.map((item) => (
-            <div key={item.id} className="bg-white rounded-[6px] border border-gray-200 overflow-hidden group relative flex flex-col hover:border-[#001BB7]/50 transition-all shadow-sm hover:shadow-md">
+            <div key={item.id} className="bg-white rounded-[6px] border border-gray-200 overflow-hidden group relative flex flex-col hover:border-[#204f79]/50 transition-all shadow-sm hover:shadow-md">
               <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                   {item.image_url ? (
                       <img src={item.image_url} alt={item.caption || "Gallery item"} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
@@ -122,7 +122,7 @@ export function GalleryPanel() {
                      <p className="text-[11px] text-gray-800 font-bold leading-relaxed line-clamp-2 italic" title={item.caption || ''}>
                          {item.caption || <span className="text-gray-300">No description...</span>}
                      </p>
-                     {item.country && <p className="text-[9px] font-black text-[#001BB7] uppercase tracking-widest mt-2 flex items-center gap-1.5"><Navigation className="w-3 h-3" /> {item.country}</p>}
+                     {item.country && <p className="text-[9px] font-black text-[#204f79] uppercase tracking-widest mt-2 flex items-center gap-1.5"><Navigation className="w-3 h-3" /> {item.country}</p>}
                  </div>
                  
                  <div className="mt-3 pt-3 border-t border-gray-50 flex items-center justify-between">
@@ -201,7 +201,7 @@ export function GalleryPanel() {
             </div>
             <div className="px-6 py-5 bg-gray-50/50 border-t border-gray-200 flex gap-3">
               <button onClick={closeForm} className="flex-1 py-3 border border-gray-200 bg-white rounded-lg text-[10px] font-black text-gray-400 uppercase tracking-widest hover:bg-gray-50 transition-colors">Abort</button>
-              <button onClick={handleSave} disabled={saving} className="flex-1 py-3 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-lg text-[10px] font-black uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-[0.98]">
+              <button onClick={handleSave} disabled={saving} className="flex-1 py-3 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-lg text-[10px] font-black uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-[0.98]">
                 {saving && <Loader2 className="w-4 h-4 animate-spin" />} {editId ? 'Update Record' : 'Record Asset'}
               </button>
             </div>

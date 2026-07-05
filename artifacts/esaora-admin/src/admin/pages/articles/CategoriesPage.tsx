@@ -8,7 +8,7 @@ function toSlug(text: string) {
 }
 
 const PRESET_COLORS = [
-  '#001BB7', '#22C55E', '#F59E0B', '#8B5CF6', '#001BB7',
+  '#204f79', '#22C55E', '#F59E0B', '#8B5CF6', '#204f79',
   '#EF4444', '#F97316', '#06B6D4', '#6366F1', '#14B8A6',
 ];
 
@@ -18,7 +18,7 @@ export default function CategoriesPage() {
 
   // Category form
   const [catName, setCatName] = useState('');
-  const [catColor, setCatColor] = useState('#001BB7');
+  const [catColor, setCatColor] = useState('#204f79');
   const [catSaving, setCatSaving] = useState(false);
   const [catError, setCatError] = useState('');
 
@@ -93,7 +93,7 @@ export default function CategoriesPage() {
             <button
               onClick={handleCreateCat}
               disabled={catSaving}
-              className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+              className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
             >
               {catSaving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Plus className="w-3.5 h-3.5" />}
               Add Category
@@ -144,7 +144,7 @@ export default function CategoriesPage() {
             <button
               onClick={handleCreateTag}
               disabled={tagSaving}
-              className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+              className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
             >
               {tagSaving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Plus className="w-3.5 h-3.5" />}
               Add Tag

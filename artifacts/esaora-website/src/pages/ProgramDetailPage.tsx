@@ -53,7 +53,7 @@ export default function ProgramDetailPage() {
         <h1 className="text-4xl text-brand-navy font-bold mb-4">Program Offline</h1>
         <p className="text-slate-800 mb-8 max-w-md">The requested program is currently unavailable or has been archived.</p>
         <Link href="/programs">
-          <a className="bg-[#001BB7] text-white px-8 py-3 rounded-[7px] font-bold transition-transform hover:scale-105">All Programs</a>
+          <a className="bg-[#204f79] text-white px-8 py-3 rounded-[7px] font-bold transition-transform hover:scale-105">All Programs</a>
         </Link>
       </div>
     );
@@ -191,7 +191,7 @@ export default function ProgramDetailPage() {
                     <section className="bg-white rounded-[7px] p-10 border border-gray-100">
                         <div className="max-w-2xl">
                             <h3 className="flex items-center gap-3 text-xs font-black text-slate-900 uppercase tracking-widest mb-8">
-                                <HelpCircle className="w-4 h-4 text-[#001BB7]" /> Challenges & Resilience
+                                <HelpCircle className="w-4 h-4 text-[#204f79]" /> Challenges & Resilience
                             </h3>
                             <div className="prose prose-slate prose-p:text-slate-900 prose-p:leading-relaxed" dangerouslySetInnerHTML={{ __html: program.challenges }} />
                         </div>
@@ -293,12 +293,12 @@ export default function ProgramDetailPage() {
                   </div>
 
                   {/* Funding Tracker Card */}
-                  <div className="bg-[#001BB7] rounded-[7px] p-8 text-white relative overflow-hidden group">
+                  <div className="bg-[#204f79] rounded-[7px] p-8 text-white relative overflow-hidden group">
                       <div className="relative z-10">
                           <div className="flex items-center justify-between mb-8">
                               <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Funding Progress</h4>
                               <span className={`text-[8px] font-black px-2 py-0.5 rounded uppercase tracking-tighter border border-white/20 ${
-                                program.funding_status === 'partially funded' ? 'bg-[#001BB7] text-white' : 'bg-white text-brand-navy'
+                                program.funding_status === 'partially funded' ? 'bg-[#204f79] text-white' : 'bg-white text-brand-navy'
                               }`}>
                                   {program.funding_status}
                               </span>

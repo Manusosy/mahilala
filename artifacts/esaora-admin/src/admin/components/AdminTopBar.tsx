@@ -42,7 +42,7 @@ export function AdminTopBar({ title, breadcrumbs, setMobileOpen }: AdminTopBarPr
       {/* Mobile Menu Toggle */}
       <button 
         onClick={() => setMobileOpen?.(true)}
-        className="lg:hidden p-1.5 -ml-1.5 rounded-lg text-gray-500 hover:bg-[#001BB7] hover:text-white transition-colors"
+        className="lg:hidden p-1.5 -ml-1.5 rounded-lg text-gray-500 hover:bg-[#204f79] hover:text-white transition-colors"
       >
         <Menu className="w-5 h-5" />
       </button>
@@ -76,7 +76,7 @@ export function AdminTopBar({ title, breadcrumbs, setMobileOpen }: AdminTopBarPr
       </div>
 
       {/* Notifications */}
-      <button className="relative p-2 rounded-lg text-gray-400 hover:bg-[#001BB7] hover:text-white transition-colors">
+      <button className="relative p-2 rounded-lg text-gray-400 hover:bg-[#204f79] hover:text-white transition-colors">
         <Bell className="w-4 h-4" />
         {totalNewCount > 0 && (
           <span className="absolute top-1.5 right-1.5 flex h-2 w-2">
@@ -90,9 +90,9 @@ export function AdminTopBar({ title, breadcrumbs, setMobileOpen }: AdminTopBarPr
       <div className="relative">
         <button
           onClick={() => setDropdownOpen((o) => !o)}
-          className="flex items-center gap-2 p-1 pr-2 rounded-lg hover:bg-[#001BB7] hover:text-white transition-colors group"
+          className="flex items-center gap-2 p-1 pr-2 rounded-lg hover:bg-[#204f79] hover:text-white transition-colors group"
         >
-          <div className="w-7 h-7 rounded-full bg-[#001BB7] flex items-center justify-center text-white text-xs font-bold group-hover:bg-[#F78A28] transition-colors">
+          <div className="w-7 h-7 rounded-full bg-[#204f79] flex items-center justify-center text-white text-xs font-bold group-hover:bg-[#F78A28] transition-colors">
             {initials}
           </div>
           <div className="hidden md:block text-left group-hover:text-white">

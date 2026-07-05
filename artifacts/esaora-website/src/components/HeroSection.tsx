@@ -100,7 +100,7 @@ export function HeroSection() {
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link href="/programs" className="bg-[#001BB7] hover:bg-[#F78A28] text-white px-8 py-3.5 rounded-lg font-semibold text-base transition-colors duration-200 hover:scale-105">
+          <Link href="/programs" className="bg-[#204f79] hover:bg-[#F78A28] text-white px-8 py-3.5 rounded-lg font-semibold text-base transition-colors duration-200 hover:scale-105">
             {t.hero.discoverWork}
           </Link>
           <Link href="/about" className="border-2 border-white text-white hover:bg-[#F78A28] hover:border-[#F78A28] px-8 py-3.5 rounded-lg font-semibold text-base transition-colors duration-200 text-center">

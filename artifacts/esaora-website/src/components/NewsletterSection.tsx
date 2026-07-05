@@ -49,7 +49,7 @@ export function NewsletterSection() {
                   <button
                     type="submit"
                     disabled={subscribing}
-                    className="flex items-center justify-center gap-2 bg-[#F78A28] hover:bg-[#001BB7] text-white px-6 py-3.5 font-black text-xs uppercase tracking-widest transition-colors whitespace-nowrap disabled:opacity-60"
+                    className="flex items-center justify-center gap-2 bg-[#F78A28] hover:bg-[#204f79] text-white px-6 py-3.5 font-black text-xs uppercase tracking-widest transition-colors whitespace-nowrap disabled:opacity-60"
                   >
                     {subscribing ? (
                       <Loader2 className="w-4 h-4 animate-spin" />

@@ -27,7 +27,7 @@ export interface ImageTextSectionProps {
   background?: 'white' | 'offwhite';
 }
 
-const BRAND_BLUE = '#001BB7';
+const BRAND_BLUE = '#204f79';
 const ACCENT_ORANGE = '#F78A28';
 
 export function ImageTextSection({
@@ -163,7 +163,7 @@ export function ImageTextSection({
           {cta && (
             <Link
               href={cta.href}
-              className="inline-flex items-center gap-3 mt-8 py-3.5 px-7 rounded-lg bg-[#001BB7] text-white font-bold text-sm hover:bg-[#F78A28] hover:gap-5 transition-all active:scale-95"
+              className="inline-flex items-center gap-3 mt-8 py-3.5 px-7 rounded-lg bg-[#204f79] text-white font-bold text-sm hover:bg-[#F78A28] hover:gap-5 transition-all active:scale-95"
             >
               {cta.label} <ArrowRight className="w-4 h-4" />
             </Link>

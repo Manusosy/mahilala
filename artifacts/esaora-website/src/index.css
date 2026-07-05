@@ -56,9 +56,9 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   /* Mahilala Brand Colors */
-  --color-brand-primary: #001BB7;
-  --color-brand-cyan: #001BB7;
-  --color-brand-navy: #001BB7;
+  --color-brand-primary: #204f79;
+  --color-brand-cyan: #204f79;
+  --color-brand-navy: #1a4066;
   --color-brand-accent: #F78A28;
   --color-coral-amber: #F78A28;
   --color-off-white: #F8F8F8;
@@ -80,36 +80,36 @@
   --foreground: 0 0% 7%;
   --border: 220 13% 91%;
   --input: 220 13% 91%;
-  --ring: 231 100% 36%;
+  --ring: 208 58% 30%;
   --card: 0 0% 100%;
   --card-foreground: 0 0% 7%;
   --card-border: 220 13% 93%;
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 7%;
   --popover-border: 220 13% 91%;
-  --primary: 231 100% 36%;
+  --primary: 208 58% 30%;
   --primary-foreground: 0 0% 100%;
   --secondary: 28 93% 56%;
   --secondary-foreground: 0 0% 100%;
   --muted: 220 14% 96%;
   --muted-foreground: 215 16% 47%;
-  --accent: 231 100% 36%;
+  --accent: 208 58% 30%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --chart-1: 231 100% 36%;
+  --chart-1: 208 58% 30%;
   --chart-2: 28 93% 56%;
-  --chart-3: 236 54% 35%;
+  --chart-3: 208 58% 22%;
   --chart-4: 145 58% 33%;
   --chart-5: 45 93% 47%;
-  --sidebar: 236 54% 22%;
+  --sidebar: 208 58% 18%;
   --sidebar-foreground: 0 0% 98%;
-  --sidebar-border: 236 54% 18%;
-  --sidebar-primary: 231 100% 36%;
+  --sidebar-border: 208 58% 15%;
+  --sidebar-primary: 208 58% 30%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 236 54% 28%;
+  --sidebar-accent: 208 58% 22%;
   --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-ring: 231 100% 36%;
+  --sidebar-ring: 208 58% 30%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: 'Playfair Display', Georgia, serif;
@@ -157,7 +157,7 @@
 
 /* Animated gradient text */
 .gradient-text {
-  color: #001BB7;
+  color: #204f79;
 }
 
 
@@ -231,7 +231,7 @@
 
 /* Footer wave effect */
 .wave-bg {
-  background: #001BB7;
+  background: #204f79;
 }
 
 /* Responsive text clamp */
@@ -246,7 +246,7 @@
 
 /* Video overlay — solid brand navy */
 .video-overlay {
-  background: #001BB7;
+  background: #204f79;
 }
 
 /* Swiper custom styles */
@@ -258,7 +258,7 @@
 }
 
 .swiper-custom .swiper-pagination-bullet-active {
-  background: #001BB7;
+  background: #204f79;
   width: 24px;
   border-radius: 4px;
 }
@@ -285,13 +285,13 @@
 }
 
 .country-path:hover {
-  fill: #001BB7;
+  fill: #204f79;
   opacity: 0.9;
 }
 
 .country-path.active {
-  fill: #001BB7;
-  stroke: #001BB7;
+  fill: #204f79;
+  stroke: #204f79;
   stroke-width: 2;
 }
 

@@ -18,7 +18,7 @@ export default function DonatePage() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center justify-center bg-[#001BB7] hover:bg-[#F78A28] text-white px-8 py-4 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-brand-navy/10"
+            className="inline-flex items-center justify-center bg-[#204f79] hover:bg-[#F78A28] text-white px-8 py-4 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-brand-navy/10"
           >
             Contact the Secretariat
           </a>

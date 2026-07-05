@@ -203,7 +203,7 @@ export default function ProgramEditor() {
           <button onClick={() => handleSave('draft')} disabled={saving} className="flex items-center gap-2 px-4 py-2.5 border border-gray-200 bg-white text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-colors disabled:opacity-50">
             {saving && saveMode === 'draft' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />} Save Draft
           </button>
-          <button onClick={() => handleSave('publish')} disabled={saving} className="flex items-center gap-2 px-4 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors disabled:opacity-50">
+          <button onClick={() => handleSave('publish')} disabled={saving} className="flex items-center gap-2 px-4 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors disabled:opacity-50">
             {saving && saveMode === 'publish' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />} {isPublished ? 'Update' : 'Publish'}
           </button>
         </div>
@@ -310,7 +310,7 @@ export default function ProgramEditor() {
 
             <div>
               <p className="text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">Location</p>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] text-[10px] font-bold uppercase tracking-tight border bg-[#001BB7] text-white border-[#001BB7]">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] text-[10px] font-bold uppercase tracking-tight border bg-[#204f79] text-white border-[#204f79]">
                 <MapPin className="w-2.5 h-2.5" />{PROGRAM_LOCATION}
               </div>
               <p className="text-[10px] text-gray-400 mt-2">All Mahilala programmes operate in Madagascar.</p>

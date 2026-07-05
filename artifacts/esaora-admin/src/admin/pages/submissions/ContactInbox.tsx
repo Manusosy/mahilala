@@ -43,14 +43,14 @@ export default function ContactInbox() {
 
       {/* Status tabs */}
       <div className="flex items-center gap-2 mb-4 flex-wrap">
-        <button onClick={() => setFilterStatus('')} className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${!filterStatus ? 'bg-[#001BB7] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
+        <button onClick={() => setFilterStatus('')} className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${!filterStatus ? 'bg-[#204f79] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
           All ({submissions.length})
         </button>
         {STATUS_ORDER.map((s) => {
           const cfg = STATUS_CONFIG[s];
           return (
             <button key={s} onClick={() => setFilterStatus(s === filterStatus ? '' : s)}
-              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${filterStatus === s ? 'bg-[#001BB7] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${filterStatus === s ? 'bg-[#204f79] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
               {cfg.label} ({counts[s] || 0})
             </button>
           );
@@ -86,7 +86,7 @@ export default function ContactInbox() {
                     {msg.status === 'new' && <span className="text-[10px] font-bold bg-red-500 text-white px-1.5 py-0.5 rounded-full">NEW</span>}
                   </div>
                   <div className="flex items-center gap-3 mt-0.5">
-                    <span className="text-xs text-[#001BB7]">{msg.email}</span>
+                    <span className="text-xs text-[#204f79]">{msg.email}</span>
                     {msg.country && <span className="text-xs text-gray-400">· {msg.country}</span>}
                     {msg.purpose && <span className="text-xs text-gray-400">· {msg.purpose}</span>}
                   </div>
@@ -103,7 +103,7 @@ export default function ContactInbox() {
                   <p className="text-sm text-gray-700 leading-relaxed bg-gray-50 rounded-[6px] px-4 py-3 mb-4">{msg.message}</p>
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <a href={`mailto:${msg.email}?subject=Re: ESA-ORA Contact&body=%0A%0A----%0AOriginal message from ${msg.name}:%0A${msg.message}`}
-                      className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                      className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
                       <Mail className="w-3.5 h-3.5" /> Reply via Email
                     </a>
                     <div className="flex items-center gap-2">

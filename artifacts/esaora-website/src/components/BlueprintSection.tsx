@@ -8,7 +8,7 @@ import { useSiteSettings } from '@workspace/esaora-core/hooks/useData';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BRAND_BLUE = '#001BB7';
+const BRAND_BLUE = '#204f79';
 const ACCENT_ORANGE = '#F78A28';
 
 const PILLAR_KEYS = ['wash', 'climate', 'blueEconomy', 'publicHealth'] as const;
@@ -221,7 +221,7 @@ export function BlueprintSection() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-[#001BB7] py-20 md:py-28 px-4 overflow-hidden">
+    <section ref={sectionRef} className="bg-[#204f79] py-20 md:py-28 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">

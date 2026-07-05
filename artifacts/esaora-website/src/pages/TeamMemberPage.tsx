@@ -142,7 +142,7 @@ export default function TeamMemberPage() {
                 <div className="mt-10 flex flex-wrap gap-x-12 gap-y-6">
                     {member.organization && (
                         <div className="flex items-center gap-3">
-                            <Building2 className="w-4 h-4 text-[#001BB7]" />
+                            <Building2 className="w-4 h-4 text-[#204f79]" />
                             <div>
                                 <span className="text-[9px] text-gray-400 font-black uppercase tracking-widest block leading-none mb-1">Affiliation</span>
                                 <span className="text-brand-navy font-bold text-base leading-none">{member.organization}</span>
@@ -151,7 +151,7 @@ export default function TeamMemberPage() {
                     )}
                     {member.country && (
                         <div className="flex items-center gap-3">
-                            <Globe className="w-4 h-4 text-[#001BB7]" />
+                            <Globe className="w-4 h-4 text-[#204f79]" />
                             <div>
                                 <span className="text-[9px] text-gray-400 font-black uppercase tracking-widest block leading-none mb-1">Region</span>
                                 <span className="text-brand-navy font-bold text-base leading-none">{member.country}</span>

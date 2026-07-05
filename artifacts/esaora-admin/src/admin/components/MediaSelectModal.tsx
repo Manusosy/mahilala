@@ -85,7 +85,7 @@ export function MediaSelectModal({
           <div className="flex items-center gap-3">
               <h3 className="font-bold text-gray-900 text-lg">{title}</h3>
               {multiSelect && selectedUrls.length > 0 && (
-                  <span className="bg-[#001BB7] text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                  <span className="bg-[#204f79] text-white text-[10px] font-black px-2 py-0.5 rounded-full">
                       {selectedUrls.length} SELECTED
                   </span>
               )}
@@ -104,7 +104,7 @@ export function MediaSelectModal({
                         onClick={() => setActiveBucket(bucket.id)}
                         className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-md transition-colors ${
                             activeBucket === bucket.id 
-                            ? 'bg-[#001BB7] text-white' 
+                            ? 'bg-[#204f79] text-white' 
                             : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                         }`}
                     >
@@ -128,7 +128,7 @@ export function MediaSelectModal({
                 <button 
                     onClick={() => fileInputRef.current?.click()} 
                     disabled={uploading}
-                    className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-3 py-1.5 rounded-lg text-sm font-black transition-colors disabled:opacity-50"
+                    className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-3 py-1.5 rounded-lg text-sm font-black transition-colors disabled:opacity-50"
                 >
                     {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
                     Upload New
@@ -166,10 +166,10 @@ export function MediaSelectModal({
                             <button
                                 key={file.name}
                                 onClick={() => toggleSelection(url)}
-                                className={`group relative border rounded-xl overflow-hidden transition-all text-left focus:outline-none focus:ring-2 focus:ring-[#001BB7] ${
+                                className={`group relative border rounded-xl overflow-hidden transition-all text-left focus:outline-none focus:ring-2 focus:ring-[#204f79] ${
                                     isSelected 
-                                    ? 'border-[#001BB7] shadow-lg ring-2 ring-[#001BB7]' 
-                                    : 'border-gray-200 bg-white hover:border-[#001BB7] hover:shadow-md'
+                                    ? 'border-[#204f79] shadow-lg ring-2 ring-[#204f79]' 
+                                    : 'border-gray-200 bg-white hover:border-[#204f79] hover:shadow-md'
                                 }`}
                             >
                                 <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center overflow-hidden">
@@ -185,12 +185,12 @@ export function MediaSelectModal({
                                 
                                 {isSelected && (
                                     <div className="absolute top-2 right-2">
-                                        <CheckCircle2 className="w-5 h-5 text-[#001BB7] bg-white rounded-full shadow-lg" />
+                                        <CheckCircle2 className="w-5 h-5 text-[#204f79] bg-white rounded-full shadow-lg" />
                                     </div>
                                 )}
 
-                                <div className={`absolute inset-0 bg-[#001BB7]/0 group-hover:bg-[#001BB7]/5 transition-colors flex items-center justify-center pointer-events-none ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-                                    <span className="bg-[#001BB7] text-white text-[9px] font-black tracking-[0.2em] uppercase px-2 py-1 rounded shadow-sm transition-opacity">
+                                <div className={`absolute inset-0 bg-[#204f79]/0 group-hover:bg-[#204f79]/5 transition-colors flex items-center justify-center pointer-events-none ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                                    <span className="bg-[#204f79] text-white text-[9px] font-black tracking-[0.2em] uppercase px-2 py-1 rounded shadow-sm transition-opacity">
                                         {isSelected ? 'SELECTED' : 'SELECT'}
                                     </span>
                                 </div>
@@ -214,7 +214,7 @@ export function MediaSelectModal({
                     <button 
                         onClick={handleConfirmSelection}
                         disabled={selectedUrls.length === 0 || saving}
-                        className="px-6 py-2 bg-[#001BB7] text-white text-sm font-black uppercase tracking-widest rounded-lg disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:scale-[1.02] flex items-center gap-2"
+                        className="px-6 py-2 bg-[#204f79] text-white text-sm font-black uppercase tracking-widest rounded-lg disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:scale-[1.02] flex items-center gap-2"
                     >
                         {saving && <Loader2 className="w-4 h-4 animate-spin" />}
                         {saving ? 'Uploading…' : 'Add Selected Images'}

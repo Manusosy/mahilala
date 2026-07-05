@@ -28,7 +28,7 @@ function LogoRow({
       {/* Preview — transparent logos shown on their real background, never cropped or rounded */}
       <div
         className={`w-[92px] h-14 flex-shrink-0 rounded-md border flex items-center justify-center overflow-hidden ${
-          previewBg === 'brand' ? 'bg-[#001BB7] border-[#001496]' : 'bg-gray-50 border-gray-200'
+          previewBg === 'brand' ? 'bg-[#204f79] border-[#001496]' : 'bg-gray-50 border-gray-200'
         }`}
       >
         {value ? (
@@ -57,7 +57,7 @@ function LogoRow({
         <button
           type="button"
           onClick={onPick}
-          className="px-3.5 py-2 border border-gray-300 text-gray-700 hover:border-[#001BB7] hover:text-[#001BB7] rounded-md text-xs font-semibold transition-colors"
+          className="px-3.5 py-2 border border-gray-300 text-gray-700 hover:border-[#204f79] hover:text-[#204f79] rounded-md text-xs font-semibold transition-colors"
         >
           {value ? 'Change' : 'Select'}
         </button>
@@ -204,7 +204,7 @@ export default function SystemSettingsTab() {
             <button
               type="button"
               onClick={() => setMaintenanceMode(!maintenanceMode)}
-              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001BB7] ${maintenanceMode ? 'bg-red-500' : 'bg-gray-200'}`}
+              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#204f79] ${maintenanceMode ? 'bg-red-500' : 'bg-gray-200'}`}
               style={{ width: 44, height: 24 }}
             >
               <span className={`inline-block w-5 h-5 bg-white rounded-full shadow transform transition ease-in-out duration-200 ${maintenanceMode ? 'translate-x-[22px]' : 'translate-x-[2px]'}`} />
@@ -220,7 +220,7 @@ export default function SystemSettingsTab() {
             <button
               type="button"
               onClick={() => setAllowRegistration(!allowRegistration)}
-              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001BB7] ${allowRegistration ? 'bg-[#001BB7]' : 'bg-gray-200'}`}
+              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#204f79] ${allowRegistration ? 'bg-[#204f79]' : 'bg-gray-200'}`}
               style={{ width: 44, height: 24 }}
             >
               <span className={`inline-block w-5 h-5 bg-white rounded-full shadow transform transition ease-in-out duration-200 ${allowRegistration ? 'translate-x-[22px]' : 'translate-x-[2px]'}`} />
@@ -236,7 +236,7 @@ export default function SystemSettingsTab() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-[6px] text-sm font-semibold transition-colors disabled:opacity-50"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-[6px] text-sm font-semibold transition-colors disabled:opacity-50"
         >
           {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
           Save Configuration

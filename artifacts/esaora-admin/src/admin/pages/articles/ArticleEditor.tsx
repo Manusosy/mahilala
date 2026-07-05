@@ -69,7 +69,7 @@ function ToolBtn({
       onClick={onClick}
       disabled={disabled}
       className={`p-1.5 rounded-md transition-colors text-sm ${
-        active ? 'bg-[#001BB7] text-white' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+        active ? 'bg-[#204f79] text-white' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
       } disabled:opacity-30 disabled:cursor-not-allowed`}
     >
       {children}
@@ -106,7 +106,7 @@ export default function ArticleEditor() {
   // Inline category/tag creation
   const [showAddCategory, setShowAddCategory] = useState(false);
   const [newCatName, setNewCatName] = useState('');
-  const [newCatColor, setNewCatColor] = useState('#001BB7');
+  const [newCatColor, setNewCatColor] = useState('#204f79');
   const [savingCat, setSavingCat] = useState(false);
 
   const [showAddTag, setShowAddTag] = useState(false);
@@ -119,7 +119,7 @@ export default function ArticleEditor() {
     try {
       await createCategory(newCatName.trim(), toSlug(newCatName.trim()), newCatColor);
       setNewCatName('');
-      setNewCatColor('#001BB7');
+      setNewCatColor('#204f79');
       setShowAddCategory(false);
     } catch (err: any) {
       setError(`Failed to add category: ${err.message}`);
@@ -334,7 +334,7 @@ export default function ArticleEditor() {
             type="button"
             onClick={() => handleSave('publish')}
             disabled={saving}
-            className="flex items-center gap-2 px-4 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors disabled:opacity-50"
+            className="flex items-center gap-2 px-4 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors disabled:opacity-50"
           >
             {saving && saveMode === 'publish' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
             {isPublished ? 'Update & Publish' : 'Publish'}
@@ -435,7 +435,7 @@ export default function ArticleEditor() {
                       autoFocus
                     />
                     <div className="flex gap-2">
-                       <button onClick={handleSetLink} className="flex-1 bg-[#001BB7] text-white rounded-[4px] py-1.5 text-xs font-semibold hover:bg-[#F78A28] transition-colors">Set Link</button>
+                       <button onClick={handleSetLink} className="flex-1 bg-[#204f79] text-white rounded-[4px] py-1.5 text-xs font-semibold hover:bg-[#F78A28] transition-colors">Set Link</button>
                       {editor?.isActive('link') && (
                         <button onClick={() => { editor?.chain().focus().unsetLink().run(); setShowLinkInput(false); }} className="px-3 border border-gray-200 rounded-lg text-xs text-red-500 hover:bg-red-50 transition-colors">Remove</button>
                       )}
@@ -542,7 +542,7 @@ export default function ArticleEditor() {
               <button
                 type="button"
                 onClick={() => setShowAddCategory((s) => !s)}
-                className="flex items-center gap-1 text-[10px] font-bold text-[#001BB7] hover:underline"
+                className="flex items-center gap-1 text-[10px] font-bold text-[#204f79] hover:underline"
               >
                 <Plus className="w-3 h-3" /> New
               </button>
@@ -565,7 +565,7 @@ export default function ArticleEditor() {
                   <span className="text-[10px] text-gray-400 font-mono">{newCatColor}</span>
                 </div>
                 <div className="flex gap-2">
-                  <button onClick={handleAddCategory} disabled={savingCat || !newCatName.trim()} className="flex-1 bg-[#001BB7] text-white rounded-[4px] py-1.5 text-xs font-semibold hover:bg-[#F78A28] transition-colors disabled:opacity-50 flex items-center justify-center gap-1">
+                  <button onClick={handleAddCategory} disabled={savingCat || !newCatName.trim()} className="flex-1 bg-[#204f79] text-white rounded-[4px] py-1.5 text-xs font-semibold hover:bg-[#F78A28] transition-colors disabled:opacity-50 flex items-center justify-center gap-1">
                     {savingCat ? <Loader2 className="w-3 h-3 animate-spin" /> : <Check className="w-3 h-3" />} Add
                   </button>
                   <button onClick={() => { setShowAddCategory(false); setNewCatName(''); }} className="px-3 border border-gray-200 rounded-[4px] text-xs text-gray-500 hover:bg-white">
@@ -586,7 +586,7 @@ export default function ArticleEditor() {
               ))}
             </select>
             <p className="text-[10px] text-gray-500 mt-2">
-              Or <a href="/admin/articles/categories" className="text-[#001BB7] font-bold hover:underline inline-flex items-center gap-0.5">manage all categories <ExternalLink className="w-2.5 h-2.5" /></a>
+              Or <a href="/admin/articles/categories" className="text-[#204f79] font-bold hover:underline inline-flex items-center gap-0.5">manage all categories <ExternalLink className="w-2.5 h-2.5" /></a>
             </p>
           </div>
 
@@ -597,7 +597,7 @@ export default function ArticleEditor() {
               <button
                 type="button"
                 onClick={() => setShowAddTag((s) => !s)}
-                className="flex items-center gap-1 text-[10px] font-bold text-[#001BB7] hover:underline"
+                className="flex items-center gap-1 text-[10px] font-bold text-[#204f79] hover:underline"
               >
                 <Plus className="w-3 h-3" /> New
               </button>
@@ -615,7 +615,7 @@ export default function ArticleEditor() {
                   autoFocus
                 />
                 <div className="flex gap-2">
-                  <button onClick={handleAddTag} disabled={savingTag || !newTagName.trim()} className="flex-1 bg-[#001BB7] text-white rounded-[4px] py-1.5 text-xs font-semibold hover:bg-[#F78A28] transition-colors disabled:opacity-50 flex items-center justify-center gap-1">
+                  <button onClick={handleAddTag} disabled={savingTag || !newTagName.trim()} className="flex-1 bg-[#204f79] text-white rounded-[4px] py-1.5 text-xs font-semibold hover:bg-[#F78A28] transition-colors disabled:opacity-50 flex items-center justify-center gap-1">
                     {savingTag ? <Loader2 className="w-3 h-3 animate-spin" /> : <Check className="w-3 h-3" />} Add Tag
                   </button>
                   <button onClick={() => { setShowAddTag(false); setNewTagName(''); }} className="px-3 border border-gray-200 rounded-[4px] text-xs text-gray-500 hover:bg-white">
@@ -638,7 +638,7 @@ export default function ArticleEditor() {
                     )}
                     className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
                       selectedTagIds.includes(tag.id)
-                        ? 'bg-[#001BB7] text-white border-[#001BB7]'
+                        ? 'bg-[#204f79] text-white border-[#204f79]'
                         : 'bg-white text-gray-600 border-gray-300 hover:border-gray-500 hover:text-gray-900'
                     }`}
                   >
@@ -703,12 +703,12 @@ export default function ArticleEditor() {
         .ProseMirror h1 { font-size: 1.6rem; font-weight: 700; margin: 1.2rem 0 0.5rem; }
         .ProseMirror h2 { font-size: 1.3rem; font-weight: 700; margin: 1rem 0 0.4rem; }
         .ProseMirror h3 { font-size: 1.1rem; font-weight: 600; margin: 0.8rem 0 0.3rem; }
-        .ProseMirror blockquote { border-left: 3px solid #001BB7; padding-left: 1rem; color: #6b7280; font-style: italic; margin: 1rem 0; }
+        .ProseMirror blockquote { border-left: 3px solid #204f79; padding-left: 1rem; color: #6b7280; font-style: italic; margin: 1rem 0; }
         .ProseMirror ul { list-style: disc; padding-left: 1.5rem; }
         .ProseMirror ol { list-style: decimal; padding-left: 1.5rem; }
         .ProseMirror pre.code-block { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 0.5rem; font-family: monospace; font-size: 0.85rem; overflow-x: auto; }
         .ProseMirror img { max-width: 100%; border-radius: 0.5rem; margin: 0.5rem 0; }
-        .ProseMirror a { color: #001BB7; text-decoration: underline; }
+        .ProseMirror a { color: #204f79; text-decoration: underline; }
         .ProseMirror table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
         .ProseMirror table td, .ProseMirror table th { border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: left; }
         .ProseMirror table th { background: #f8fafc; font-weight: 600; }

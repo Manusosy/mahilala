@@ -46,7 +46,7 @@ export default function NewsPage() {
                   ? 'text-white' 
                   : 'text-brand-navy/40 hover:text-brand-navy hover:bg-gray-50'
                 }`}
-                style={filterCategory === cat.name ? { backgroundColor: cat.color || '#001BB7' } : {}}
+                style={filterCategory === cat.name ? { backgroundColor: cat.color || '#204f79' } : {}}
               >
                 {cat.name.toUpperCase()}
               </button>
@@ -83,7 +83,7 @@ export default function NewsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filtered.map((article) => {
                 const catInfo = article.categories;
-                const color = catInfo?.color || '#001BB7';
+                const color = catInfo?.color || '#204f79';
                 const date = new Date(article.published_at || article.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
                 return (

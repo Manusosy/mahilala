@@ -100,7 +100,7 @@ export default function AdminDashboard() {
   ];
 
   const QUICK_ACTIONS = [
-    { label: 'New Article', href: '/admin/articles/new', icon: Newspaper, color: 'bg-white hover:bg-gray-50', iconColor: 'text-[#001BB7]' },
+    { label: 'New Article', href: '/admin/articles/new', icon: Newspaper, color: 'bg-white hover:bg-gray-50', iconColor: 'text-[#204f79]' },
     { label: 'New Programme', href: '/admin/programs/new', icon: Layers, color: 'bg-white hover:bg-gray-50', iconColor: 'text-emerald-600' },
     { label: 'Add Partner', href: '/admin/partners', icon: Handshake, color: 'bg-white hover:bg-gray-50', iconColor: 'text-purple-600' },
     { label: 'Add Team Member', href: '/admin/team', icon: Users, color: 'bg-white hover:bg-gray-50', iconColor: 'text-orange-600' },
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
       breadcrumbs={[{ label: 'Dashboard' }]}
     >
       {/* Welcome Banner */}
-      <div className="bg-[#001BB7] rounded-[6px] p-6 mb-6">
+      <div className="bg-[#204f79] rounded-[6px] p-6 mb-6">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[#F78A28] text-sm font-semibold mb-1">Mahilala Platform Manager</p>

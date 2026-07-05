@@ -52,7 +52,7 @@ export default function PartnersManager() {
           <h2 className="text-gray-900 font-bold text-xl">Partners & Members</h2>
           <p className="text-gray-400 text-sm mt-0.5">{partners.length} total partners</p>
         </div>
-        <button onClick={openAdd} className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+        <button onClick={openAdd} className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
           <Plus className="w-4 h-4" /> Add Partner
         </button>
       </div>
@@ -78,7 +78,7 @@ export default function PartnersManager() {
                   </div>
                   <p className="text-xs text-gray-400 mt-0.5">{partner.country}</p>
                   <div className="flex items-center gap-2 mt-1.5">
-                    <span className="text-[10px] font-medium px-2 py-0.5 bg-[#001BB7]/10 text-[#001BB7] rounded-full capitalize">{partner.type}</span>
+                    <span className="text-[10px] font-medium px-2 py-0.5 bg-[#204f79]/10 text-[#204f79] rounded-full capitalize">{partner.type}</span>
                     <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${partner.is_active ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-500'}`}>{partner.is_active ? 'Active' : 'Inactive'}</span>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function PartnersManager() {
               {partner.description && <p className="text-xs text-gray-500 mt-3 line-clamp-2">{partner.description}</p>}
               <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-50">
                 {partner.website_url ? (
-                  <a href={partner.website_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs text-[#001BB7] hover:underline">
+                  <a href={partner.website_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs text-[#204f79] hover:underline">
                     <ExternalLink className="w-3 h-3" /> Website
                   </a>
                 ) : <span />}
@@ -175,7 +175,7 @@ export default function PartnersManager() {
             </div>
             <div className="px-6 pb-5 flex gap-2">
               <button onClick={closeForm} className="flex-1 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">Cancel</button>
-              <button onClick={handleSave} disabled={saving} className="flex-1 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+              <button onClick={handleSave} disabled={saving} className="flex-1 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
                 {saving && <Loader2 className="w-4 h-4 animate-spin" />} {editId ? 'Save Changes' : 'Add Partner'}
               </button>
             </div>

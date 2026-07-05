@@ -53,7 +53,7 @@ export function NewsletterPopup({ open, onDismiss, onClose }: NewsletterPopupPro
           </p>
 
           {subscribed ? (
-            <div className="flex items-center gap-2 text-[#001BB7] font-semibold text-sm py-2">
+            <div className="flex items-center gap-2 text-[#204f79] font-semibold text-sm py-2">
               <Check className="w-5 h-5 text-[#F78A28]" />
               You're subscribed. Thank you!
             </div>
@@ -72,7 +72,7 @@ export function NewsletterPopup({ open, onDismiss, onClose }: NewsletterPopupPro
                   type="submit"
                   disabled={subscribing}
                   aria-label="Subscribe"
-                  className="flex items-center justify-center w-14 bg-[#001BB7] hover:bg-[#F78A28] text-white transition-colors disabled:opacity-60"
+                  className="flex items-center justify-center w-14 bg-[#204f79] hover:bg-[#F78A28] text-white transition-colors disabled:opacity-60"
                 >
                   {subscribing ? (
                     <Loader2 className="w-5 h-5 animate-spin" />

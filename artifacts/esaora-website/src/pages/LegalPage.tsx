@@ -133,7 +133,7 @@ export default function LegalPage({ title, type }: { title: string; type: string
             <div className="mt-12 pt-8 border-t border-black/5 text-[#A0AEC0] text-sm">
               <p className="mb-1">Mahilala Madagascar · Toliara, Madagascar</p>
               <p className="mb-1">
-                <a href="mailto:info@mahilalamadagascar.org" className="text-[#001BB7] hover:underline">
+                <a href="mailto:info@mahilalamadagascar.org" className="text-[#204f79] hover:underline">
                   info@mahilalamadagascar.org
                 </a>
               </p>

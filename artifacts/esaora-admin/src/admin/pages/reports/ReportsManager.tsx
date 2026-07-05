@@ -17,7 +17,7 @@ const getLocalDate = () => {
 const EMPTY: FormState = { 
     title: '', category: 'Annual Report', report_type: '', description: '', 
     file_url: '', cover_image_url: '', page_count: 0, 
-    published_date: getLocalDate(), is_published: true, is_featured: false, color: '#001BB7' 
+    published_date: getLocalDate(), is_published: true, is_featured: false, color: '#204f79' 
 };
 
 export default function ReportsManager() {
@@ -67,7 +67,7 @@ export default function ReportsManager() {
           <h2 className="text-gray-900 font-bold text-xl">Reports & Publications</h2>
           <p className="text-gray-400 text-sm mt-0.5">{reports.length} documents published</p>
         </div>
-        <button onClick={openAdd} className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+        <button onClick={openAdd} className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
           <Plus className="w-4 h-4" /> Add Report
         </button>
       </div>
@@ -210,7 +210,7 @@ export default function ReportsManager() {
             </div>
             <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex gap-2">
               <button onClick={closeForm} className="flex-1 py-2.5 border border-gray-300 bg-white rounded-[4px] text-sm font-bold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
-              <button onClick={handleSave} disabled={saving} className="flex-1 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-[4px] text-sm font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm">
+              <button onClick={handleSave} disabled={saving} className="flex-1 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-[4px] text-sm font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm">
                 {saving && <Loader2 className="w-4 h-4 animate-spin" />} {editId ? 'Save Changes' : 'Publish Report'}
               </button>
             </div>

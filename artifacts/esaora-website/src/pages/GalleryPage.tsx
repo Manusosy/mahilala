@@ -32,7 +32,7 @@ export default function GalleryPage() {
       <section className="sticky top-16 md:top-20 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 py-6 px-4">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3 text-brand-navy">
-                  <Filter className="w-5 h-5 text-[#001BB7]" />
+                  <Filter className="w-5 h-5 text-[#204f79]" />
                   <span className="text-xs font-black uppercase tracking-widest">Filter Archive</span>
               </div>
               <div className="flex flex-wrap justify-center gap-2">
@@ -43,7 +43,7 @@ export default function GalleryPage() {
                         className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${
                             activeCategory === cat 
                             ? 'bg-brand-navy text-white shadow-xl' 
-                            : 'bg-gray-50 text-gray-500 hover:bg-[#001BB7]/10 hover:text-brand-navy'
+                            : 'bg-gray-50 text-gray-500 hover:bg-[#204f79]/10 hover:text-brand-navy'
                         }`}
                       >
                           {cat}
@@ -78,7 +78,7 @@ export default function GalleryPage() {
               {filteredItems.map((item, index) => (
                 <div 
                     key={item.id} 
-                    className="group bg-white rounded-[7px] border border-gray-100 overflow-hidden flex flex-col hover:border-[#001BB7]/30 transition-all duration-500"
+                    className="group bg-white rounded-[7px] border border-gray-100 overflow-hidden flex flex-col hover:border-[#204f79]/30 transition-all duration-500"
                     onClick={() => openLightbox(index)}
                 >
                   <div className="aspect-[4/3] bg-gray-50 relative overflow-hidden cursor-zoom-in">
@@ -104,7 +104,7 @@ export default function GalleryPage() {
                             "{item.caption}"
                           </p>
                           {item.country && (
-                              <div className="flex items-center gap-2 text-[10px] text-[#001BB7] font-black uppercase tracking-widest pt-4 border-t border-gray-50">
+                              <div className="flex items-center gap-2 text-[10px] text-[#204f79] font-black uppercase tracking-widest pt-4 border-t border-gray-50">
                                   <Navigation className="w-3 h-3" /> {item.country}
                               </div>
                           )}
@@ -142,7 +142,7 @@ export default function GalleryPage() {
                 />
                 
                 <div className="max-w-2xl text-center space-y-4">
-                    <span className="text-[#001BB7] text-xs font-black uppercase tracking-widest">{filteredItems[lightboxIndex].category} | {filteredItems[lightboxIndex].country}</span>
+                    <span className="text-[#204f79] text-xs font-black uppercase tracking-widest">{filteredItems[lightboxIndex].category} | {filteredItems[lightboxIndex].country}</span>
                     <p className="text-white text-xl md:text-2xl font-medium italic leading-relaxed">
                         "{filteredItems[lightboxIndex].caption || 'Visual documentation from Mahilala Madagascar programmes and community work.'}"
                     </p>

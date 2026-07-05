@@ -29,8 +29,8 @@ export default function SettingsManager() {
               const Icon = t.icon;
               return (
                 <Link key={t.id} href={`/admin/settings/${t.id}`}>
-                  <button className={`w-full flex items-center gap-2.5 px-4 py-3 text-sm font-semibold transition-colors text-left ${active ? 'bg-[#001BB7]/10 text-[#001BB7]' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700 border-b border-gray-50'}`}>
-                    <Icon className={`w-4 h-4 ${active ? 'text-[#001BB7]' : 'text-gray-400'}`} />
+                  <button className={`w-full flex items-center gap-2.5 px-4 py-3 text-sm font-semibold transition-colors text-left ${active ? 'bg-[#204f79]/10 text-[#204f79]' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700 border-b border-gray-50'}`}>
+                    <Icon className={`w-4 h-4 ${active ? 'text-[#204f79]' : 'text-gray-400'}`} />
                     {t.label}
                   </button>
                 </Link>

@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 
 const STORAGE_KEY = 'mahilala-cookie-consent';
 
-const BRAND_BLUE = '#001BB7';
+const BRAND_BLUE = '#204f79';
 const BRAND_ORANGE = '#F78A28';
 
 interface CookieCategory {
@@ -49,10 +49,10 @@ function persistAndClose(
 }
 
 const primaryBtn =
-  'rounded-md px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 bg-[#001BB7] hover:bg-[#F78A28] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#001BB7]';
+  'rounded-md px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 bg-[#204f79] hover:bg-[#F78A28] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#204f79]';
 
 const ghostBtn =
-  'rounded-md px-4 py-2 text-sm font-semibold text-[#111111] transition-colors duration-200 border border-[#001BB7]/25 hover:border-[#F78A28] hover:text-[#F78A28] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#001BB7]';
+  'rounded-md px-4 py-2 text-sm font-semibold text-[#111111] transition-colors duration-200 border border-[#204f79]/25 hover:border-[#F78A28] hover:text-[#F78A28] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#204f79]';
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
@@ -102,7 +102,7 @@ export function CookieConsent() {
           {showManage && (
             <div className="border-b border-black/8 px-4 py-3 sm:px-5">
               <div className="mb-2 flex items-center justify-between">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#001BB7]">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#204f79]">
                   Cookie preferences
                 </p>
                 <button
@@ -122,7 +122,7 @@ export function CookieConsent() {
                       <span className="text-sm text-[#111111]">
                         {cat.label}
                         {cat.required && (
-                          <span className="ml-1.5 text-[10px] font-bold uppercase tracking-wide text-[#001BB7]">
+                          <span className="ml-1.5 text-[10px] font-bold uppercase tracking-wide text-[#204f79]">
                             Required
                           </span>
                         )}
@@ -161,7 +161,7 @@ export function CookieConsent() {
               We use cookies to improve your experience. See our{' '}
               <Link
                 href="/cookies"
-                className="font-semibold text-[#001BB7] underline underline-offset-2 transition-colors hover:text-[#F78A28]"
+                className="font-semibold text-[#204f79] underline underline-offset-2 transition-colors hover:text-[#F78A28]"
               >
                 cookie policy
               </Link>
@@ -173,7 +173,7 @@ export function CookieConsent() {
                 <button
                   type="button"
                   onClick={() => setShowManage(true)}
-                  className="text-sm font-semibold text-[#001BB7] underline underline-offset-2 transition-colors hover:text-[#F78A28]"
+                  className="text-sm font-semibold text-[#204f79] underline underline-offset-2 transition-colors hover:text-[#F78A28]"
                 >
                   Manage
                 </button>

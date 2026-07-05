@@ -8,12 +8,12 @@ export default function UsersRoles() {
       <div className="flex items-center justify-center min-h-[500px]">
         <div className="text-center max-w-md">
           <div className="w-16 h-16 bg-[#E8EAF8] rounded-2xl flex items-center justify-center mx-auto mb-5">
-            <Users className="w-8 h-8 text-[#001BB7]" />
+            <Users className="w-8 h-8 text-[#204f79]" />
           </div>
           <h2 className="text-gray-900 font-bold text-2xl mb-2">Users & Roles Module</h2>
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Clock className="w-4 h-4 text-[#001BB7]" />
-            <span className="text-[#001BB7] font-semibold text-sm">Coming Soon</span>
+            <Clock className="w-4 h-4 text-[#204f79]" />
+            <span className="text-[#204f79] font-semibold text-sm">Coming Soon</span>
           </div>
           <p className="text-gray-500 text-sm leading-relaxed mb-6">
             The users and roles management module is currently under active development. It will include user tracking, role assignment, permissions management, and audit logs.
@@ -27,7 +27,7 @@ export default function UsersRoles() {
             ))}
           </div>
           <Link href="/admin">
-            <button className="px-5 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors">
+            <button className="px-5 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors">
               Return to Dashboard
             </button>
           </Link>

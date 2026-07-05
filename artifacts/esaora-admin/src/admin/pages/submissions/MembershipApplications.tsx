@@ -42,10 +42,10 @@ export default function MembershipApplications() {
 
       {/* Status tabs */}
       <div className="flex items-center gap-2 mb-4 flex-wrap">
-        <button onClick={() => setFilterStatus('')} className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${!filterStatus ? 'bg-[#001BB7] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>All ({applications.length})</button>
+        <button onClick={() => setFilterStatus('')} className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${!filterStatus ? 'bg-[#204f79] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>All ({applications.length})</button>
         {Object.entries(STATUS_CONFIG).map(([s, cfg]) => (
           <button key={s} onClick={() => setFilterStatus(s === filterStatus ? '' : s)}
-            className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${filterStatus === s ? 'bg-[#001BB7] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
+            className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${filterStatus === s ? 'bg-[#204f79] text-white' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
             {cfg.label} ({counts[s] || 0})
           </button>
         ))}
@@ -62,7 +62,7 @@ export default function MembershipApplications() {
           return (
             <div key={app.id} className="bg-white rounded-[6px] border border-gray-200">
               <div className="flex items-center gap-4 px-5 py-4 cursor-pointer" onClick={() => setExpanded(isExpanded ? null : app.id)}>
-                <div className={`w-10 h-10 rounded-full bg-[#001BB7]/10 flex items-center justify-center text-[#001BB7] font-bold text-sm flex-shrink-0`}>
+                <div className={`w-10 h-10 rounded-full bg-[#204f79]/10 flex items-center justify-center text-[#204f79] font-bold text-sm flex-shrink-0`}>
                   {app.org_name.charAt(0)}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -138,7 +138,7 @@ export default function MembershipApplications() {
                     {updating === app.id && <Loader2 className="w-4 h-4 animate-spin text-gray-400" />}
                     {app.contact_email && (
                       <a href={`mailto:${app.contact_email}?subject=ESA-ORA Partnership Application`}
-                        className="ml-auto flex items-center gap-1.5 px-3 py-2 bg-[#001BB7] text-white rounded-lg text-xs font-semibold hover:bg-[#F78A28] transition-colors">
+                        className="ml-auto flex items-center gap-1.5 px-3 py-2 bg-[#204f79] text-white rounded-lg text-xs font-semibold hover:bg-[#F78A28] transition-colors">
                         Reply via Email
                       </a>
                     )}
@@ -158,7 +158,7 @@ function InfoRow({ label, value, isLink }: { label: string; value: string; isLin
     <div className="flex items-start gap-2">
       <span className="text-xs text-gray-400 flex-shrink-0 w-20">{label}</span>
       {isLink
-        ? <a href={value} target="_blank" rel="noopener noreferrer" className="text-xs text-[#001BB7] hover:underline truncate">{value}</a>
+        ? <a href={value} target="_blank" rel="noopener noreferrer" className="text-xs text-[#204f79] hover:underline truncate">{value}</a>
         : <span className="text-xs text-gray-700">{value}</span>}
     </div>
   );

@@ -7,7 +7,7 @@ import { Link } from 'wouter';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BRAND_BLUE = '#001BB7';
+const BRAND_BLUE = '#204f79';
 const ACCENT_ORANGE = '#F78A28';
 
 const FALLBACK_IMAGES = [
@@ -156,7 +156,7 @@ export function ObjectivesSlider() {
         <div className="text-center mt-12">
           <Link
             href="/programs"
-            className="inline-flex items-center gap-3 py-3.5 px-7 rounded-lg bg-[#001BB7] text-white font-bold text-sm hover:bg-[#F78A28] hover:gap-5 transition-all active:scale-95"
+            className="inline-flex items-center gap-3 py-3.5 px-7 rounded-lg bg-[#204f79] text-white font-bold text-sm hover:bg-[#F78A28] hover:gap-5 transition-all active:scale-95"
           >
             Explore our programmes <ArrowRight className="w-4 h-4" />
           </Link>

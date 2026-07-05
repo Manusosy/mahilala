@@ -60,7 +60,7 @@ export default function ArticlesList() {
           <p className="text-gray-400 text-sm mt-0.5">{articles.length} total articles</p>
         </div>
         <Link href="/admin/articles/new">
-          <button className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+          <button className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
             <Plus className="w-4 h-4" /> New Article
           </button>
         </Link>
@@ -113,7 +113,7 @@ export default function ArticlesList() {
             </p>
             {!search && !filterCat && !filterStatus && (
               <Link href="/admin/articles/new">
-                <button className="mt-4 px-4 py-2 bg-[#001BB7] text-white rounded-lg text-sm font-semibold hover:bg-[#F78A28] transition-colors">
+                <button className="mt-4 px-4 py-2 bg-[#204f79] text-white rounded-lg text-sm font-semibold hover:bg-[#F78A28] transition-colors">
                   Create First Article
                 </button>
               </Link>
@@ -233,7 +233,7 @@ export default function ArticlesList() {
                 <button
                   key={i}
                   onClick={() => setPage(i + 1)}
-                  className={`w-7 h-7 rounded-lg text-xs font-medium transition-colors ${page === i + 1 ? 'bg-[#001BB7] text-white' : 'text-gray-500 hover:bg-gray-100'}`}
+                  className={`w-7 h-7 rounded-lg text-xs font-medium transition-colors ${page === i + 1 ? 'bg-[#204f79] text-white' : 'text-gray-500 hover:bg-gray-100'}`}
                 >{i + 1}</button>
               ))}
               <button onClick={() => setPage((p) => Math.min(totalPages, p + 1))} disabled={page === totalPages} className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-100 disabled:opacity-30 transition-colors">

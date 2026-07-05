@@ -54,7 +54,7 @@ export default function TeamManager() {
           <h2 className="text-gray-900 font-bold text-xl">Team Members</h2>
           <p className="text-gray-400 text-sm mt-0.5">{members.length} members</p>
         </div>
-        <button onClick={openAdd} className="flex items-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+        <button onClick={openAdd} className="flex items-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">
           <Plus className="w-4 h-4" /> Add Member
         </button>
       </div>
@@ -176,7 +176,7 @@ export default function TeamManager() {
             </div>
             <div className="px-6 pb-5 flex gap-2">
               <button onClick={closeForm} className="flex-1 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">Cancel</button>
-              <button onClick={handleSave} disabled={saving} className="flex-1 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+              <button onClick={handleSave} disabled={saving} className="flex-1 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
                 {saving && <Loader2 className="w-4 h-4 animate-spin" />} {editId ? 'Save Changes' : 'Add Member'}
               </button>
             </div>

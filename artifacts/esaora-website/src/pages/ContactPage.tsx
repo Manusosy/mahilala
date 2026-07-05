@@ -4,7 +4,7 @@ import { FaLinkedin, FaXTwitter, FaFacebookF, FaYoutube } from 'react-icons/fa6'
 import { PageHero } from '@/components/PageHero';
 import { supabase } from '@workspace/esaora-core/lib/supabase';
 
-const BRAND_BLUE = '#001BB7';
+const BRAND_BLUE = '#204f79';
 
 const PURPOSES = ['I am a young person', 'I want to volunteer / mentor', 'Partnership & Collaboration', 'Environmental Education Request', 'Media Inquiry', 'General Question'];
 
@@ -42,7 +42,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 }
 
 const inputClass =
-  'w-full bg-white border border-black/10 rounded-lg px-4 py-2.5 text-[#111111] text-sm focus:outline-none focus:border-[#001BB7]/50 focus:ring-1 focus:ring-[#001BB7]/20 transition-all placeholder-gray-400';
+  'w-full bg-white border border-black/10 rounded-lg px-4 py-2.5 text-[#111111] text-sm focus:outline-none focus:border-[#204f79]/50 focus:ring-1 focus:ring-[#204f79]/20 transition-all placeholder-gray-400';
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -117,7 +117,7 @@ export default function ContactPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-[#4A5568] mb-1">Email</p>
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
-                className="text-[#111111] font-bold hover:text-[#001BB7] transition-colors"
+                className="text-[#111111] font-bold hover:text-[#204f79] transition-colors"
               >
                 {CONTACT_INFO.email}
               </a>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                   aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-[#001BB7]/30 text-[#001BB7] hover:bg-[#001BB7] hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-[#204f79]/30 text-[#204f79] hover:bg-[#204f79] hover:text-white transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -247,7 +247,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="flex items-center justify-center gap-2 bg-[#001BB7] hover:bg-[#F78A28] text-white px-8 py-3.5 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-95 w-full shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex items-center justify-center gap-2 bg-[#204f79] hover:bg-[#F78A28] text-white px-8 py-3.5 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-95 w-full shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
                       {submitting ? 'Sending...' : 'Send Message'}
@@ -268,7 +268,7 @@ export default function ContactPage() {
 
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
-                className="flex items-center gap-4 bg-white rounded-lg p-5 border border-black/5 hover:border-[#001BB7]/30 transition-all group shadow-sm"
+                className="flex items-center gap-4 bg-white rounded-lg p-5 border border-black/5 hover:border-[#204f79]/30 transition-all group shadow-sm"
               >
                 <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${BRAND_BLUE}15`, color: BRAND_BLUE }}>
                   <Mail className="w-5 h-5" />

@@ -118,7 +118,7 @@ export default function TeamPage() {
                       key={label}
                       className="founder-chip inline-flex items-center gap-2 bg-[#F0F4F8] text-brand-navy text-[11px] font-bold px-3.5 py-2 rounded-[7px] border border-gray-100"
                     >
-                      <Icon className="w-3.5 h-3.5 text-[#001BB7]" />
+                      <Icon className="w-3.5 h-3.5 text-[#204f79]" />
                       {label}
                     </span>
                   ))}
@@ -130,7 +130,7 @@ export default function TeamPage() {
             <div className="founder-copy lg:col-span-7">
               <span
                 className="uppercase tracking-widest text-xs font-bold border px-4 py-1.5 rounded-lg leading-none inline-block mb-5"
-                style={{ color: '#001BB7', borderColor: '#001BB7' }}
+                style={{ color: '#204f79', borderColor: '#204f79' }}
               >
                 Founder
               </span>
@@ -138,7 +138,7 @@ export default function TeamPage() {
               <h2 className="font-display text-4xl md:text-5xl text-[#111111] font-bold tracking-tight leading-[1.1] mb-4">
                 Rakotonjanahary Fidèle
               </h2>
-              <p className="text-[#001BB7] text-sm md:text-base font-bold uppercase tracking-[0.15em] mb-10">
+              <p className="text-[#204f79] text-sm md:text-base font-bold uppercase tracking-[0.15em] mb-10">
                 Marine Biologist · Environmentalist · Youth Advocate
               </p>
 
@@ -169,7 +169,7 @@ export default function TeamPage() {
 
         <div className="max-w-4xl mx-auto relative z-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
           <div className="founder-message-panel text-center">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#001BB7]/25 backdrop-blur-sm mb-8">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#204f79]/25 backdrop-blur-sm mb-8">
               <Quote className="w-6 h-6 text-white" />
             </div>
             <span className="text-white/90 text-[10px] font-black uppercase tracking-[0.4em] block mb-6">
@@ -201,7 +201,7 @@ export default function TeamPage() {
           <div className="mb-24 text-center">
               <span
                 className="uppercase tracking-widest text-xs font-bold border px-4 py-1.5 rounded-lg leading-none inline-block mb-5"
-                style={{ color: '#001BB7', borderColor: '#001BB7' }}
+                style={{ color: '#204f79', borderColor: '#204f79' }}
               >
                 Leadership &amp; Team
               </span>
@@ -246,7 +246,7 @@ export default function TeamPage() {
                         
                         {/* Hover Overlay Icon */}
                         <div className="absolute inset-0 bg-brand-navy/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                            <div className="bg-[#001BB7] p-4 rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <div className="bg-[#204f79] p-4 rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                 <ArrowUpRight className="w-6 h-6 text-white" />
                             </div>
                         </div>
@@ -276,7 +276,7 @@ export default function TeamPage() {
                                 </a>
                              )}
                              {member.email && (
-                                <a href={`mailto:${member.email}`} className="text-[#001BB7] hover:text-brand-navy transition-colors">
+                                <a href={`mailto:${member.email}`} className="text-[#204f79] hover:text-brand-navy transition-colors">
                                     <Mail size={18} />
                                 </a>
                              )}
@@ -295,7 +295,7 @@ export default function TeamPage() {
           <div className="mb-20 text-center">
               <span
                 className="uppercase tracking-widest text-xs font-bold border px-4 py-1.5 rounded-lg leading-none inline-block mb-5"
-                style={{ color: '#001BB7', borderColor: '#001BB7' }}
+                style={{ color: '#204f79', borderColor: '#204f79' }}
               >
                 Our People
               </span>
@@ -315,7 +315,7 @@ export default function TeamPage() {
 
                             {/* Hover Overlay Icon */}
                             <div className="absolute inset-0 bg-brand-navy/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center overflow-hidden">
-                                <div className="bg-[#001BB7] p-4 rounded-full shadow-2xl transform translate-y-10 group-hover:translate-y-0 transition-all duration-300">
+                                <div className="bg-[#204f79] p-4 rounded-full shadow-2xl transform translate-y-10 group-hover:translate-y-0 transition-all duration-300">
                                     <Plus className="w-6 h-6 text-white" />
                                 </div>
                             </div>
@@ -343,7 +343,7 @@ export default function TeamPage() {
                                  </a>
                              )}
                              {member.email && (
-                                 <a href={`mailto:${member.email}`} className="text-[#001BB7] hover:text-brand-navy transition-colors">
+                                 <a href={`mailto:${member.email}`} className="text-[#204f79] hover:text-brand-navy transition-colors">
                                      <Mail size={16} />
                                  </a>
                              )}

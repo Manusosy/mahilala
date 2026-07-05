@@ -120,14 +120,14 @@ export default function ProfileSettingsTab() {
             />
             {uploadingAvatar ? (
                <div className="absolute inset-0 flex items-center justify-center">
-                 <Loader2 className="w-6 h-6 animate-spin text-[#001BB7]" />
+                 <Loader2 className="w-6 h-6 animate-spin text-[#204f79]" />
                </div>
             ) : (
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 rounded-full">
                 <UploadCloud className="w-6 h-6 text-white" />
               </div>
             )}
-            <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#001BB7] border-2 border-white rounded-full flex items-center justify-center pointer-events-none">
+            <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#204f79] border-2 border-white rounded-full flex items-center justify-center pointer-events-none">
               <Check className="w-3 h-3 text-white" />
             </div>
             <input 
@@ -201,7 +201,7 @@ export default function ProfileSettingsTab() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-[6px] text-sm font-semibold transition-colors disabled:opacity-50"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-[6px] text-sm font-semibold transition-colors disabled:opacity-50"
         >
           {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
           Update Profile

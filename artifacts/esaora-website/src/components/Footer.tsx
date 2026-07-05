@@ -11,7 +11,7 @@ export function Footer() {
   const siteName = settings.site_name || 'Mahilala Madagascar';
 
   return (
-    <footer className="bg-[#001BB7] border-t border-white/20 pt-24 pb-12 relative overflow-hidden">
+    <footer className="bg-[#204f79] border-t border-white/20 pt-24 pb-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
 
@@ -49,7 +49,7 @@ export function Footer() {
                   title={s.label === 'Email' ? t.footer.email : s.label}
                   target={s.href.startsWith('mailto:') ? undefined : '_blank'}
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/15 text-white hover:bg-white hover:text-[#001BB7] transition-all duration-300 hover:-translate-y-1"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/15 text-white hover:bg-white hover:text-[#204f79] transition-all duration-300 hover:-translate-y-1"
                 >
                   {s.icon}
                 </a>

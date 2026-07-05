@@ -149,7 +149,7 @@ export function NavBar() {
                       >
                         {item.label}
                         {item.sub && <ChevronDown className={`w-3 h-3 opacity-60 flex-shrink-0 transition-transform duration-200 ${activeDropdown === item.key ? 'rotate-180' : ''}`} />}
-                        {active && <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#001BB7] rounded-full" />}
+                        {active && <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#204f79] rounded-full" />}
                       </Link>
                     ) : (
                       <button
@@ -159,7 +159,7 @@ export function NavBar() {
                       >
                         {item.label}
                         {item.sub && <ChevronDown className={`w-3 h-3 opacity-60 flex-shrink-0 transition-transform duration-200 ${activeDropdown === item.key ? 'rotate-180' : ''}`} />}
-                        {active && <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#001BB7] rounded-full" />}
+                        {active && <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-[#204f79] rounded-full" />}
                       </button>
                     )}
 
@@ -172,7 +172,7 @@ export function NavBar() {
                             href={s.href}
                             className={`block w-full text-left px-4 py-2.5 text-sm transition-colors font-medium ${
                               location === s.href
-                                ? 'text-[#001BB7] bg-brand-navy/5'
+                                ? 'text-[#204f79] bg-brand-navy/5'
                                 : 'text-brand-navy/80 hover:text-brand-navy hover:bg-brand-navy/5'
                             }`}
                           >
@@ -211,7 +211,7 @@ export function NavBar() {
                         aria-selected={language === lang.code}
                         onClick={() => { setLanguage(lang.code); setLangOpen(false); }}
                         className={`w-full text-left px-4 py-2 text-sm transition-colors font-medium ${
-                          language === lang.code ? 'text-[#001BB7] bg-brand-navy/5' : 'text-brand-navy/80 hover:text-brand-navy hover:bg-brand-navy/5'
+                          language === lang.code ? 'text-[#204f79] bg-brand-navy/5' : 'text-brand-navy/80 hover:text-brand-navy hover:bg-brand-navy/5'
                         }`}
                       >
                         {lang.label}
@@ -224,7 +224,7 @@ export function NavBar() {
               {/* Contact CTA */}
               <Link
                 href="/contact"
-                className="bg-[#001BB7] hover:bg-[#F78A28] text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:scale-105 whitespace-nowrap"
+                className="bg-[#204f79] hover:bg-[#F78A28] text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 hover:scale-105 whitespace-nowrap"
               >
                 {t.nav.contact}
               </Link>
@@ -297,7 +297,7 @@ export function NavBar() {
                   onClick={() => setLanguage(lang.code)}
                   className={`px-3 py-1.5 rounded-lg text-sm border transition-colors ${
                     language === lang.code
-                      ? 'border-[#001BB7] bg-[#001BB7] text-white font-semibold'
+                      ? 'border-[#204f79] bg-[#204f79] text-white font-semibold'
                       : 'border-brand-navy/30 text-brand-navy/80 hover:border-brand-navy/60 hover:text-brand-navy font-medium'
                   }`}
                 >
@@ -307,7 +307,7 @@ export function NavBar() {
             </div>
             <Link
               href="/contact"
-              className="bg-[#001BB7] hover:bg-[#F78A28] text-white px-6 py-3.5 rounded-lg font-semibold text-base w-full transition-colors text-center block"
+              className="bg-[#204f79] hover:bg-[#F78A28] text-white px-6 py-3.5 rounded-lg font-semibold text-base w-full transition-colors text-center block"
               onClick={() => setMobileOpen(false)}
             >
               {t.nav.contact}

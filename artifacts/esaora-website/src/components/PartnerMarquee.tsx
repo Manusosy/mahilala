@@ -73,7 +73,7 @@ export function PartnerMarquee() {
     <section className="bg-white py-16 px-4 overflow-hidden border-t border-brand-navy/[0.03]">
       <div className="max-w-7xl mx-auto mb-12">
         <div className="text-center space-y-2">
-          <span className="text-[#001BB7] uppercase tracking-[0.25em] text-[10px] font-extrabold block">
+          <span className="text-[#204f79] uppercase tracking-[0.25em] text-[10px] font-extrabold block">
             {t.partners.headline}
           </span>
           <h2 className="text-[#111111] text-2xl font-bold tracking-tight">
@@ -125,10 +125,10 @@ export function PartnerMarquee() {
       </div>
 
       <div className="text-center mt-12">
-        <button className="group inline-flex items-center gap-2 text-brand-navy/60 font-bold text-xs uppercase tracking-widest hover:text-[#001BB7] transition-all duration-300">
+        <button className="group inline-flex items-center gap-2 text-brand-navy/60 font-bold text-xs uppercase tracking-widest hover:text-[#204f79] transition-all duration-300">
           <span className="relative">
             {t.partners.becomeMember}
-            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#001BB7] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#204f79] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
           </span>
           <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
         </button>

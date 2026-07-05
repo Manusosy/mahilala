@@ -94,9 +94,9 @@ function App() {
 
   if (settings.maintenance_mode === 'true') {
     return (
-      <div className="min-h-screen bg-[#001BB7] flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-[#204f79] flex flex-col items-center justify-center p-6 text-center">
         <h1 className="text-4xl font-bold text-white mb-4">Under Maintenance</h1>
-        <p className="text-[#001BB7] text-xl max-w-lg leading-relaxed">
+        <p className="text-[#204f79] text-xl max-w-lg leading-relaxed">
           The Mahilala Madagascar website is currently undergoing scheduled maintenance. Please check back shortly.
         </p>
       </div>

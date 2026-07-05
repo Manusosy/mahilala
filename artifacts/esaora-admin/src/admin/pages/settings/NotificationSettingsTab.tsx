@@ -75,7 +75,7 @@ export default function NotificationSettingsTab() {
             <button
               type="button"
               onClick={() => setEmailNewContacts(!emailNewContacts)}
-              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001BB7] ${emailNewContacts ? 'bg-[#001BB7]' : 'bg-gray-200'}`}
+              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#204f79] ${emailNewContacts ? 'bg-[#204f79]' : 'bg-gray-200'}`}
               style={{ width: 44, height: 24 }}
             >
               <span className={`inline-block w-5 h-5 bg-white rounded-full shadow transform transition ease-in-out duration-200 ${emailNewContacts ? 'translate-x-[22px]' : 'translate-x-[2px]'}`} />
@@ -91,7 +91,7 @@ export default function NotificationSettingsTab() {
             <button
               type="button"
               onClick={() => setEmailNewMemberships(!emailNewMemberships)}
-              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001BB7] ${emailNewMemberships ? 'bg-[#001BB7]' : 'bg-gray-200'}`}
+              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#204f79] ${emailNewMemberships ? 'bg-[#204f79]' : 'bg-gray-200'}`}
               style={{ width: 44, height: 24 }}
             >
               <span className={`inline-block w-5 h-5 bg-white rounded-full shadow transform transition ease-in-out duration-200 ${emailNewMemberships ? 'translate-x-[22px]' : 'translate-x-[2px]'}`} />
@@ -111,7 +111,7 @@ export default function NotificationSettingsTab() {
             <button
               type="button"
               onClick={() => setAppSounds(!appSounds)}
-              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#001BB7] ${appSounds ? 'bg-[#001BB7]' : 'bg-gray-200'}`}
+              className={`relative inline-flex items-center flex-shrink-0 rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#204f79] ${appSounds ? 'bg-[#204f79]' : 'bg-gray-200'}`}
               style={{ width: 44, height: 24 }}
             >
               <span className={`inline-block w-5 h-5 bg-white rounded-full shadow transform transition ease-in-out duration-200 ${appSounds ? 'translate-x-[22px]' : 'translate-x-[2px]'}`} />
@@ -127,7 +127,7 @@ export default function NotificationSettingsTab() {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#001BB7] hover:bg-[#F78A28] text-white rounded-[6px] text-sm font-semibold transition-colors disabled:opacity-50"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#204f79] hover:bg-[#F78A28] text-white rounded-[6px] text-sm font-semibold transition-colors disabled:opacity-50"
         >
           {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
           Update Preferences

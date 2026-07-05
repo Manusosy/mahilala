@@ -73,14 +73,14 @@ export default function NewsArticlePage() {
         <h1 className="text-4xl text-brand-navy font-bold mb-4">Article Not Found</h1>
         <p className="text-gray-500 mb-8 max-w-md">The article you are looking for doesn't exist or has been removed.</p>
         <Link href="/news">
-          <a className="bg-[#001BB7] text-white px-8 py-3 rounded-lg font-bold transition-transform hover:scale-105">Return to News</a>
+          <a className="bg-[#204f79] text-white px-8 py-3 rounded-lg font-bold transition-transform hover:scale-105">Return to News</a>
         </Link>
       </div>
     );
   }
 
   const date = new Date(article.published_at || article.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-  const categoryColor = article.categories?.color || '#001BB7';
+  const categoryColor = article.categories?.color || '#204f79';
   const authorName = article.author?.full_name?.trim() || 'Mahilala';
   const authorAvatar = article.author?.avatar_url?.trim() || null;
 
@@ -133,7 +133,7 @@ export default function NewsArticlePage() {
                 
                 <div className="flex items-center gap-6 md:ml-auto">
                     <div className="flex items-center text-gray-500 text-xs font-bold uppercase tracking-wider">
-                        <Calendar className="w-4 h-4 mr-2 text-[#001BB7]" /> {date}
+                        <Calendar className="w-4 h-4 mr-2 text-[#204f79]" /> {date}
                     </div>
                     
                     <span 
@@ -203,7 +203,7 @@ export default function NewsArticlePage() {
                         </a>
                         <button 
                             onClick={handleCopyLink}
-                            className={`p-3 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all border border-gray-50 ${copySuccess ? 'bg-[#001BB7] text-white' : 'bg-white text-gray-500'}`}
+                            className={`p-3 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all border border-gray-50 ${copySuccess ? 'bg-[#204f79] text-white' : 'bg-white text-gray-500'}`}
                             title="Copy Link"
                         >
                             {copySuccess ? <Check className="w-5 h-5 animate-in zoom-in" /> : <LinkIcon className="w-5 h-5" />}
@@ -214,14 +214,14 @@ export default function NewsArticlePage() {
                 {/* Article Body */}
                 <div className="flex-1 max-w-3xl">
                     <div 
-                        className="prose prose-lg prose-blue max-w-none prose-headings:font-display prose-headings:text-brand-navy prose-a:text-[#001BB7] prose-img:rounded-xl prose-img:shadow-lg prose-p:text-gray-700 leading-relaxed"
+                        className="prose prose-lg prose-blue max-w-none prose-headings:font-display prose-headings:text-brand-navy prose-a:text-[#204f79] prose-img:rounded-xl prose-img:shadow-lg prose-p:text-gray-700 leading-relaxed"
                         dangerouslySetInnerHTML={{ __html: article.body }}
                     />
 
                     {/* Bottom Tags */}
                     <div className="mt-16 pt-8 border-t border-gray-200 flex flex-wrap gap-2">
                         {article.tags?.map((tag: any) => (
-                            <span key={tag.id} className="text-xs font-bold text-gray-400 bg-white border border-gray-200 px-4 py-1.5 rounded-full hover:border-[#001BB7] hover:text-brand-navy transition-colors cursor-default">
+                            <span key={tag.id} className="text-xs font-bold text-gray-400 bg-white border border-gray-200 px-4 py-1.5 rounded-full hover:border-[#204f79] hover:text-brand-navy transition-colors cursor-default">
                                 #{tag.name}
                             </span>
                         ))}
@@ -247,7 +247,7 @@ export default function NewsArticlePage() {
             <div className="flex items-center justify-between mb-12">
                 <h2 className="text-3xl font-display font-bold text-brand-navy">Related Articles</h2>
                 <Link href="/news">
-                    <a className="text-[#001BB7] font-bold text-sm hover:underline">View all news →</a>
+                    <a className="text-[#204f79] font-bold text-sm hover:underline">View all news →</a>
                 </Link>
             </div>
             
@@ -259,7 +259,7 @@ export default function NewsArticlePage() {
                                 <img src={a.cover_image_url || '/images/sections/impact-mentorship.jpg'} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                             </div>
                             <div className="p-6 flex flex-col flex-1">
-                                <span className="text-[10px] font-bold text-[#001BB7] uppercase tracking-widest mb-3">{a.categories?.name || 'News'}</span>
+                                <span className="text-[10px] font-bold text-[#204f79] uppercase tracking-widest mb-3">{a.categories?.name || 'News'}</span>
                                 <h3 className="text-lg font-bold text-[#111111] mb-4 group-hover:text-gray-600 transition-colors line-clamp-2">{a.title}</h3>
                                 <p className="text-sm text-gray-500 line-clamp-2 mt-auto">{a.excerpt}</p>
                             </div>

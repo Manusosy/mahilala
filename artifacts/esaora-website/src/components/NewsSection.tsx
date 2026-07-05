@@ -51,7 +51,7 @@ export function NewsSection() {
             <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {articles.map((article) => {
                     const date = new Date(article.published_at || article.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-                    const color = article.categories?.color || '#001BB7';
+                    const color = article.categories?.color || '#204f79';
                     
                     return (
                         <Link key={article.id} href={`/news/${article.slug}`}>
@@ -107,7 +107,7 @@ export function NewsSection() {
                     News and announcements from Mahilala Madagascar will be shared here soon. 
                     Stay tuned for updates on our programmes, events, and community work in Toliara.
                 </p>
-                <Link href="/news" className="inline-flex items-center gap-3 bg-[#001BB7] text-white px-8 py-3 rounded-[7px] font-black text-xs uppercase tracking-widest hover:bg-[#F78A28] hover:gap-4 transition-all">
+                <Link href="/news" className="inline-flex items-center gap-3 bg-[#204f79] text-white px-8 py-3 rounded-[7px] font-black text-xs uppercase tracking-widest hover:bg-[#F78A28] hover:gap-4 transition-all">
                     {t.news.viewAll} <ArrowRight className="w-4 h-4" />
                 </Link>
             </div>

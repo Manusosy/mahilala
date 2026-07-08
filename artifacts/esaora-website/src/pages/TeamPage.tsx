@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PageHero } from '@/components/PageHero';
 import { usePublishedTeam } from '@workspace/esaora-core/hooks/useData';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 import { Mail, Plus, User, ArrowUpRight, GraduationCap, Award, MapPin, Quote } from 'lucide-react';
 import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
 
@@ -82,7 +83,7 @@ export default function TeamPage() {
         label="OUR TEAM"
         heading="The People Behind Mahilala"
         subheading="A founder and a dedicated team working together for Madagascar's youth through science, mentorship, environmental education, and community engagement."
-        imageSrc="/images/hero/team-hero.jpg"
+        slides={PAGE_HERO_SLIDES.team}
         breadcrumb="Our Team"
         breadcrumbParent={{ label: 'About', href: '/about' }}
       />

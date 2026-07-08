@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Target, Eye, Heart } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { usePublishedPartners } from '@workspace/esaora-core/hooks/useData';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 gsap.registerPlugin(ScrollTrigger);
 
 const PURPOSE_TABS = [
@@ -13,7 +14,7 @@ const PURPOSE_TABS = [
     icon: Target,
     headline: 'Our Mission',
     body: 'To sensitize, support, and inspire young Malagasy people toward responsible citizenship, personal development, academic fulfillment, leadership, and environmental stewardship.',
-    image: '/images/sections/impact-personal-growth.jpg',
+    image: '/images/about/IMG_6743.jpg',
   },
   {
     key: 'vision',
@@ -21,7 +22,7 @@ const PURPOSE_TABS = [
     icon: Eye,
     headline: 'Our Vision',
     body: 'A generation of informed, confident, purpose-driven, and civically engaged Malagasy youth who contribute positively to their communities and protect Madagascar\u2019s marine and coastal ecosystems.',
-    image: '/images/sections/pillar-toroy-izy.jpg',
+    image: '/images/about/IMG_6770.jpg',
   },
   {
     key: 'values',
@@ -30,7 +31,7 @@ const PURPOSE_TABS = [
     headline: 'Our Values',
     body: 'The principles that shape how Mahilala accompanies young people in Toliara and across Madagascar.',
     values: ['Empowerment', 'Civic Responsibility', 'Environmental Consciousness', 'Community Action', 'Mentorship', 'Humility', 'Hope', 'Lifelong Learning'],
-    image: '/images/sections/pillar-sekoly-manga.jpg',
+    image: '/images/about/IMG_5399.jpg',
   },
 ] as const;
 
@@ -50,7 +51,7 @@ const CRISES = [
   {
     title: 'Environmental Disconnect',
     body: 'Young people also need human, social, emotional, creative, civic, and environmental intelligence to build a better future for themselves and for Madagascar.',
-    image: '/images/about/challenge-environmental-disconnect.png',
+    image: '/images/about/IMG_6743.jpg',
     color: '#F59E0B',
   },
   {
@@ -66,31 +67,31 @@ const MILESTONES = [
     period: '2016',
     event: 'Youth Orientation Roots Begin',
     detail: 'The youth orientation initiative began informally, shaped by the founder\'s desire to help young people discover purpose, direction, and confidence.',
-    image: '/images/sections/pillar-toroy-izy.jpg',
+    image: '/images/heroes/IMG_3064.jpg',
   },
   {
     period: '2019',
     event: 'Mahilala Begins Informally',
     detail: 'Mahilala started informally as a response to the need for youth guidance, personal development, civic values, and environmental awareness. Sekoly Manga Madagascar page created.',
-    image: '/images/hero/hero-slide-youth-program.png',
+    image: '/images/heroes/IMG_3033.jpg',
   },
   {
     period: 'December 2023',
     event: 'TEDx Toliara Message',
     detail: 'The founder shared a personal story emphasizing that a person from a poor family background can still become an important contributor to society by discovering purpose.',
-    image: '/images/sections/pillar-youth-mentoring.jpg',
+    image: '/images/heroes/IMG_20230729_101635.jpg',
   },
   {
     period: '2025',
     event: 'Official Recognition',
     detail: 'Mahilala was officially recognized by the Malagasy government. Collaboration with VOIZO Madagascar for marine bioecology training along the southwest coast.',
-    image: '/images/sections/who-we-are.jpg',
+    image: '/images/about/IMG_6698.jpg',
   },
   {
     period: 'Beginning of 2026',
     event: 'Ady Fototra Movement',
     detail: 'Mahilala became involved in the launch of the Ady Fototra movement with Move On: Be Ready for Change, promoting civic responsibility and shared values.',
-    image: '/images/sections/pillar-civic-engagement.jpg',
+    image: '/images/about/IMG_6770.jpg',
   },
 ];
 
@@ -143,7 +144,7 @@ export default function OurStoryPage() {
         label="ABOUT US"
         heading="Who Is Mahilala Madagascar"
         subheading="Born from personal reflection, lived experience, and a desire to make guidance more accessible to young people in Toliara and across Madagascar."
-        imageSrc="/images/about/about-hero-team.png"
+        slides={PAGE_HERO_SLIDES.about}
         imagePosition="center center"
         breadcrumb="About"
       />
@@ -157,7 +158,7 @@ export default function OurStoryPage() {
             <div className="w-full lg:w-1/2 flex items-center justify-center gap-4 sm:gap-6 lg:pr-8">
               <div className="w-1/2 pt-16 sm:pt-24">
                 <div className="rounded-lg overflow-hidden shadow-sm h-[300px] sm:h-[400px] lg:h-[480px] w-full relative border border-brand-navy/5">
-                  <img src="/images/about/about-story-workshop.png" alt="Mahilala team leading a youth workshop in Toliara" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src="/images/about/IMG_6698.jpg" alt="Mahilala team leading a youth workshop in Toliara" className="absolute inset-0 w-full h-full object-cover" />
                 </div>
               </div>
               <div className="w-1/2 pb-16 sm:pb-24">
@@ -301,7 +302,7 @@ export default function OurStoryPage() {
         {/* Sticky Background Image */}
         <div 
           className="fixed top-0 left-0 w-full h-[100vh] pointer-events-none overflow-hidden -z-10 bg-black bg-cover bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero/hero-slide-outdoor-education.png')", backgroundPosition: 'center center' }}
+          style={{ backgroundImage: "url('/images/about/IMG_5355.jpg')", backgroundPosition: 'center center' }}
         />
         <div className="absolute inset-0 bg-black/30 pointer-events-none" />
 

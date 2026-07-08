@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { ArrowRight, Download, FileText, BookOpen, Loader2, Calendar, Star } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { usePublishedReports, incrementReportDownload } from '@workspace/esaora-core/hooks/useData';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 import type { Report } from '@workspace/esaora-core/lib/database.types';
 
 const CATEGORIES = ['All', 'Annual Report', 'Research Paper', 'Policy Brief', 'Impact Review'];
@@ -47,7 +48,7 @@ export default function ReportsPage() {
         label="REPORTS & PUBLICATIONS"
         heading="Knowledge, Transparency, and Evidence"
         subheading="ESA-ORA publishes program reports, research findings, financial statements, and policy documents to ensure full transparency and drive evidence-based practice across the region."
-        imageSrc="/images/hero/hero-bg-5.jpg"
+        slides={PAGE_HERO_SLIDES.reports}
         breadcrumb="Reports & Publications"
       />
 

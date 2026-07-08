@@ -1,4 +1,5 @@
 import { PageHero } from '@/components/PageHero';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 export default function DonatePage() {
   return (
     <main>
@@ -6,7 +7,7 @@ export default function DonatePage() {
         label="SUPPORT OUR MISSION"
         heading="Donate to ESA-ORA"
         subheading="Your contribution supports regional climate resilience, sustainable blue economy, and community health initiatives across East and Southern Africa."
-        imageSrc="/images/hero/hero-bg-9.jpg"
+        slides={PAGE_HERO_SLIDES.donate}
         breadcrumb="Donate"
       />
       

@@ -3,6 +3,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Mail } from 'lucide-react';
 import { FaLinkedin, FaXTwitter, FaFacebookF, FaYoutube } from 'react-icons/fa6';
 import { useSiteSettings } from '@workspace/esaora-core/hooks/useData';
+import { SOCIAL_LINKS } from '@/constants/socialLinks';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -36,10 +37,10 @@ export function Footer() {
             {/* Social + Contact Links */}
             <div className="flex flex-wrap gap-3 pt-2">
               {[
-                { icon: <FaLinkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
-                { icon: <FaXTwitter className="w-5 h-5" />,  href: '#', label: 'Twitter' },
-                { icon: <FaFacebookF className="w-5 h-5" />, href: '#', label: 'Facebook' },
-                { icon: <FaYoutube className="w-5 h-5" />,   href: '#', label: 'YouTube' },
+                { icon: <FaLinkedin className="w-5 h-5" />, href: SOCIAL_LINKS.linkedin, label: 'LinkedIn' },
+                { icon: <FaXTwitter className="w-5 h-5" />,  href: SOCIAL_LINKS.twitter, label: 'Twitter' },
+                { icon: <FaFacebookF className="w-5 h-5" />, href: SOCIAL_LINKS.facebook, label: 'Facebook' },
+                { icon: <FaYoutube className="w-5 h-5" />,   href: SOCIAL_LINKS.youtube, label: 'YouTube' },
                 { icon: <Mail className="w-5 h-5" />, href: `mailto:${t.footer.email}`, label: 'Email' },
               ].map((s, i) => (
                 <a

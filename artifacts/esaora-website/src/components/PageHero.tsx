@@ -1,13 +1,17 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'wouter';
 import { gsap } from 'gsap';
+import { HeroSliderBackground, type HeroSlide } from '@/components/HeroSliderBackground';
 
 export interface PageHeroProps {
   label: string;
   heading: string;
   subheading?: string;
-  imageSrc: string;
-  /** CSS background-position for the hero image. Defaults to center top. */
+  /** Rotating hero slides — preferred over imageSrc */
+  slides?: readonly HeroSlide[];
+  /** Fallback single image when slides are not provided */
+  imageSrc?: string;
+  /** CSS background-position for the hero images. Defaults to center. */
   imagePosition?: string;
   breadcrumb?: string;
   /** Optional second breadcrumb segment for nested pages e.g. "About > Our Story" */
@@ -18,14 +22,19 @@ export function PageHero({
   label,
   heading,
   subheading,
+  slides,
   imageSrc,
-  imagePosition = 'center top',
+  imagePosition = 'center',
   breadcrumb,
   breadcrumbParent,
 }: PageHeroProps) {
   const labelRef   = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const subRef     = useRef<HTMLParagraphElement>(null);
+
+  const heroSlides: readonly HeroSlide[] = slides ?? (imageSrc
+    ? [{ id: 'single', url: imageSrc, alt: heading }]
+    : []);
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.1 });
@@ -52,17 +61,7 @@ export function PageHero({
 
   return (
     <section className="relative w-full min-h-[420px] md:min-h-[540px] flex flex-col justify-end overflow-hidden bg-brand-navy">
-      {/* Background image + uniform overlay — matches homepage hero */}
-      <div className="absolute top-16 md:top-20 left-0 right-0 bottom-0 bg-black">
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: `url('${imageSrc}')`,
-            backgroundPosition: imagePosition,
-          }}
-        />
-        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-      </div>
+      <HeroSliderBackground slides={heroSlides} imagePosition={imagePosition} />
 
       {/* Content — anchored to the bottom */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-14 md:pb-20 pt-28 md:pt-36">

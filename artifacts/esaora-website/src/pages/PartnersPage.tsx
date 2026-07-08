@@ -2,6 +2,7 @@ import { Link } from 'wouter';
 import { ArrowRight, Check, ExternalLink, Globe } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { usePublishedPartners } from '@workspace/esaora-core/hooks/useData';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 
 const COLLABORATION_TYPES = [
   'Joint environmental education activities',
@@ -28,7 +29,7 @@ export default function PartnersPage() {
         label="PARTNERS & COLLABORATORS"
         heading="Working Together for Youth and the Environment"
         subheading="Mahilala Madagascar collaborates with organizations that share our commitment to youth empowerment, civic engagement, and environmental education in Toliara and across Madagascar."
-        imageSrc="/images/about/about-hero-team.png"
+        slides={PAGE_HERO_SLIDES.partners}
         breadcrumb="Partners"
       />
 

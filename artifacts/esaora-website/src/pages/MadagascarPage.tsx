@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 const FOCUS_AREAS = [
   { name: 'Toroy Izy', color: '#204f79', href: '/programs/toroy-izy', desc: 'Youth orientation and mentoring helping young people in Toliara discover purpose, choose academic and career pathways, and grow through guidance.' },
   { name: 'Sekoly Manga', color: '#22C55E', href: '/programs/sekoly-manga', desc: 'Environmental education connecting students, schools, and coastal communities to Madagascar\'s marine and coastal ecosystems across the southwest coast.' },
@@ -14,7 +15,7 @@ export default function MadagascarPage() {
         label="TOLIARA, MADAGASCAR"
         heading="Mahilala Madagascar — Based in Toliara"
         subheading="Youth empowerment, civic engagement, and environmental education in the Atsimo-Andrefana Region of southwest Madagascar."
-        imageSrc="/images/hero/hero-bg-9.jpg"
+        slides={PAGE_HERO_SLIDES.madagascar}
         breadcrumb="Toliara"
         breadcrumbParent={{ label: 'About', href: '/about' }}
       />

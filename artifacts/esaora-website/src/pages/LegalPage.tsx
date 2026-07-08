@@ -1,4 +1,5 @@
 import { PageHero } from '@/components/PageHero';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 const LEGAL_CONTENT: Record<string, { intro: string; sections: { heading: string; body: string }[] }> = {
   privacy: {
     intro:
@@ -114,7 +115,7 @@ export default function LegalPage({ title, type }: { title: string; type: string
         label="LEGAL & COMPLIANCE"
         heading={title}
         subheading="Official policies governing Mahilala Madagascar and its digital platforms."
-        imageSrc="/images/hero/hero-bg-12.jpg"
+        slides={PAGE_HERO_SLIDES.legal}
         breadcrumb={title}
       />
 

@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { X, Maximize2, Navigation, Filter, Camera } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { usePublishedGallery } from '@workspace/esaora-core/hooks/useData';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 
 const CATEGORIES = ['All', 'Conferences', 'Field Projects', 'Workshops', 'General'];
 
@@ -24,7 +25,7 @@ export default function GalleryPage() {
         label="GALLERY"
         heading="Mahilala in Action"
         subheading="Moments from our programmes, events, environmental education activities, and community work across Madagascar."
-        imageSrc="/images/hero/hero-slide-youth-workshop.png"
+        slides={PAGE_HERO_SLIDES.gallery}
         breadcrumb="Gallery"
       />
 

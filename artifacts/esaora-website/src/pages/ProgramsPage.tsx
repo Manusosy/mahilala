@@ -2,6 +2,7 @@ import { Link } from 'wouter';
 import { PageHero } from '@/components/PageHero';
 import { PartnerMarquee } from '@/components/PartnerMarquee';
 import { usePublishedPrograms } from '@workspace/esaora-core/hooks/usePrograms';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 import { Calendar, Globe, ArrowRight } from 'lucide-react';
 
 const CROSS_CUTTING = [
@@ -18,7 +19,7 @@ export default function ProgramsPage() {
         label="WHAT WE DO"
         heading="Programmes Built for Youth, By People Who Care"
         subheading="Mahilala Madagascar combines mentoring, orientation, civic engagement, and environmental education to help young people grow with purpose and responsibility."
-        imageSrc="/images/hero/hero-slide-youth-program.png"
+        slides={PAGE_HERO_SLIDES.programs}
         breadcrumb="Programmes"
       />
 

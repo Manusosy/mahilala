@@ -3,6 +3,8 @@ import { ArrowRight, Mail, MapPin, Clock, Loader2 } from 'lucide-react';
 import { FaLinkedin, FaXTwitter, FaFacebookF, FaYoutube } from 'react-icons/fa6';
 import { PageHero } from '@/components/PageHero';
 import { supabase } from '@workspace/esaora-core/lib/supabase';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
+import { SOCIAL_LINKS } from '@/constants/socialLinks';
 
 const BRAND_BLUE = '#204f79';
 
@@ -15,11 +17,11 @@ const CONTACT_INFO = {
   responseTime: 'We aim to respond within 2 to 3 business days.',
 };
 
-const SOCIAL_LINKS = [
-  { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-  { icon: FaXTwitter, href: '#', label: 'Twitter' },
-  { icon: FaFacebookF, href: '#', label: 'Facebook' },
-  { icon: FaYoutube, href: '#', label: 'YouTube' },
+const SOCIAL_LINKS_UI = [
+  { icon: FaLinkedin, href: SOCIAL_LINKS.linkedin, label: 'LinkedIn' },
+  { icon: FaXTwitter, href: SOCIAL_LINKS.twitter, label: 'Twitter' },
+  { icon: FaFacebookF, href: SOCIAL_LINKS.facebook, label: 'Facebook' },
+  { icon: FaYoutube, href: SOCIAL_LINKS.youtube, label: 'YouTube' },
 ];
 
 const FAQ = [
@@ -83,7 +85,7 @@ export default function ContactPage() {
         label="CONTACT US"
         heading="Get in Touch with Mahilala"
         subheading="Reach out for programme information, partnerships, volunteering, mentoring, or to connect with our team in Toliara."
-        imageSrc="/images/about/about-story-workshop.png"
+        slides={PAGE_HERO_SLIDES.contact}
         imagePosition="center center"
         breadcrumb="Contact"
       />
@@ -135,7 +137,7 @@ export default function ContactPage() {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <span className="text-[#4A5568] text-sm font-medium">Follow us</span>
             <div className="flex gap-3">
-              {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
+              {SOCIAL_LINKS_UI.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}

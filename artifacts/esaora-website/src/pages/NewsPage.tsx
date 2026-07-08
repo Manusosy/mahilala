@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { PageHero } from '@/components/PageHero';
 import { NewsletterSection } from '@/components/NewsletterSection';
+import { PAGE_HERO_SLIDES } from '@/constants/pageHeroSlides';
 import { ArrowRight, Globe, Calendar } from 'lucide-react';
 import { usePublishedArticles, useCategories } from '@workspace/esaora-core/hooks/useArticles';
 
@@ -19,7 +20,7 @@ export default function NewsPage() {
         label="NEWS & STORIES"
         heading="Updates from Mahilala Madagascar"
         subheading="Programme stories, announcements, and insights on youth mentorship, civic engagement, and environmental education in Toliara and across Madagascar."
-        imageSrc="/images/sections/pillar-youth-mentoring.jpg"
+        slides={PAGE_HERO_SLIDES.news}
         breadcrumb="News"
       />
 
